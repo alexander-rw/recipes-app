@@ -1,0 +1,449 @@
+{
+  "recipes": [
+    {
+      "name": "Sweet Potato Shepherd's Pie",
+      "href": "https://www.bbcgoodfood.com/recipes/veggie-shepherds-pie-sweet-potato-mash",
+      "timeTakenToCook": 60
+    },
+    {
+      "name": "Sweet Potato Curry",
+      "href": "https://www.bbcgoodfood.com/recipes/satay-sweet-potato-curry",
+      "timeTakenToCook": 60
+    },
+    {
+      "name": "Kimchi fried rice",
+      "href": "https://www.bbcgoodfood.com/recipes/kimchi-fried-rice",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Broccoli Bread bake",
+      "href": "https://www.bbcgoodfood.com/recipes/long-stem-broccoli-bread-bake",
+      "timeTakenToCook": 35
+    },
+    {
+      "name": "Paneer Makhani",
+      "href": "https://www.bbcgoodfood.com/recipes/paneer-makhani",
+      "timeTakenToCook": 45
+    },
+    {
+      "name": "Minestrone",
+      "href": "https://www.bbc.co.uk/food/recipes/minestrone_23211",
+      "timeTakenToCook": 45
+    },
+    {
+      "name": "Miso Mushroom Risotto",
+      "href": "https://rainbowplantlife.com/vegan-miso-butter-mushroom-risotto/",
+      "timeTakenToCook": 60
+    },
+    {
+      "name": "Saffron Risotto",
+      "href": "https://www.insidetherustickitchen.com/saffron-risotto/",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Palak Paneer",
+      "href": "https://www.cookwithmanali.com/palak-paneer/",
+      "timeTakenToCook": 40
+    },
+    {
+      "name": "Tomato Soup",
+      "href": "https://diethood.com/roasted-tomato-soup/",
+      "timeTakenToCook": 45
+    },
+    {
+      "name": "Nasi Goreng",
+      "href": "https://www.bbcgoodfood.com/recipes/nasi-goreng-indonesian-stir-fried-rice",
+      "timeTakenToCook": 50
+    },
+    {
+      "name": "Teriyaki Tofu",
+      "href": "https://www.bbcgoodfood.com/recipes/charred-spring-onions-teriyaki-tofu",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Cacio e Pepe Gnocchi",
+      "href": "https://www.bbcgoodfood.com/recipes/gnocchi-cacio-e-pepe",
+      "timeTakenToCook": 10
+    },
+    {
+      "name": "Fajitas",
+      "href": "https://www.bbcgoodfood.com/recipes/veggie-fajitas",
+      "timeTakenToCook": 15
+    },
+    {
+      "name": "Yaki Udon",
+      "href": "https://www.bbcgoodfood.com/recipes/yaki-udon",
+      "timeTakenToCook": 15
+    },
+    {
+      "name": "Spiral Pie",
+      "href": "https://www.bbcgoodfood.com/recipes/veggie-spiral-pie-spiced-tomato-sauce-chopped-salad",
+      "timeTakenToCook": 140
+    },
+    {
+      "name": "Carbonara",
+      "href": "https://www.bbcgoodfood.com/recipes/ultimate-spaghetti-carbonara-recipe",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Spinach Cannelloni",
+      "href": "https://www.bbcgoodfood.com/recipes/spinach-ricotta-cannelloni",
+      "timeTakenToCook": 90
+    },
+    {
+      "name": "Quesadillas",
+      "href": "https://www.simplyrecipes.com/recipes/quesadilla/",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Mexican-style Stuffed Peppers",
+      "href": "https://www.bbcgoodfood.com/recipes/mexican-style-stuffed-peppers",
+      "timeTakenToCook": 50
+    },
+    {
+      "name": "Kale & Pesto Pasta",
+      "href": "https://www.bbcgoodfood.com/recipes/creamy-pesto-kale-pasta",
+      "timeTakenToCook": 35
+    },
+    {
+      "name": "Tomato & Mascarpone Risotto",
+      "href": "https://www.bbcgoodfood.com/recipes/tomato-mascarpone-risotto",
+      "timeTakenToCook": 40
+    },
+    {
+      "name": "Okonomiyaki",
+      "href": "https://www.bbcgoodfood.com/recipes/veggie-okonomiyaki",
+      "timeTakenToCook": 25
+    },
+    {
+      "name": "Caponata",
+      "href": "https://www.bbcgoodfood.com/recipes/caponata-pasta",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Spinach, Sweet Potato, & Lentil Dhal",
+      "href": "https://www.bbcgoodfood.com/recipes/spinach-sweet-potato-lentil-dhal",
+      "timeTakenToCook": 45
+    },
+    {
+      "name": "Sweet and Sour Tofu",
+      "href": "https://www.bbcgoodfood.com/recipes/sweet-sour-tofu",
+      "timeTakenToCook": 25
+    },
+    {
+      "name": "Vegetable Enchiladas",
+      "href": "https://www.bbcgoodfood.com/recipes/bean-enchiladas",
+      "timeTakenToCook": 40
+    },
+    {
+      "name": "Pineapple Fried Rice",
+      "href": "https://www.bbcgoodfood.com/recipes/pineapple-fried-rice",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Cauliflower Steaks",
+      "href": "https://www.bbcgoodfood.com/recipes/cauliflower-steaks-roasted-red-pepper-olive-salsa",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Butternut Biryani",
+      "href": "https://www.bbcgoodfood.com/recipes/butternut-biryani-cucumber-raita",
+      "timeTakenToCook": 45
+    },
+    {
+      "name": "Jollof Rice",
+      "href": "https://www.bbcgoodfood.com/recipes/smoky-spiced-jollof-rice-coconut-fried-plantain",
+      "timeTakenToCook": 50
+    },
+    {
+      "name": "Miso Ramen",
+      "href": "https://www.bbcgoodfood.com/recipes/miso-ramen",
+      "timeTakenToCook": 25
+    },
+    {
+      "name": "Tofu & Noodle Stir Fry",
+      "href": "https://www.bbcgoodfood.com/recipes/singapore-noodles-tofu",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Mushroom Couscous",
+      "href": "https://www.bbcgoodfood.com/recipes/moroccan-mushrooms-couscous",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Shakshuka",
+      "href": "https://www.bbcgoodfood.com/recipes/shakshuka",
+      "timeTakenToCook": 25
+    },
+    {
+      "name": "Club Sandwich",
+      "href": "https://www.bbcgoodfood.com/recipes/vegetarian-club",
+      "timeTakenToCook": 10
+    },
+    {
+      "name": "Beer Mac 'n' Cheese",
+      "href": "https://www.bbcgoodfood.com/recipes/beer-mac-n-cheese",
+      "timeTakenToCook": 45
+    },
+    {
+      "name": "Vegan Jambalaya",
+      "href": "https://www.bbcgoodfood.com/recipes/smoky-spiced-veggie-rice",
+      "timeTakenToCook": 75
+    },
+    {
+      "name": "Gnocchi & Tomato Bake",
+      "href": "https://www.bbcgoodfood.com/recipes/gnocchi-tomato-bake",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Lentil & Spinach Pie",
+      "href": "https://www.bbcgoodfood.com/recipes/spiced-lentil-spinach-pies",
+      "timeTakenToCook": 85
+    },
+    {
+      "name": "Mushroom Cottage Pie",
+      "href": "https://www.bbcgoodfood.com/recipes/wild-mushroom-chestnut-cottage-pie",
+      "timeTakenToCook": 80
+    },
+    {
+      "name": "Mushroom Rarebit",
+      "href": "https://www.bbcgoodfood.com/recipes/mushroom-rarebit-mash-thyme-gravy",
+      "timeTakenToCook": 110
+    },
+    {
+      "name": "Leek & Mushroom Quiche",
+      "href": "https://www.bbcgoodfood.com/recipes/leek-mushroom-gruyere-quiche",
+      "timeTakenToCook": 80
+    },
+    {
+      "name": "Moussaka",
+      "href": "https://www.olivemagazine.com/recipes/vegetarian/veggie-moussaka/",
+      "timeTakenToCook": 100
+    },
+    {
+      "name": "Vegetable Paella",
+      "href": "https://www.olivemagazine.com/recipes/vegan/sunblush-tomato-and-olive-vegan-paella/",
+      "timeTakenToCook": 60
+    },
+    {
+      "name": "Vegetable Wellington",
+      "href": "https://www.olivemagazine.com/recipes/vegetarian/stilton-chard-and-walnut-wellington/",
+      "timeTakenToCook": 100
+    },
+    {
+      "name": "Quiche",
+      "href": "https://www.olivemagazine.com/recipes/vegetarian/cheese-and-onion-quiche/",
+      "timeTakenToCook": 70
+    },
+    {
+      "name": "Paneer Pulao",
+      "href": "https://www.deliciousmagazine.co.uk/recipes/spinach-and-paneer-pulao/",
+      "timeTakenToCook": 35
+    },
+    {
+      "name": "Pasta alla Vodka",
+      "href": "https://www.bbcgoodfood.com/recipes/pasta-alla-vodka",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Korean Barbecue Tofu",
+      "href": "https://www.deliciousmagazine.co.uk/recipes/korean-style-clay-pot-barbecue-tofu/",
+      "timeTakenToCook": 35
+    },
+    {
+      "name": "Egg, Spinach, & Potato Curry",
+      "href": "https://www.deliciousmagazine.co.uk/recipes/aromatic-egg-spinach-and-potato-curry/",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Miso-glazed Aubergine",
+      "href": "https://www.deliciousmagazine.co.uk/recipes/miso-glazed-aubergines/",
+      "timeTakenToCook": 25
+    },
+    {
+      "name": "Portobello Burgers",
+      "href": "https://www.deliciousmagazine.co.uk/recipes/portobello-mushroom-burgers/",
+      "timeTakenToCook": 15
+    },
+    {
+      "name": "Khichdi",
+      "href": "https://www.deliciousmagazine.co.uk/recipes/bengali-khichdi/",
+      "timeTakenToCook": 90
+    },
+    {
+      "name": "Parsnip & Spinach Soup",
+      "href": "https://www.centralengland.coop/food/recipes/starters/curried-parsnip-and-spinach-soup",
+      "timeTakenToCook": 65
+    },
+    {
+      "name": "Gochujang-Sesame Noodles",
+      "href": "https://www.eatfigsnotpigs.com/garlic-sesame-gochujang-noodles/",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Tofu Scramble",
+      "href": "https://www.bbcgoodfood.com/recipes/tofu-scramble",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Cashew & Mushroom Udon",
+      "href": "https://tiffycooks.com/creamy-mushroom-udon-20-minutes-only/",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Tofu Tikka Masala",
+      "href": "https://rainbowplantlife.com/tofu-tikka-masala/",
+      "timeTakenToCook": 80
+    },
+    {
+      "name": "Use-It-Up Frittata",
+      "href": "https://tasty-yummies.com/perfect-leftovers-frittata-recipe/",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Mushroom and Onion Tart",
+      "href": "https://www.hellofresh.co.uk/recipes/garlic-mushroom-and-onion-marmalade-tart-629e16e4020b48279305d2a4",
+      "timeTakenToCook": 35
+    },
+    {
+      "name": "Mushroom Pasanda",
+      "href": "https://www.hellofresh.co.uk/recipes/mushroom-pasanda-6282120849d96890da08afe9",
+      "timeTakenToCook": 40
+    },
+    {
+      "name": "Cashew Lasagne",
+      "href": "https://veggiefunkitchen.com/lasagna-with-cashew-bechamel-vegan/",
+      "timeTakenToCook": 75
+    },
+    {
+      "name": "King Oyster Mushroom Scallops",
+      "href": "https://www.theedgyveg.com/2020/08/27/vegan-scallops/",
+      "timeTakenToCook": 32
+    },
+    {
+      "name": "Miso Brown Butter Pasta",
+      "href": "https://food52.com/recipes/84437-spicy-miso-brown-butter-pasta",
+      "timeTakenToCook": 15
+    },
+    {
+      "name": "Silken Tofu",
+      "href": "https://www.cookerru.com/silken-tofu/",
+      "timeTakenToCook": 5
+    },
+    {
+      "name": "Pad Thai",
+      "href": "https://www.feastingathome.com/15-minute-pad-thai/",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Agedashi Tofu",
+      "href": "https://pickledplum.com/agedashi-tofu-recipe/",
+      "timeTakenToCook": 25
+    },
+    {
+      "name": "Honey Garlic Cauliflower",
+      "href": "https://www.spoonforkbacon.com/cauliflower-recipes/",
+      "timeTakenToCook": 36
+    },
+    {
+      "name": "Mapo Tofu",
+      "href": "https://rasamalaysia.com/ma-po-tofu/",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Bokkeumbap",
+      "href": "https://somebodyfeedseb.com/bokkeumbap/",
+      "timeTakenToCook": 25
+    },
+    {
+      "name": "Mushroom Stroganoff",
+      "href": "https://www.sainsburysmagazine.co.uk/recipes/mains/mushroom-stroganoff",
+      "timeTakenToCook": 35
+    },
+    {
+      "name": "Tofu Banh Mi",
+      "href": "https://www.cookinglight.com/recipes/vegetarian-banh-mi-with-crispy-tofu",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Black Pepper Tofu",
+      "href": "https://ottolenghi.co.uk/recipes/black-pepper-tofu-a",
+      "timeTakenToCook": 25
+    },
+    {
+      "name": "Potato & Gochujang Eggs",
+      "href": "https://ottolenghi.co.uk/recipes/potato-and-gochujang-braised-eggs",
+      "timeTakenToCook": 70
+    },
+    {
+      "name": "Saffron Pasta",
+      "href": "https://ottolenghi.co.uk/recipes/saffron-pasta-with-chipotle-shallots-and-pickled-chillies",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Za'atar Cacio e Pepe",
+      "href": "https://ottolenghi.co.uk/recipes/zaatar-cacio-e-pepe",
+      "timeTakenToCook": 45
+    },
+    {
+      "name": "Feta Potatoes",
+      "href": "https://ottolenghi.co.uk/recipes/twice-baked-feta-stuffed-potatoes-with-za-atar-pesto-otk",
+      "timeTakenToCook": 75
+    },
+    {
+      "name": "Roast Cassava ",
+      "href": "https://ottolenghi.co.uk/recipes/roast-cassava-with-roast-garlic-and-coriander-salsa",
+      "timeTakenToCook": 65
+    },
+    {
+      "name": "Mee Goreng",
+      "href": "https://ottolenghi.co.uk/recipes/mee-goreng",
+      "timeTakenToCook": 20
+    },
+    {
+      "name": "Ricotta Tart",
+      "href": "https://ottolenghi.co.uk/recipes/ricotta-tart",
+      "timeTakenToCook": 80
+    },
+    {
+      "name": "Roasted Vegetable Toad in the Hole",
+      "href": "https://www.coop.co.uk/recipes/roasted-vegetable-toad-in-the-hole",
+      "timeTakenToCook": 75
+    },
+    {
+      "name": "Telur Masak Kicap",
+      "href": "https://farahjeats.com/recipe/malaysian-soy-sauce-eggs-telur-masak-kicap/",
+      "timeTakenToCook": 10
+    },
+    {
+      "name": "Tandoori Tofu Wrap",
+      "href": "https://cookingwithparita.com/tofu-tandoori-garlic-coriander-naan-wraps/",
+      "timeTakenToCook": 40
+    },
+    {
+      "name": "Crispy Sage Tofu",
+      "href": "https://justinesnacks.com/crispy-sage-tofu-thanksgiving-tofu/",
+      "timeTakenToCook": 30
+    },
+    {
+      "name": "Creamy Red Lentil Curry",
+      "href": "https://heartfultable.com/red-lentil-curry/",
+      "timeTakenToCook": 45
+    },
+    {
+      "name": "Vegan Birria Tacos",
+      "href": "https://www.eatfigsnotpigs.com/vegan-birria-tacos/",
+      "timeTakenToCook": 90
+    },
+    {
+      "name": "BBQ Pulled Tofu",
+      "href": "https://itdoesnttastelikechicken.com/vegan-bbq-shredded-tofu-shredded-chicken/",
+      "timeTakenToCook": 43
+    },
+    {
+      "name": "Bacon Jam Toast",
+      "href": "https://www.gordonramsay.com/gr/recipes/baconjamtoast",
+      "timeTakenToCook": 90
+    }
+   ]
+}
