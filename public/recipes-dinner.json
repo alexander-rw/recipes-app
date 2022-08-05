@@ -444,6 +444,11 @@
       "name": "Bacon Jam Toast",
       "href": "https://www.gordonramsay.com/gr/recipes/baconjamtoast",
       "timeTakenToCook": 90
+    },
+    {
+      "name": "Bacon Jam Toast 2",
+      "href": "https://www.gordonramsay.com/gr/recipes/baconjamtoast",
+      "timeTakenToCook": 90
     }
    ]
 }
