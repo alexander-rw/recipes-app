@@ -9,7 +9,7 @@ export const BeanHeader = () => {
   return (
     <Grid container justifyContent="center" alignItems="center" item xs={12}>
       <Grid item xs={3}>
-        <img src="./android-chrome-192x192.png" alt="a white cat" />
+        <img src="./android-chrome-192x192.png" alt="a white cat called Bean" />
       </Grid>
       <Grid container item xs={6}>
         <Grid item xs={12}>

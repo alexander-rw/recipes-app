@@ -1,0 +1,5 @@
+FROM node:16-alpine AS recipes-base
+WORKDIR /base
+# don't need to install yarn as 16-alpine has it already
+# using yarn - as a runner instead of NPM
+RUN yarn global add react-scripts@^5
