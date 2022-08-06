@@ -449,6 +449,86 @@
       "name": "Plantain Tacos",
       "href": "https://www.lazycatkitchen.com/vegan-tacos-fried-plantain/",
       "timeTakenToCook": 50
-    }
+    },
+     {
+   "name": "Cucumber Halloumi Salad",
+   "href": "https://www.mob.co.uk/recipes/smashed-cucumber-and-sesame-salad",
+   "timeTakenToCook": 10
+     },
+   {
+     "name": "Kimchi Potato Skins",
+     "href": "https://www.mob.co.uk/recipes/cheesy-kimchi-potato-skins",
+     "timeTakenToCook": 50
+   },
+   {
+     "name": "Yoghurt and Za'atar Fried Eggs",
+     "href": "https://www.mob.co.uk/recipes/fried-eggs-with-yoghurt-and-zaatar",
+     "timeTakenToCook": 10
+   },
+   {
+     "name": "Feta Stuffed Jacket Potatos",
+     "href": "https://www.mob.co.uk/recipes/feta-stuffed-jacket-potatoes-with-dill-salsa",
+     "timeTakenToCook": 60
+   },
+   {
+     "name": "Kimchi Mac & Cheese",
+     "href": "https://www.mob.co.uk/recipes/kimchi-mac-and-cheese",
+     "timeTakenToCook": 60
+   },
+   {
+     "name": "Labneh Pitta Salad",
+     "href": "https://www.mob.co.uk/recipes/jordons-interview-salad",
+     "timeTakenToCook": 45
+   },
+   {
+     "name": "Mushroom Cheese Tacos",
+     "href": "https://www.mob.co.uk/recipes/mushroom-cheese-tacos",
+     "timeTakenToCook": 40
+   },
+   {
+     "name": "Mayak Eggs",
+     "href": "https://www.cookerru.com/mayak-eggs/",
+     "timeTakenToCook": 25
+   },
+   {
+     "name": "Corn Ribs",
+     "href": "https://www.yuzubakes.com/recipes/corn-ribs",
+     "timeTakenToCook": 35
+   },
+   {
+     "name": "Banana Akara",
+     "href": "https://www.196flavors.com/sierra-leone-banana-akaras/",
+     "timeTakenToCook": 30
+   },
+   {
+     "name": "Molokhia",
+     "href": "https://feelgoodfoodie.net/recipe/molokhia/",
+     "timeTakenToCook": 85
+   },
+   {
+     "name": "Granat Soup",
+     "href": "https://feelgoodfoodie.net/recipe/peanut-soup/",
+     "timeTakenToCook": 40
+   },
+   {
+     "name": "Oyster Mushroom Shawarma",
+     "href": "https://yumveganlunchideas.com/vegan-shawarma-vegan-doner-kebab-recipe/",
+     "timeTakenToCook": 35
+   },
+   {
+     "name": "Cheesy French Toast",
+     "href": "https://thehappyfoodie.co.uk/recipes/nadiya-hussains-savoury-french-toast/",
+     "timeTakenToCook": 25
+   },
+   {
+     "name": "Masala French Toast",
+     "href": "https://ministryofcurry.com/savory-french-toast/",
+     "timeTakenToCook": 20
+   },
+   {
+     "name": "Mushroom Cheese Crepes",
+     "href": "https://www.food.com/recipe/savory-mushroom-spinach-cheese-crepes-373390",
+     "timeTakenToCook": 45
+   }
    ]
 }
