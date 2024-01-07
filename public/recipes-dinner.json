@@ -529,6 +529,56 @@
      "name": "Mushroom Cheese Crepes",
      "href": "https://www.food.com/recipe/savory-mushroom-spinach-cheese-crepes-373390",
      "timeTakenToCook": 45
-   }
+   },
+     {
+   "name": "Peanut Butter Ramen",
+   "href": "https://www.realsimple.com/food-recipes/browse-all-recipes/peanut-butter-ramen-recipe",
+   "timeTakenToCook": 30
+ },
+ {
+   "name": "Kale Lasagne",
+   "href": "https://www.tastingtable.com/768548/kale-lasagna-recipe/",
+   "timeTakenToCook": 70
+ },
+ {
+   "name": "Tagine",
+   "href": "https://www.ocado.com/webshop/recipe/butternut-squash-and-aubergine-tagine/94345",
+   "timeTakenToCook": 30
+ },
+ {
+   "name": "Baked Gnocchi",
+   "href": "https://www.bbcgoodfood.com/recipes/creamy-baked-gnocchi-with-squash-spinach",
+   "timeTakenToCook": 30
+ },
+ {
+   "name": "Saag Aloo Pie",
+   "href": "https://www.hellofresh.co.uk/recipes/indian-inspired-saag-aloo-pie-63b56f07b1ab4b4b8a219524",
+   "timeTakenToCook": 75
+ },
+ {
+   "name": "Ssamjang Fried Rice",
+   "href": "https://www.hellofresh.co.nz/recipes/korean-ssamjang-veggie-fried-rice-613ab8a6c31487453b4a6db1",
+   "timeTakenToCook": 35
+ },
+ {
+   "name": "Black Garlic Pasta",
+   "href": "https://www.vanillabeancuisine.com/black-garlic-pasta/",
+   "timeTakenToCook": 25
+ },
+ {
+   "name": "Black Garlic Chilli Oil Noodles",
+   "href": "https://woonheng.com/black-garlic-chili-oil-noodles/",
+   "timeTakenToCook": 40
+ },
+ {
+   "name": "Akara",
+   "href": "https://recipesfromapantry.com/akara-recipe/",
+   "timeTakenToCook": 40
+ },
+ {
+   "name": "Shorbet Adas",
+   "href": "https://plantbasedfolk.com/lebanese-lentil-soup/",
+   "timeTakenToCook": 40
+ }
    ]
 }
