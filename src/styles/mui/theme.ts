@@ -33,6 +33,11 @@ const themeOptions: ThemeOptions = {
   },
   typography: {
     fontFamily: bodyFont,
+    // One step lighter than MUI's defaults (300 / 400 / 500 / 700)
+    fontWeightLight: 200,
+    fontWeightRegular: 300,
+    fontWeightMedium: 400,
+    fontWeightBold: 600,
   },
 };
 

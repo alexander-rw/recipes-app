@@ -12,7 +12,7 @@ export const BeanHeader = () => (
       spacing={{ xs: 1, sm: 4 }}
     >
       <img src="./android-chrome-192x192.png" alt="a white cat called Bean" style={{ maxWidth: "100%" }} />
-      <Typography variant="h2" sx={{ fontFamily: headerFont, fontWeight: 400 }}>My Recipes</Typography>
+      <Typography variant="h2" color="primary" sx={{ fontFamily: headerFont, fontWeight: 400 }}>Hungry?</Typography>
     </Stack>
   </Grid>
 );

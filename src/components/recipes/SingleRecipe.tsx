@@ -38,7 +38,7 @@ export const SingleRecipe = (recipe: Recipe) => {
           />
         : <NoPreview />}
       <CardHeader title={recipe.name} subheader={recipe.mealType} titleTypographyProps={{
-        fontWeight: "bold",
+        fontWeight: "fontWeightBold",
         minHeight: "70px",
       }} />
       <CardContent sx={{ py: 0 }}>
