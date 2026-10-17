@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import recipeReducer from "../features/recipes/recipeSlice";
+import worldReducer from "../features/world/worldSlice";
 
 export const store = configureStore({
   reducer: {
     recipes: recipeReducer,
+    world: worldReducer,
   },
 });
 

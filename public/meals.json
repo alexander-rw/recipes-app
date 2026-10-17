@@ -1,0 +1,27 @@
+{
+  "meals": [
+    {
+      "country": "ES",
+      "status": "eaten",
+      "dish": "Pan con tomate",
+      "where": "home",
+      "recipeUrl": "https://www.themediterraneandish.com/pan-con-tomate/",
+      "date": "2026-10-01"
+    },
+    {
+      "country": "NG",
+      "status": "planned",
+      "dish": "Jollof rice",
+      "where": "home",
+      "recipeUrl": "https://www.bbcgoodfood.com/recipes/smoky-spiced-jollof-rice-coconut-fried-plantain"
+    },
+    {
+      "country": "ET",
+      "status": "planned",
+      "dish": "Injera with wats",
+      "where": "restaurant",
+      "place": "An Ethiopian restaurant (to pick)",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ethiopian+restaurant"
+    }
+  ]
+}
