@@ -198,14 +198,14 @@
       "status": "eaten",
       "where": "restaurant",
       "place": "The Real Greek (Bankside)",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=The+Real+Greek%2C+Bankside%2C+London"
+      "mapsUrl": "https://www.google.com/maps?cid=11377101230835334720"
     },
     {
       "country": "KR",
       "status": "eaten",
       "where": "restaurant",
       "place": "Dongmun Traditional Market (Jeju Island)",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Dongmun+Traditional+Market%2C+Jeju"
+      "mapsUrl": "https://www.google.com/maps?cid=4366899934413159669"
     },
     {
       "country": "PH",
