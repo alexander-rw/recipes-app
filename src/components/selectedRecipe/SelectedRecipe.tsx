@@ -10,7 +10,7 @@ export const SelectedRecipe = () => {
 
   const elemInfo = currentlySelectedRecipe == null 
     ? <Typography variant="h3">No Recipe Selected</Typography>
-    : <SingleRecipe name={currentlySelectedRecipe.name} timeTakenToCook={currentlySelectedRecipe.timeTakenToCook} href={currentlySelectedRecipe.href} />
+    : <SingleRecipe name={currentlySelectedRecipe.name} timeTakenToCook={currentlySelectedRecipe.timeTakenToCook} href={currentlySelectedRecipe.href} mealType={currentlySelectedRecipe.mealType} />
 
     return (
       <Grid container item xs={12}>

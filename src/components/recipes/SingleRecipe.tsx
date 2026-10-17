@@ -6,7 +6,7 @@ import { Recipe } from '../../types/Recipe';
 
 export const SingleRecipe = (recipe: Recipe) => (
   <Card variant="outlined" style={{ width: "100%" }}>
-    <CardHeader title={recipe.name} titleTypographyProps={{
+    <CardHeader title={recipe.name} subheader={recipe.mealType} titleTypographyProps={{
       fontWeight: "bold",
       minHeight: "70px",
     }} />
