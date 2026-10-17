@@ -125,7 +125,7 @@ export const selectFilteredCountries = createSelector(
         (statusFilter === "all" || c.status === statusFilter)
         && (continentFilter == null || c.continent === continentFilter)
         && (query === "" || normalise(c.name).includes(query)
-          || c.meals.some(m => normalise(m.dish).includes(query))))
+          || c.meals.some(m => normalise(m.dish ?? "").includes(query))))
       .sort((a, b) => a.name.localeCompare(b.name));
   }
 );

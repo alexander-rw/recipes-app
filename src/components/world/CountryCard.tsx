@@ -18,7 +18,7 @@ const MealRow = ({ meal }: { meal: Meal }) => {
   return (
     <Stack direction="row" spacing={1} alignItems="center" justifyContent="space-between">
       <Box sx={{ minWidth: 0 }}>
-        <Typography variant="body1" fontWeight="fontWeightMedium">{meal.dish}</Typography>
+        <Typography variant="body1" fontWeight="fontWeightMedium">{meal.dish ?? "Dish to be decided"}</Typography>
         <Typography variant="body2" color="text.secondary">{details}</Typography>
         {meal.notes && <Typography variant="body2" sx={{ mt: 0.5 }}>{meal.notes}</Typography>}
       </Box>

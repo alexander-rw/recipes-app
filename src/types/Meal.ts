@@ -5,7 +5,8 @@ export type Meal = {
   // ISO 3166-1 alpha-2 country code, e.g. "JP"
   country: string;
   status: MealStatus;
-  dish: string;
+  // Can be left out for a plan that has a place but no dish chosen yet
+  dish?: string;
   where: "restaurant" | "home";
   // Restaurant name and its Google Maps link, for restaurant meals
   place?: string;

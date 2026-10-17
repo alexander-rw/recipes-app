@@ -1,27 +1,197 @@
 {
   "meals": [
     {
-      "country": "ES",
+      "country": "BE",
       "status": "eaten",
-      "dish": "Pan con tomate",
+      "dish": "Belgian Frites",
+      "where": "restaurant",
+      "place": "La Friterie (Brussels)",
+      "mapsUrl": "https://www.google.com/maps?cid=4391615529234449270",
+      "date": "2023-08-16"
+    },
+    {
+      "country": "CN",
+      "status": "eaten",
+      "dish": "Wonton Soup",
+      "where": "restaurant",
+      "place": "WeiXiangZhai (Shanghai)",
+      "mapsUrl": "https://www.google.com/maps?cid=3149463789255130782",
+      "date": "2026-06-19"
+    },
+    {
+      "country": "FR",
+      "status": "eaten",
+      "dish": "French Onion Soup",
       "where": "home",
-      "recipeUrl": "https://www.themediterraneandish.com/pan-con-tomate/",
-      "date": "2026-10-01"
+      "recipeUrl": "https://www.recipetineats.com/french-onion-soup/"
+    },
+    {
+      "country": "GE",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Kartuli",
+      "mapsUrl": "https://www.google.com/maps?cid=17727867503298350939"
+    },
+    {
+      "country": "IN",
+      "status": "eaten",
+      "dish": "Palak Paneer",
+      "where": "restaurant",
+      "place": "Sparsh",
+      "mapsUrl": "https://www.google.com/maps?cid=5597817355824094401"
+    },
+    {
+      "country": "ID",
+      "status": "eaten",
+      "dish": "Satay",
+      "where": "restaurant",
+      "place": "Banana Tree",
+      "mapsUrl": "https://www.google.com/maps?cid=16745285516350468573"
+    },
+    {
+      "country": "IT",
+      "status": "eaten",
+      "dish": "Pizza",
+      "where": "restaurant",
+      "place": "Bona",
+      "mapsUrl": "https://www.google.com/maps?cid=1171974878929526111"
+    },
+    {
+      "country": "JM",
+      "status": "eaten",
+      "dish": "Curry Chicken Coco Bread",
+      "where": "restaurant",
+      "place": "Jam Delish",
+      "mapsUrl": "https://www.google.com/maps?cid=5418544308024677132"
+    },
+    {
+      "country": "JP",
+      "status": "eaten",
+      "dish": "Sushi Omakase",
+      "where": "restaurant",
+      "place": "Hot Stone London",
+      "mapsUrl": "https://www.google.com/maps?cid=1464650907179344818",
+      "date": "2025-07-22"
+    },
+    {
+      "country": "LB",
+      "status": "eaten",
+      "dish": "Molokhia",
+      "where": "home",
+      "recipeUrl": "https://feelgoodfoodie.net/recipe/molokhia/",
+      "date": "2026-10-07"
+    },
+    {
+      "country": "MY",
+      "status": "eaten",
+      "dish": "Sambal Okra",
+      "where": "restaurant",
+      "place": "Rasa Sayang",
+      "mapsUrl": "https://www.google.com/maps?cid=9949291564257742226"
+    },
+    {
+      "country": "MX",
+      "status": "eaten",
+      "dish": "Tacos",
+      "where": "restaurant",
+      "place": "Corrochio’s",
+      "mapsUrl": "https://www.google.com/maps?cid=9791714130113114800",
+      "date": "2026-09-15"
     },
     {
       "country": "NG",
-      "status": "planned",
+      "status": "eaten",
       "dish": "Jollof rice",
       "where": "home",
       "recipeUrl": "https://www.bbcgoodfood.com/recipes/smoky-spiced-jollof-rice-coconut-fried-plantain"
     },
     {
-      "country": "ET",
-      "status": "planned",
-      "dish": "Injera with wats",
+      "country": "PE",
+      "status": "eaten",
+      "dish": "Ceviche",
       "where": "restaurant",
-      "place": "An Ethiopian restaurant (to pick)",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ethiopian+restaurant"
+      "place": "Senor Ceviche",
+      "mapsUrl": "https://www.google.com/maps?cid=7060919755925853269"
+    },
+    {
+      "country": "PL",
+      "status": "eaten",
+      "dish": "Pierogi",
+      "where": "restaurant",
+      "place": "Pierogarnia Stary (Wroclaw)",
+      "mapsUrl": "https://www.google.com/maps?cid=4234046604344017483"
+    },
+    {
+      "country": "PT",
+      "status": "eaten",
+      "dish": "Pasteis de Bacalhau",
+      "where": "restaurant",
+      "place": "Alma Do Fado Alfama (Lisbon)",
+      "mapsUrl": "https://www.google.com/maps?cid=2625538977481465250"
+    },
+    {
+      "country": "SL",
+      "status": "eaten",
+      "dish": "Akara",
+      "where": "home",
+      "recipeUrl": "https://recipesfromapantry.com/akara-recipe/"
+    },
+    {
+      "country": "SG",
+      "status": "eaten",
+      "dish": "Hainanese Chicken Rice",
+      "where": "restaurant",
+      "place": "Rasa Sayang",
+      "mapsUrl": "https://www.google.com/maps?cid=9949291564257742226"
+    },
+    {
+      "country": "ES",
+      "status": "eaten",
+      "dish": "Pan con tomate",
+      "where": "home",
+      "recipeUrl": "https://www.themediterraneandish.com/pan-con-tomate/"
+    },
+    {
+      "country": "TH",
+      "status": "eaten",
+      "dish": "Pad Thai",
+      "where": "restaurant",
+      "place": "Big Cheeks Thai",
+      "mapsUrl": "https://www.google.com/maps?cid=6086695745843897404"
+    },
+    {
+      "country": "TR",
+      "status": "eaten",
+      "dish": "Pide",
+      "where": "restaurant"
+    },
+    {
+      "country": "GB",
+      "status": "eaten",
+      "dish": "Roast Dinner",
+      "where": "home"
+    },
+    {
+      "country": "US",
+      "status": "eaten",
+      "dish": "Burger",
+      "where": "home"
+    },
+    {
+      "country": "VE",
+      "status": "eaten",
+      "dish": "Arepas",
+      "where": "restaurant",
+      "place": "Arepa & Co",
+      "mapsUrl": "https://www.google.com/maps?cid=11740036695054059958"
+    },
+    {
+      "country": "VN",
+      "status": "eaten",
+      "dish": "Banh Mi",
+      "where": "restaurant",
+      "place": "Gao House",
+      "mapsUrl": "https://www.google.com/maps?cid=7075860603989059067"
     }
   ]
 }
