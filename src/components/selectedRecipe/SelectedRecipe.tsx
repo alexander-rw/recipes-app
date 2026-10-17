@@ -10,7 +10,12 @@ export const SelectedRecipe = () => {
 
   const elemInfo = currentlySelectedRecipe == null 
     ? <Typography variant="h3">No Recipe Selected</Typography>
-    : <SingleRecipe name={currentlySelectedRecipe.name} timeTakenToCook={currentlySelectedRecipe.timeTakenToCook} href={currentlySelectedRecipe.href} mealType={currentlySelectedRecipe.mealType} />
+    // Keyed so a new pick resets the card's image state
+    : (
+      <Grid container item xs={12} sm={6} md={4} lg={3}>
+        <SingleRecipe key={currentlySelectedRecipe.href} {...currentlySelectedRecipe} />
+      </Grid>
+    );
 
     return (
       <Grid container item xs={12}>
