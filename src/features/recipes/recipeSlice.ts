@@ -88,8 +88,13 @@ export const recipeSlice = createSlice({
       state.isLoaded = true;
     },
     randomizeRecipe: (state) => {
-      const { recipes, filters } = state;
-      state.selectedRecipe = sample(filterRecipes(recipes, filters)) ?? null;
+      const { recipes, filters, selectedRecipe } = state;
+      const matching = filterRecipes(recipes, filters);
+      // Avoid picking the same recipe twice in a row when there's a choice
+      const candidates = matching.length > 1
+        ? matching.filter(r => r.href !== selectedRecipe?.href)
+        : matching;
+      state.selectedRecipe = sample(candidates) ?? null;
     },
     setMealTypeFilter: (state, action: PayloadAction<string[]>) => {
       state.filters.mealTypes = action.payload;

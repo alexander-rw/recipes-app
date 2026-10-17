@@ -6,7 +6,6 @@ import Container from '@mui/material/Container';
 
 import { theme } from "../../styles/mui/theme";
 import { ThemeProvider } from "@mui/material/styles";
-import { SelectedRecipe } from "../selectedRecipe/SelectedRecipe";
 import { RecipeFilters } from "../filters/RecipeFilters";
 
 import "../../styles/index.css";
@@ -19,7 +18,6 @@ export const App = () => (
         <Grid container spacing={{ xs: 3, md: 8 }}>
           <BeanHeader />
           <RecipeFilters />
-          <SelectedRecipe />
           <RecipeList />
         </Grid>
       </Container>
