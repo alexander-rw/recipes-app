@@ -15,6 +15,8 @@ export const SingleRecipe = (recipe: Recipe) => (
         {recipe.timeTakenToCook} mins
       </Typography>
     </CardContent>
-    <Button variant="contained" fullWidth href={recipe.href} target="_blank">Open Page</Button>
+    <CardActions>
+      <Button variant="outlined" fullWidth href={recipe.href} target="_blank">Open Page</Button>
+    </CardActions>
   </Card>
 );
