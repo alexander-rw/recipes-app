@@ -192,6 +192,118 @@
       "where": "restaurant",
       "place": "Gao House",
       "mapsUrl": "https://www.google.com/maps?cid=7075860603989059067"
+    },
+    {
+      "country": "PS",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Palestine House",
+      "mapsUrl": "https://www.google.com/maps?cid=6365458544429805513"
+    },
+    {
+      "country": "KR",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Miga (Hackney)",
+      "mapsUrl": "https://www.google.com/maps?cid=11609650469286679398"
+    },
+    {
+      "country": "KR",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Assa (Soho)",
+      "mapsUrl": "https://www.google.com/maps?cid=7105423867987506610"
+    },
+    {
+      "country": "KR",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Bunsik (Leicester Square)",
+      "mapsUrl": "https://www.google.com/maps?cid=5685597962880258453"
+    },
+    {
+      "country": "KR",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Ssam Ssam (Wimbledon)",
+      "mapsUrl": "https://www.google.com/maps?cid=15970518218644496124"
+    },
+    {
+      "country": "KR",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Seoul Food (Holborn)",
+      "mapsUrl": "https://www.google.com/maps?cid=8749085594156006915"
+    },
+    {
+      "country": "GR",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Suzi Tros (Notting Hill)",
+      "mapsUrl": "https://www.google.com/maps?cid=3358122377185354428"
+    },
+    {
+      "country": "GR",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Agora Souvla Bar (Borough)",
+      "mapsUrl": "https://www.google.com/maps?cid=1940739031133063093"
+    },
+    {
+      "country": "GR",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Ergon Deli (Mayfair)",
+      "mapsUrl": "https://www.google.com/maps?cid=6578442873235073985"
+    },
+    {
+      "country": "DE",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Zeit für Brot (Islington)",
+      "mapsUrl": "https://www.google.com/maps?cid=3567280605143862294"
+    },
+    {
+      "country": "CO",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Alfonso's (Dalston)",
+      "mapsUrl": "https://www.google.com/maps?cid=3869820016862510888"
+    },
+    {
+      "country": "LK",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Rambutan (Borough Market)",
+      "mapsUrl": "https://www.google.com/maps?cid=256573347670374579"
+    },
+    {
+      "country": "IR",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Berenjak (Soho)",
+      "mapsUrl": "https://www.google.com/maps?cid=13571049445325058150"
+    },
+    {
+      "country": "PH",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Panadera (Soho)",
+      "mapsUrl": "https://www.google.com/maps?cid=5169710329517601011"
+    },
+    {
+      "country": "PH",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Mamasons (Chinatown)",
+      "mapsUrl": "https://www.google.com/maps?cid=13963459813716659849"
+    },
+    {
+      "country": "SE",
+      "status": "planned",
+      "where": "restaurant",
+      "place": "Fabrique (Hoxton)",
+      "mapsUrl": "https://www.google.com/maps?cid=17472128276912556560"
     }
   ]
 }
