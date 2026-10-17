@@ -6,7 +6,7 @@ const ink = '#141301';
 const blue = '#247ba0';
 const blush = '#eee5e5';
 
-export const bodyFont = '"Narnoor", Georgia, serif';
+export const bodyFont = '"Commissioner", "Helvetica Neue", Arial, sans-serif';
 export const headerFont = '"Bagel Fat One", "Arial Black", sans-serif';
 
 const themeOptions: ThemeOptions = {
