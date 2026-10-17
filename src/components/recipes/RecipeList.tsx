@@ -23,7 +23,7 @@ export const RecipeList = () => {
         </Grid>
       )}
       {recipes.map(r => (
-        <Grid container item xs={4} justifyContent="space-evenly" alignItems="stretch" key={r.name}>
+        <Grid container item xs={12} sm={6} md={4} lg={3} xl={2} justifyContent="space-evenly" alignItems="stretch" key={r.name}>
           <SingleRecipe href={r.href} timeTakenToCook={r.timeTakenToCook} name={r.name} mealType={r.mealType} />
         </Grid>
       ))}

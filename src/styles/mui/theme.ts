@@ -1,4 +1,4 @@
-import { alpha, createTheme, ThemeOptions } from '@mui/material/styles';
+import { alpha, createTheme, responsiveFontSizes, ThemeOptions } from '@mui/material/styles';
 
 const red = '#b80c09';
 const brown = '#6b2b06';
@@ -30,4 +30,5 @@ const themeOptions: ThemeOptions = {
   },
 };
 
-export const theme = createTheme(themeOptions);
+// Scale headings down on smaller screens
+export const theme = responsiveFontSizes(createTheme(themeOptions));

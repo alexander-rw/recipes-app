@@ -15,8 +15,8 @@ export const App = () => (
   <>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="md">
-        <Grid container spacing={8}>
+      <Container maxWidth="xl">
+        <Grid container spacing={{ xs: 3, md: 8 }}>
           <BeanHeader />
           <RecipeFilters />
           <SelectedRecipe />
