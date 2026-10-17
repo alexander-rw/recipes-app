@@ -194,67 +194,39 @@
       "mapsUrl": "https://www.google.com/maps?cid=7075860603989059067"
     },
     {
+      "country": "GR",
+      "status": "eaten",
+      "where": "restaurant",
+      "place": "The Real Greek (Bankside)",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=The+Real+Greek%2C+Bankside%2C+London"
+    },
+    {
+      "country": "KR",
+      "status": "eaten",
+      "where": "restaurant",
+      "place": "Dongmun Traditional Market (Jeju Island)",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Dongmun+Traditional+Market%2C+Jeju"
+    },
+    {
+      "country": "PH",
+      "status": "eaten",
+      "where": "restaurant",
+      "place": "Belly (Kentish Town)",
+      "mapsUrl": "https://www.google.com/maps?cid=8230024827235080999"
+    },
+    {
+      "country": "SE",
+      "status": "eaten",
+      "where": "restaurant",
+      "place": "Fabrique (Hoxton)",
+      "mapsUrl": "https://www.google.com/maps?cid=17472128276912556560"
+    },
+    {
       "country": "PS",
       "status": "planned",
       "where": "restaurant",
       "place": "Palestine House",
       "mapsUrl": "https://www.google.com/maps?cid=6365458544429805513"
-    },
-    {
-      "country": "KR",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Miga (Hackney)",
-      "mapsUrl": "https://www.google.com/maps?cid=11609650469286679398"
-    },
-    {
-      "country": "KR",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Assa (Soho)",
-      "mapsUrl": "https://www.google.com/maps?cid=7105423867987506610"
-    },
-    {
-      "country": "KR",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Bunsik (Leicester Square)",
-      "mapsUrl": "https://www.google.com/maps?cid=5685597962880258453"
-    },
-    {
-      "country": "KR",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Ssam Ssam (Wimbledon)",
-      "mapsUrl": "https://www.google.com/maps?cid=15970518218644496124"
-    },
-    {
-      "country": "KR",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Seoul Food (Holborn)",
-      "mapsUrl": "https://www.google.com/maps?cid=8749085594156006915"
-    },
-    {
-      "country": "GR",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Suzi Tros (Notting Hill)",
-      "mapsUrl": "https://www.google.com/maps?cid=3358122377185354428"
-    },
-    {
-      "country": "GR",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Agora Souvla Bar (Borough)",
-      "mapsUrl": "https://www.google.com/maps?cid=1940739031133063093"
-    },
-    {
-      "country": "GR",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Ergon Deli (Mayfair)",
-      "mapsUrl": "https://www.google.com/maps?cid=6578442873235073985"
     },
     {
       "country": "DE",
@@ -285,25 +257,11 @@
       "mapsUrl": "https://www.google.com/maps?cid=13571049445325058150"
     },
     {
-      "country": "PH",
+      "country": "NP",
       "status": "planned",
       "where": "restaurant",
-      "place": "Panadera (Soho)",
-      "mapsUrl": "https://www.google.com/maps?cid=5169710329517601011"
-    },
-    {
-      "country": "PH",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Mamasons (Chinatown)",
-      "mapsUrl": "https://www.google.com/maps?cid=13963459813716659849"
-    },
-    {
-      "country": "SE",
-      "status": "planned",
-      "where": "restaurant",
-      "place": "Fabrique (Hoxton)",
-      "mapsUrl": "https://www.google.com/maps?cid=17472128276912556560"
+      "place": "House of MoMo (Stoke Newington)",
+      "mapsUrl": "https://www.google.com/maps?cid=17316092362422860511"
     }
   ]
 }
