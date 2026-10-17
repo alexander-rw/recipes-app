@@ -41,7 +41,7 @@ export const CookTimeHistogram = ({ recipes, min, max, step, selectedRange, isCa
     <Box
       role="img"
       aria-label={`Distribution of cook times for ${recipes.length} recipes`}
-      sx={{ position: "relative", height: HEIGHT_PX, borderBottom: 1, borderColor: "grey.300" }}
+      sx={{ position: "relative", height: HEIGHT_PX, borderBottom: 1, borderColor: "divider" }}
     >
       {counts.map((count, i) => {
         if (count === 0) {
@@ -76,7 +76,7 @@ export const CookTimeHistogram = ({ recipes, min, max, step, selectedRange, isCa
                   width: "100%",
                   height: `${Math.max(2, (count / tallest) * HEIGHT_PX)}px`,
                   borderRadius: "2px 2px 0 0",
-                  bgcolor: isSelected ? "secondary.main" : "grey.300",
+                  bgcolor: isSelected ? "secondary.main" : "divider",
                 }}
               />
             </Box>

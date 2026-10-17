@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 
 import { theme } from "../../styles/mui/theme";
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider } from "@mui/material/styles";
 import { SelectedRecipe } from "../selectedRecipe/SelectedRecipe";
 import { RecipeFilters } from "../filters/RecipeFilters";
 
