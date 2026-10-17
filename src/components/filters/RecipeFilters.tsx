@@ -4,10 +4,8 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   clearFilters,
   selectCookTimeBounds,
-  selectFilteredRecipes,
   selectFilters,
   selectMealTypes,
-  selectRecipes,
   selectRecipesForCookTimeFilter,
   setCookTimeRange,
   setMealTypeFilter,
@@ -18,8 +16,6 @@ const COOK_TIME_STEP = 5;
 
 export const RecipeFilters = () => {
   const dispatch = useAppDispatch();
-  const { recipes } = useAppSelector(selectRecipes);
-  const filteredRecipes = useAppSelector(selectFilteredRecipes);
   const mealTypes = useAppSelector(selectMealTypes);
   const cookTimeRecipes = useAppSelector(selectRecipesForCookTimeFilter);
   const { min: minTime, max: maxTime, isCapped } = useAppSelector(selectCookTimeBounds);
@@ -84,10 +80,7 @@ export const RecipeFilters = () => {
           />
         </Box>
       </Grid>
-      <Grid container item xs={12} justifyContent="space-between" alignItems="center">
-        <Typography variant="body2">
-          Showing {filteredRecipes.length} of {recipes.length} recipes
-        </Typography>
+      <Grid container item xs={12} justifyContent="flex-end">
         <Button color="secondary" disabled={!hasFilters} onClick={() => dispatch(clearFilters())}>
           Clear filters
         </Button>
