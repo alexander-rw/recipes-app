@@ -16,7 +16,6 @@ import { SingleRecipe } from './SingleRecipe';
 import { RandomRecipe } from '../randomRecipe/RandomRecipe';
 
 const SORT_OPTIONS: { value: RecipeSort; label: string }[] = [
-  { value: "default", label: "Default" },
   { value: "nameAsc", label: "Name (A–Z)" },
   { value: "nameDesc", label: "Name (Z–A)" },
   { value: "timeAsc", label: "Cook time (shortest)" },

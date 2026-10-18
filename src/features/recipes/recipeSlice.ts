@@ -28,7 +28,7 @@ export interface RecipeState {
   sortBy: RecipeSort;
 }
 
-export type RecipeSort = "default" | "nameAsc" | "nameDesc" | "timeAsc" | "timeDesc";
+export type RecipeSort = "nameAsc" | "nameDesc" | "timeAsc" | "timeDesc";
 
 const initialFilters: RecipeFilters = {
   mealTypes: [],
@@ -40,14 +40,14 @@ const initialState: RecipeState = {
   isLoaded: false,
   selectedRecipe: null,
   filters: initialFilters,
-  sortBy: "default",
+  sortBy: "nameAsc",
 };
 
 const byName = (a: Recipe, b: Recipe) =>
   a.name.trim().localeCompare(b.name.trim(), undefined, { sensitivity: "base" });
 
 // Ties on cook time fall back to name order
-const recipeComparators: Record<Exclude<RecipeSort, "default">, (a: Recipe, b: Recipe) => number> = {
+const recipeComparators: Record<RecipeSort, (a: Recipe, b: Recipe) => number> = {
   nameAsc: byName,
   nameDesc: (a, b) => byName(b, a),
   timeAsc: (a, b) => a.timeTakenToCook - b.timeTakenToCook || byName(a, b),
@@ -156,7 +156,7 @@ export const selectSortBy = (state: RootState) => state.recipes.sortBy;
 // The filtered recipes in the chosen display order
 export const selectSortedRecipes = createSelector(
   [selectFilteredRecipes, selectSortBy],
-  (recipes, sortBy) => (sortBy === "default" ? recipes : [...recipes].sort(recipeComparators[sortBy]))
+  (recipes, sortBy) => [...recipes].sort(recipeComparators[sortBy])
 );
 
 // Recipes matching every filter except cook time, so the cook time
