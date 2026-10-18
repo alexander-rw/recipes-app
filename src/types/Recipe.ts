@@ -1,3 +1,5 @@
+export type Diet = "vegan" | "vegetarian" | "meat";
+
 export type Recipe = {
   // Names the recipe's page on the site and its file in public/recipes, set by `yarn details`
   id: string;
@@ -5,6 +7,8 @@ export type Recipe = {
   href: string;
   timeTakenToCook: number;
   mealType: string;
+  // Left out until someone has checked the ingredients; "meat" includes fish
+  diet?: Diet;
   // Preview image from the recipe page's og:image, filled in by `yarn images`
   image?: string;
 }

@@ -1,13 +1,15 @@
-import { Box, Button, Slider, TextField, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import { Box, Button, Slider, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   clearFilters,
+  DietFilter,
   selectCookTimeBounds,
   selectFilters,
   selectMealTypes,
   selectRecipesForCookTimeFilter,
   setCookTimeRange,
+  setDietFilter,
   setMealTypeFilter,
   setSearch,
 } from "../../features/recipes/recipeSlice";
@@ -15,16 +17,21 @@ import { CookTimeHistogram } from "./CookTimeHistogram";
 
 const COOK_TIME_STEP = 5;
 
+const DIET_OPTIONS: { value: DietFilter; label: string }[] = [
+  { value: "vegetarian", label: "Vegetarian" },
+  { value: "vegan", label: "Vegan" },
+];
+
 export const RecipeFilters = () => {
   const dispatch = useAppDispatch();
   const mealTypes = useAppSelector(selectMealTypes);
   const cookTimeRecipes = useAppSelector(selectRecipesForCookTimeFilter);
   const { min: minTime, max: maxTime, isCapped } = useAppSelector(selectCookTimeBounds);
-  const { search, mealTypes: selectedMealTypes, cookTimeRange } = useAppSelector(selectFilters);
+  const { search, mealTypes: selectedMealTypes, diet, cookTimeRange } = useAppSelector(selectFilters);
 
   const [fromTime, toTime] = cookTimeRange ?? [minTime, null];
   const sliderTo = toTime ?? maxTime;
-  const hasFilters = search !== "" || selectedMealTypes.length > 0 || cookTimeRange != null;
+  const hasFilters = search !== "" || selectedMealTypes.length > 0 || diet != null || cookTimeRange != null;
 
   const formatMinutes = (value: number) => (isCapped && value >= maxTime ? `${maxTime}+` : `${value}`);
 
@@ -39,31 +46,38 @@ export const RecipeFilters = () => {
 
   return (
     <Grid container item xs={12} spacing={2} alignItems="flex-end">
-      <Grid item xs={12}>
-        <TextField
-          type="search"
-          size="small"
-          color="secondary"
-          label="Search recipes"
-          value={search}
-          onChange={e => dispatch(setSearch(e.target.value))}
-          fullWidth
-          sx={{ maxWidth: { sm: 400 } }}
-        />
-      </Grid>
       <Grid item xs={12} sm={6}>
-        <Typography gutterBottom>Meal type</Typography>
-        <ToggleButtonGroup
-          color="secondary"
-          size="small"
-          value={selectedMealTypes}
-          onChange={(_, value: string[]) => dispatch(setMealTypeFilter(value))}
-          aria-label="meal type"
-        >
-          {mealTypes.map(mealType => (
-            <ToggleButton value={mealType} key={mealType}>{mealType}</ToggleButton>
-          ))}
-        </ToggleButtonGroup>
+        <Stack spacing={2}>
+          <Box>
+            <Typography gutterBottom>Meal type</Typography>
+            <ToggleButtonGroup
+              color="secondary"
+              size="small"
+              value={selectedMealTypes}
+              onChange={(_, value: string[]) => dispatch(setMealTypeFilter(value))}
+              aria-label="meal type"
+            >
+              {mealTypes.map(mealType => (
+                <ToggleButton value={mealType} key={mealType}>{mealType}</ToggleButton>
+              ))}
+            </ToggleButtonGroup>
+          </Box>
+          <Box>
+            <Typography gutterBottom>Diet</Typography>
+            <ToggleButtonGroup
+              exclusive
+              color="secondary"
+              size="small"
+              value={diet}
+              onChange={(_, value: DietFilter | null) => dispatch(setDietFilter(value))}
+              aria-label="diet"
+            >
+              {DIET_OPTIONS.map(o => (
+                <ToggleButton value={o.value} key={o.value}>{o.label}</ToggleButton>
+              ))}
+            </ToggleButtonGroup>
+          </Box>
+        </Stack>
       </Grid>
       <Grid item xs={12} sm={6}>
         <Typography gutterBottom id="cook-time-label">
@@ -93,7 +107,16 @@ export const RecipeFilters = () => {
           />
         </Box>
       </Grid>
-      <Grid container item xs={12} justifyContent="flex-end">
+      <Grid container item xs={12} justifyContent="space-between" alignItems="center" columnGap={2} rowGap={1}>
+        <TextField
+          type="search"
+          size="small"
+          color="secondary"
+          label="Search recipes"
+          value={search}
+          onChange={e => dispatch(setSearch(e.target.value))}
+          sx={{ flex: 1, maxWidth: { sm: 400 } }}
+        />
         <Button color="secondary" disabled={!hasFilters} onClick={() => dispatch(clearFilters())}>
           Clear filters
         </Button>

@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { RootState } from '../../app/store';
-import { Recipe } from '../../types/Recipe';
+import { Diet, Recipe } from '../../types/Recipe';
 import { sample, uniq } from "lodash";
 
 const recipesUrl = "./recipes-dinner.json";
@@ -9,6 +9,14 @@ const recipesUrl = "./recipes-dinner.json";
 // Cook times above this are grouped together at the top of the slider ("160+"),
 // so a few very long recipes don't squash the rest of the range
 export const COOK_TIME_CAP = 160;
+
+// Vegan recipes count as vegetarian too
+export type DietFilter = Exclude<Diet, "meat">;
+
+const DIETS_MATCHING: Record<DietFilter, Diet[]> = {
+  vegetarian: ["vegetarian", "vegan"],
+  vegan: ["vegan"],
+};
 
 // [from, to]; a null `to` means there is no upper limit
 export type CookTimeRange = [number, number | null];
@@ -18,6 +26,8 @@ export interface RecipeFilters {
   search: string;
   // An empty list means every meal type is shown
   mealTypes: string[];
+  // null shows every recipe, including ones with no diet set yet
+  diet: DietFilter | null;
   // null means the full range of cook times is shown
   cookTimeRange: CookTimeRange | null;
 }
@@ -35,6 +45,7 @@ export type RecipeSort = "nameAsc" | "nameDesc" | "timeAsc" | "timeDesc";
 const initialFilters: RecipeFilters = {
   search: "",
   mealTypes: [],
+  diet: null,
   cookTimeRange: null,
 };
 
@@ -61,11 +72,12 @@ const recipeComparators: Record<RecipeSort, (a: Recipe, b: Recipe) => number> = 
 const normalise = (text: string) =>
   text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-const filterRecipes = (recipes: Recipe[], { search, mealTypes, cookTimeRange }: RecipeFilters) => {
+const filterRecipes = (recipes: Recipe[], { search, mealTypes, diet, cookTimeRange }: RecipeFilters) => {
   const query = normalise(search.trim());
   return recipes.filter(r =>
     (query === "" || normalise(r.name).includes(query))
     && (mealTypes.length === 0 || mealTypes.includes(r.mealType))
+    && (diet == null || (r.diet != null && DIETS_MATCHING[diet].includes(r.diet)))
     && (cookTimeRange == null
       || (r.timeTakenToCook >= cookTimeRange[0]
         && (cookTimeRange[1] == null || r.timeTakenToCook <= cookTimeRange[1])))
@@ -114,6 +126,9 @@ export const recipeSlice = createSlice({
     setMealTypeFilter: (state, action: PayloadAction<string[]>) => {
       state.filters.mealTypes = action.payload;
     },
+    setDietFilter: (state, action: PayloadAction<DietFilter | null>) => {
+      state.filters.diet = action.payload;
+    },
     setCookTimeRange: (state, action: PayloadAction<CookTimeRange | null>) => {
       state.filters.cookTimeRange = action.payload;
     },
@@ -147,6 +162,7 @@ export const {
   randomizeRecipe,
   setSearch,
   setMealTypeFilter,
+  setDietFilter,
   setCookTimeRange,
   clearFilters,
   setSortBy,
