@@ -224,16 +224,19 @@ export const RecipeDisplay = ({ browsing, onBrowse, covered, onExit }: RecipeDis
           )}
 
         <Typography
-          variant="h5"
           sx={{
             position: "absolute",
             top: 16,
             right: 20,
-            px: 1.5,
+            px: 2,
             py: 0.5,
-            borderRadius: 1,
+            borderRadius: 2,
             bgcolor: "rgba(248, 244, 244, 0.85)",
             fontWeight: "fontWeightMedium",
+            // Readable from across the kitchen, growing with the screen
+            fontSize: "clamp(2.25rem, 8vmin, 5rem)",
+            lineHeight: 1.2,
+            fontVariantNumeric: "tabular-nums",
           }}
         >
           {clock}
