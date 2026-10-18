@@ -1,0 +1,45 @@
+{
+  "source": "Julia's Album",
+  "servings": "4 people",
+  "ingredients": [
+    {
+      "items": [
+        "1 lb raw shrimp (large, peeled, and deveined - 16 or 20 count per 1 pound of shrimp)",
+        "1 teaspoon smoked paprika",
+        "½ teaspoon Italian seasoning ((thyme, basil, oregano, rosemary))",
+        "¼ teaspoon salt",
+        "¼ teaspoon black pepper",
+        "5 cloves garlic (minced)",
+        "2 tablespoons olive oil",
+        "1/3 cup sun-dried tomatoes (chopped)",
+        "1 cup orzo (uncooked)",
+        "2 cups chicken stock",
+        "1/4 teaspoon salt",
+        "14 oz artichoke hearts (drained and chopped (1 can or about 1 cup))",
+        "4 oz fresh spinach",
+        "1 cup heavy cream",
+        "salt and pepper"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "title": "How to sear the shrimp",
+      "steps": [
+        "This recipe uses 1 lb of large raw shrimp (peeled and deveined) which usually means 16 or 20 count. Season the shrimp with smoked paprika, Italian seasoning, salt, and freshly ground black pepper.",
+        "Heat 2 tablespoons of olive oil over medium-high heat in a large cast iron skillet or in a high-sided nonstick pan until hot. Add shrimp and minced garlic, and cook for about 2 minutes per side.",
+        "Make sure the shrimp are not overcrowded to avoid steaming. You might have to work in batches. Remove shrimp to a plate."
+      ]
+    },
+    {
+      "title": "How to cook orzo",
+      "steps": [
+        "To the same, now empty, skillet, add chopped sun-dried tomatoes, 1 cup of uncooked orzo, and 1 tablespoon of olive oil. Cook the orzo on medium heat, stirring, for about 2 minutes until browned.",
+        "Add 2 cups of chicken stock and ¼ teaspoon of salt. Bring to a boil, then reduce to a simmer (medium-low) and cook for about 5 or 10 minutes, occasionally stirring to prevent the orzo from sticking to the bottom of the pan, until the orzo is cooked through.",
+        "Add spinach, artichokes, and cream. Stir everything on low-medium heat until the spinach wilts.",
+        "Add seared shrimp to the skillet with the cream sauce. Simmer for about 2 minutes (or more), until everything is warmed through.",
+        "Season with salt and pepper and more smoked paprika, if desired."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "source": "Cooking Tree",
+  "author": "Cooking Tree",
+  "servings": "8",
+  "ingredients": [
+    {
+      "items": [
+        "100g Dark chocolate",
+        "100g Milk Chocolate",
+        "90g Unsalted butter",
+        "10g Sugar",
+        "3 Eggs",
+        "50g Whipping cream",
+        "30g Sour Cream",
+        "Ganache:50g chocolate",
+        "25g whipping cream"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "Place the bowl of dark chocolate, milk chocolate and unsalted butter in hot water and stir until dissolved.",
+        "Add sugar and mix, then add eggs one at a time and mix.",
+        "Add fresh cream and sour cream, mix, and remove from the pot.",
+        "Filter through a sieve, pour into a mold, place on a pan of hot water, bake in an oven preheated to 160 degrees for 30 minutes, cool at room temperature, and cool overnight in the refrigerator.",
+        "Melt the surface slightly using a steam towel, remove it from the mold, and decorate with ganache and cocoa powder."
+      ]
+    }
+  ]
+}

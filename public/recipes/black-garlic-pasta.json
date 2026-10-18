@@ -1,0 +1,35 @@
+{
+  "source": "Vanilla Bean Cuisine",
+  "servings": "4",
+  "ingredients": [
+    {
+      "items": [
+        "1 tablespoon olive oil",
+        "3 shallots (thinly sliced (about 3/4 cup))",
+        "4 ounces shiitake mushrooms (sliced)",
+        "8 ounces spaghetti or linguine",
+        "2 ounces black garlic butter",
+        "1/2 teaspoon red pepper flakes",
+        "1/2 ounce parmesan cheese (plus more to garnish)",
+        "Chopped parsley or chives (to garnish)"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "Heat olive oil over medium heat in a 10-inch nonstick skillet.",
+        "Add sliced shallots and mushrooms, and season with salt and pepper.",
+        "Sauté for 8-10 minutes, stirring frequently, until shallots and mushrooms are softened and beginning to brown.",
+        "Meanwhile, bring a large pot of salted water to boil.",
+        "Cook pasta as directed on the package.",
+        "Reserve 1/2 cup of pasta water before draining the cooked pasta.",
+        "Add the pasta to the pan with the shallots and mushrooms.",
+        "Add black garlic butter and red pepper flakes, and toss.",
+        "Add reserved water a bit at a time, until the pasta is coated in a thin sauce (you may not need all the reserved water).",
+        "Stir in parmesan cheese.",
+        "Serve, garnished with additional parmesan cheese and chopped chives or parsley."
+      ]
+    }
+  ]
+}

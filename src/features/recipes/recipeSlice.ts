@@ -73,7 +73,9 @@ export const loadRecipesAsync = createAsyncThunk(
     const response = await axios.get(recipesUrl);
     // The value we return becomes the `fulfilled` action payload
     return response.data.recipes as Recipe[];
-  }
+  },
+  // Several views ask for the recipes; once they're loaded there's no need to fetch them again
+  { condition: (_, { getState }) => !(getState() as RootState).recipes.isLoaded }
 );
 
 export const recipeSlice = createSlice({

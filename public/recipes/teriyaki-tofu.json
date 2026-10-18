@@ -1,0 +1,31 @@
+{
+  "source": "Good Food",
+  "author": "Miriam Nice",
+  "servings": "2",
+  "ingredients": [
+    {
+      "items": [
+        "150g wholegrain rice",
+        "50ml soy sauce",
+        "2 tbsp mirin",
+        "½ tsp grated ginger",
+        "1 tsp honey",
+        "350g firm tofu (we used Cauldron)",
+        "1 bunch spring onions ends trimmed",
+        "2 tsp sunflower oil",
+        "½ tsp sesame seeds",
+        "1 red chilli sliced (optional)"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "Cook the rice according to pack instructions. Pour the soy sauce, mirin, ginger and honey into a small saucepan and add 50ml water. Bring to a simmer and cook for around 5 mins or until slightly thickened. Remove from the heat and set aside until needed.",
+        "If your tofu doesn’t feel very firm, you’ll need to press it. To do this, wrap the block of tofu in a few layers of kitchen paper, then weigh it down with a heavy pan or tray for 10-15 mins – the longer you press it, the firmer it will be. Cut the tofu into thick slices.",
+        "Heat a griddle pan over high heat and lightly brush the tofu and spring onions with the oil. Griddle the tofu and spring onion until deep char lines appear on both sides (around 4 mins each side) – you may have to do this in batches depending on the size of your griddle pan.",
+        "Divide the cooked rice between two plates, top with the tofu and spring onion, then drizzle with the teriyaki sauce. Garnish with the sesame seeds and sliced red chilli, if using."
+      ]
+    }
+  ]
+}

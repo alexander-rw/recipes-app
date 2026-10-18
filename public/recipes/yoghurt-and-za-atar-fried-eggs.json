@@ -1,0 +1,29 @@
+{
+  "source": "Mob",
+  "author": "Mob",
+  "servings": "4",
+  "ingredients": [
+    {
+      "items": [
+        "512g Sourdough",
+        "500g Greek Yoghurt",
+        "8 Egg",
+        "4tbsp Za’atar",
+        "2tsp Chilli Flakes",
+        "15g Mint",
+        "Salt",
+        "Olive Oil"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "Lightly toast your bread, and then spread with a generous amount of the Greek yoghurt.",
+        "Meanwhile, warm 100ml of olive oil in a non-stick pan and fry the eggs. Season with salt and once they are almost cooked, add the za’atar and chilli to the oil.",
+        "Spoon the fragrant oil over the eggs to cook the top, then pop them onto the toast and add another drizzle of the oil.",
+        "Finely chop some mint and sprinkle over the top."
+      ]
+    }
+  ]
+}

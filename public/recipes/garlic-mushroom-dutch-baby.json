@@ -1,0 +1,58 @@
+{
+  "source": "myfoodbook",
+  "author": "Australian Eggs",
+  "servings": "4",
+  "ingredients": [
+    {
+      "title": "Dutch baby pancake",
+      "items": [
+        "⅔ cup (100g) plain flour",
+        "1 tsp salt",
+        "⅔ cup (160ml) milk",
+        "3 eggs",
+        "30g butter, diced"
+      ]
+    },
+    {
+      "title": "Garlic mushrooms",
+      "items": [
+        "2 tbsp olive oil",
+        "40g butter, diced",
+        "300g Swiss brown mushrooms, halved",
+        "3 cloves garlic, crushed",
+        "Salt and pepper"
+      ]
+    },
+    {
+      "title": "To serve",
+      "items": [
+        "3 tbsp chopped chives",
+        "⅓ cup marinated goats curd",
+        "Fresh thyme sprigs for garnish (optional)"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "title": "Dutch baby pancake",
+      "steps": [
+        "Arrange one oven rack in the middle position and remove all other racks above or below. Set oven to 240°C/220°C (fan-forced) and place a 25 cm (top measurement) ovenproof frying pan into oven to heat up",
+        "Combine flour and salt in a large mixing bowl and make a well in the centre. Pour in milk and add eggs. Whisk to a smooth batter and let rest for 10 minutes",
+        "Once oven has reached temperature, quickly remove hot frying pan from oven using oven mitts. Add butter and swirl pan to coat all the base and sides. Pour in batter and return to oven. Cook 15-18 minutes or until pancake has puffed up and sides are golden"
+      ]
+    },
+    {
+      "title": "Garlic mushrooms",
+      "steps": [
+        "While pancake is cooking, heat oil and butter in a frying pan over medium-high heat. Add mushrooms and cook stirring for 5-6 minutes. Stir in garlic and season with salt and pepper, cook a further few minutes. Remove and set aside"
+      ]
+    },
+    {
+      "title": "To serve",
+      "steps": [
+        "Remove frying pan from oven and immediately top with garlic mushrooms, chopped chives and dollops of marinated goats curd. Garnish with fresh thyme sprigs and cut into wedges. Serve immediately"
+      ]
+    }
+  ],
+  "addedByHand": true
+}

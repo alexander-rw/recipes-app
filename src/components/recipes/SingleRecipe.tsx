@@ -5,6 +5,7 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import { Box, Button, CardActions, Typography } from '@mui/material';
 import { Recipe } from '../../types/Recipe';
+import { openRecipe } from '../../app/route';
 
 const IMAGE_ASPECT_RATIO = "16 / 10";
 
@@ -47,7 +48,7 @@ export const SingleRecipe = (recipe: Recipe) => {
         </Typography>
       </CardContent>
       <CardActions sx={{ mt: "auto" }}>
-        <Button variant="outlined" fullWidth href={recipe.href} target="_blank">Open Page</Button>
+        <Button variant="outlined" fullWidth onClick={() => openRecipe(recipe.id)}>Open Recipe</Button>
       </CardActions>
     </Card>
   );

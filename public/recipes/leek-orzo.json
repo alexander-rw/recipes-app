@@ -1,0 +1,26 @@
+{
+  "source": "BBC Food",
+  "author": "Miguel Barclay",
+  "servings": "Serves 4",
+  "ingredients": [
+    {
+      "items": [
+        "2 tbsp olive oil, plus 1 tbsp extra to serve",
+        "250–300g/9–10½oz mushrooms, sliced",
+        "2 medium leeks, trimmed and thinly sliced",
+        "400g/14oz orzo pasta",
+        "1 vegetable or chicken stock cube",
+        "salt and black pepper"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "Heat the oil in a large saucepan over a medium heat. Add the mushrooms and leeks, season with a pinch of salt and lots of black pepper and fry for 5 minutes, stirring regularly.",
+        "Add the orzo and cook for a few seconds more, then stir in 1.2litre/2 pints water and crumble in the stock cube.",
+        "Bring the liquid to the boil and cook for about 12 minutes, or until the orzo is soft and the sauce is thick and glossy, similar to a risotto. Stir regularly, especially towards the end of the cooking time, as the orzo can begin to stick, and add a splash more water if needed until the right consistency is reached. Serve topped with the extra olive oil and a sprinkle of pepper."
+      ]
+    }
+  ]
+}

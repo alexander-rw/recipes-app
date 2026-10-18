@@ -1,0 +1,34 @@
+{
+  "source": "Fork in the Kitchen",
+  "servings": "6 servings",
+  "ingredients": [
+    {
+      "items": [
+        "1 cup whole milk ricotta",
+        "2 Tablespoons fresh mint (roughly chopped)",
+        "1 teaspoon fresh parsley (finely chopped)",
+        "½ teaspoon lemon zest",
+        "1 Tablespoon olive oil (additional for baguette slices)",
+        "3 teaspoons honey",
+        "Generous pinch of sea salt (to taste)",
+        "Freshly ground black pepper (to taste)",
+        "1 Baguette (sliced, if using)"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "Place the ricotta in a small mixing bowl. Using a hand mixer with a whisk attachment or beaters, whisk ricotta for 2 minutes until it's smooth and creamy; you may still see tiny bumps of ricotta, this is ok. Place the whipped ricotta in a serving bowl or spread on a plate.",
+        "In a separate bowl, stir together the mint, parsley, lemon zest, olive oil, honey, and salt. Pour the herb and honey mixture on top of the whipped ricotta. Top with freshly ground black pepper as desired. Serve with grilled baguette slices, crackers, or vegetables."
+      ]
+    },
+    {
+      "title": "Grilled Baguette or Crostini",
+      "steps": [
+        "Grilled Baguette: to serve with grilled baguette slices, brush olive oil on each side of baguette slices, and place on a grill pan over medium-high heat for 1-2 minutes on each side, until toasted. Sprinkle with salt and serve.",
+        "Crostini: Preheat the oven to 375°F. Spread the baguette slices on a baking sheet. Drizzle with olive oil (don’t drench them, dry areas are ok), and turn them over, spreading them in the olive oil a bit to coat, and flipping to coat as well. Sprinkle the slices with salt and pepper. Toast in oven for 5-7 minutes, flipping halfway through. Watch carefully so they don’t burn."
+      ]
+    }
+  ]
+}

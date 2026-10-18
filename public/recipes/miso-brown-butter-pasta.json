@@ -1,0 +1,39 @@
+{
+  "source": "Food52",
+  "ingredients": [
+    {
+      "title": "miso brown butter",
+      "items": [
+        "250 gram (20 oz) short pasta, shells or orecchiette",
+        "2 tablespoon unsalted butter",
+        "50 milliliter (1/4 cup) olive oil",
+        "4 garlic cloves, minced",
+        "1/2 tablespoon white miso paste",
+        "1 teaspoon crushed chili flakes, extra for serving",
+        "1/2 teaspoon each: cumin, smoked paprika, sweet paprika, cayenne pepper",
+        "20 sage leaves",
+        "sea salt + black pepper",
+        "grated pecorino, for serving"
+      ]
+    },
+    {
+      "title": "sage breadcrumbs",
+      "items": [
+        "30 gram (1/2 cup) panko bread crumbs",
+        "40 gram (1/4 cup) walnuts, chopped",
+        "1 tablespoon chopped fresh sage leaves",
+        "3 tablespoon olive oil"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "Step 1Boil the pasta in salted water until al dente. Drain, reserving 1/4 cup of the cooking water.",
+        "Step 2For the breadcrumbs. Heat a large skillet over medium heat and add the olive oil. Once hot, add panko and walnuts, cook, stirring for 4 minutes until toasted and golden. Add chopped sage and cook for 1-2 minutes more. Season with salt and pepper. Remove from the skillet to a plate.",
+        "Step 3Heat the same skillet over medium heat, add butter. Lower the heat and cook for 2-3 minutes or until butter foams and starts to brown. Add garlic and olive oil, cook for 2 minutes until soft. Stir in miso, lower the heat to minimum trying not to burn miso or garlic. Add chili flakes, sage leaves and the seasoning.",
+        "Step 4Toss with pasta and add the reserved cooking water. Now taste and add salt and pepper. Serve immediately with crunchy breadcrumbs, pecorino and some extra chili flakes. Enjoy!"
+      ]
+    }
+  ]
+}

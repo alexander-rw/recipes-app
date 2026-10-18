@@ -1,0 +1,41 @@
+{
+  "source": "TikTok",
+  "author": "Sam Low",
+  "servings": "2",
+  "ingredients": [
+    {
+      "title": "Seaweed garlic sauce",
+      "items": [
+        "10 cloves garlic",
+        "2 shallots (chopped) or 4 sprigs spring onion",
+        "1/2 cup rapeseed oil (or any neutral oil)",
+        "1/2 tsp salt",
+        "2 tbsp light soy sauce",
+        "1 tsp sesame oil (optional)",
+        "Pinch ground white pepper",
+        "1 tbsp brown sugar",
+        "20-30g toasted seaweed"
+      ]
+    },
+    {
+      "title": "To serve",
+      "items": [
+        "2 portions noodles of choice (cooked until still chewy), reserving 1/4 cup cooking liquid",
+        "Chives or spring onion to garnish"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "In a small saucepan with the garlic, shallots and oil, cook on medium-high heat until browned (about 5 min). Allow to cool a little.",
+        "Toast your seaweed for a few seconds in a pan, over the stove, or gently with a blowtorch.",
+        "Food process or stick blend everything with the seasoning. Taste and adjust if needed.",
+        "Cook your noodles until they still have a chew and reserve some of the cooking liquid.",
+        "In a large pan on high heat, add the sauce and noodles and stir fry with the reserved liquid for a couple of minutes.",
+        "Serve, garnished with chives or spring onion."
+      ]
+    }
+  ],
+  "addedByHand": true
+}

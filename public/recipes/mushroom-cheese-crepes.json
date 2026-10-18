@@ -1,0 +1,36 @@
+{
+  "source": "food.com",
+  "author": "Tinkerbell",
+  "servings": "12 crepes, 4 serving(s)",
+  "ingredients": [
+    {
+      "items": [
+        "12 (6 inch) crepes (pre-made or homemade with one of the crepe recipes posted on Zaar)",
+        "3 tablespoons extra virgin olive oil",
+        "1 1/4 lbs mushrooms, rinsed, trimmed and thinly sliced (about 8 cups of any combination of white button, shiitake, oyster, portobello, chanterelles or whate)",
+        "1/4 cup fresh flat-leaf parsley, finely chopped",
+        "1 tablespoon fresh thyme leave",
+        "1 garlic clove, finely chopped",
+        "salt & pepper, to taste",
+        "1 (10 ounce) package fresh spinach, washed, stemmed & coarsely chopped",
+        "5 ounces goat cheese, crumbled",
+        "2 cups mozzarella cheese, shredded"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "Make crepes if using homemade & set aside.",
+        "Preheat oven to 350°F.",
+        "Heat the oil in a large skillet until hot enough to sizzle a slice of mushroom. Add the mushrooms all at once and cook, stirring, over medium-high heat until they begin to brown. About 10 minutes.",
+        "Stir in the parsley, thyme, garlic, salt & pepper. Cook for 1 minute.",
+        "Reduce heat to medium and stir in the spinach. Cover & cook until just wilted, about 2 minutes.",
+        "Uncover & add the goat cheese, stirring until melted.",
+        "Spoon mixture down the center of each crepe. Roll up crepes and arrange side by side in a 13x9 baking dish. Sprinkle with mozzarella cheese.",
+        "Cover pan with foil and heat until cheese melts, about 15 minutes.",
+        "Serve warm."
+      ]
+    }
+  ]
+}

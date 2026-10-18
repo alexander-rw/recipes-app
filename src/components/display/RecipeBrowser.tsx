@@ -8,8 +8,12 @@ import { headerFont } from "../../styles/mui/theme";
 const IDLE_TIMEOUT_MS = 3 * 60 * 1000;
 
 // Every recipe with the usual filters, laid over the slideshow on the kitchen screen
-export const RecipeBrowser = ({ onClose }: { onClose: () => void }) => {
+export const RecipeBrowser = ({ onClose, covered }: { onClose: () => void; covered: boolean }) => {
   useEffect(() => {
+    // No timeout while a recipe is open on top, as someone's probably cooking from it
+    if (covered) {
+      return;
+    }
     let timer = window.setTimeout(onClose, IDLE_TIMEOUT_MS);
     const restart = () => {
       window.clearTimeout(timer);
@@ -22,7 +26,7 @@ export const RecipeBrowser = ({ onClose }: { onClose: () => void }) => {
       window.clearTimeout(timer);
       events.forEach(e => window.removeEventListener(e, restart, true));
     };
-  }, [onClose]);
+  }, [onClose, covered]);
 
   return (
     <Box sx={{

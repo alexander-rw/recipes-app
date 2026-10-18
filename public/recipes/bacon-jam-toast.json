@@ -1,0 +1,53 @@
+{
+  "source": "Gordon Ramsay",
+  "author": "Gordon Ramsay",
+  "ingredients": [
+    {
+      "title": "Bacon jam",
+      "items": [
+        "1 pound thick cut bacon, sliced into 1-cm pieces",
+        "1 small yellow onion, chopped (about 1 ½ cups)",
+        "3 shallots, halved and sliced into thin half moons (1 heaping cup)",
+        "½ (100g) cup brown sugar",
+        "½ cup (155 ml) maple syrup",
+        "½ (125ml) cup freshly brewed coffee",
+        "½ (115ml) cup apple cider vinegar",
+        "¼ - ½ teaspoon red pepper flakes"
+      ]
+    },
+    {
+      "title": "Soft scrambled eggs",
+      "items": [
+        "6 eggs, cold",
+        "1 tablespoon (14g) unsalted butter, cold",
+        "Kosher salt",
+        "Freshly ground black pepper",
+        "1 teaspoon crème fraîche, optional",
+        "Chives, thinly sliced",
+        "Flaky salt, optional"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "title": "Bacon jam",
+      "steps": [
+        "Make the Bacon Jam: Add bacon to a large heavy bottomed skillet or dutch oven, separating the pieces with your fingers, and set over medium-high heat. Cook, stirring occasionally as to not scorch the bottom, until the fat renders out and bacon is starting to crisp, about 10 minutes. Use a slotted spoon to remove bacon from the pan and set aside.",
+        "Pour out bacon fat (reserve for another use) and leave about 1 tablespoon of fat in the pan. Reduce heat to medium-low then add onions and shallots. Cook, stirring occasionally, until onions caramelize, about 20-25 minutes. Add a splash of water if the pan starts to get too dry.",
+        "Once caramelized, return the bacon to the pan and add brown sugar, maple syrup, coffee, apple cider vinegar, and red pepper flakes and increase heat to medium-high to bring to a boil for about 1 minute.",
+        "Reduce heat to a bare simmer and continue to cook, stirring occasionally, until the mixture is thick and jammy and most of the liquid has cooked out, about 1 hour and 30 minutes - 2 hours. Remove from heat and adjust seasoning as needed.",
+        "If using now, spread on top of toasted bread. If using later, let cool to room temperature and store in an airtight container in the refrigerator for up to 1 week."
+      ]
+    },
+    {
+      "title": "Eggs and toast",
+      "steps": [
+        "Make the Eggs: Crack eggs into a deep saucepan and add butter then place the pan over high heat. Stir continuously with a rubber spatula (don’t whisk), making sure to scrape the bottom of the pan.",
+        "After 30 seconds, take the pan off the heat and keep stirring. After about 10 seconds, put the pan back on the heat. Repeat this process, stirring continuously, for about 3 minutes.",
+        "In the last minute, season the eggs lightly with salt and pepper. For extra creamy texture, stir in crème fraîche.",
+        "Once eggs are cooked to your liking, spoon over the bacon jam on toast and garnish with chopped chives and flaky salt, if desired."
+      ]
+    }
+  ],
+  "addedByHand": true
+}

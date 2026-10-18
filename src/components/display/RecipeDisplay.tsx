@@ -6,6 +6,7 @@ import { loadRecipesAsync, selectRecipes } from "../../features/recipes/recipeSl
 import { headerFont } from "../../styles/mui/theme";
 import { Recipe } from "../../types/Recipe";
 import { RecipeBrowser } from "./RecipeBrowser";
+import { openRecipe } from "../../app/route";
 
 // How long each recipe stays up, overridable with ?interval=<seconds>
 const DEFAULT_INTERVAL_SECONDS = 30;
@@ -81,8 +82,17 @@ const Slide = ({ recipe }: { recipe: Recipe }) => {
   );
 };
 
+interface RecipeDisplayProps {
+  // Whether the list of every recipe is open over the slideshow
+  browsing: boolean;
+  onBrowse: (browsing: boolean) => void;
+  // A recipe is open on top, so the slideshow waits and leaves the keys alone
+  covered: boolean;
+  onExit: () => void;
+}
+
 // A full-screen slideshow of recipes for a kitchen screen, shown at #display
-export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
+export const RecipeDisplay = ({ browsing, onBrowse, covered, onExit }: RecipeDisplayProps) => {
   const dispatch = useAppDispatch();
   const { recipes, isLoaded } = useAppSelector(selectRecipes);
   const intervalMs = useMemo(intervalFromUrl, []);
@@ -96,7 +106,6 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
 
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [browsing, setBrowsing] = useState(false);
   const [showControls, setShowControls] = useState(false);
   const [startedAt, setStartedAt] = useState(() => Date.now());
   const [elapsed, setElapsed] = useState(0);
@@ -115,7 +124,7 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
 
   // Advance on a timer, ticking often enough to drive the progress bar
   useEffect(() => {
-    if (paused || browsing || order.length < 2) {
+    if (paused || browsing || covered || order.length < 2) {
       return;
     }
     const timer = window.setInterval(() => {
@@ -127,7 +136,7 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
       }
     }, 250);
     return () => window.clearInterval(timer);
-  }, [paused, browsing, order.length, startedAt, intervalMs, go]);
+  }, [paused, browsing, covered, order.length, startedAt, intervalMs, go]);
 
   // Load the next photo early so it doesn't pop in
   useEffect(() => {
@@ -148,19 +157,25 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
   useEffect(() => () => window.clearTimeout(hideTimer.current), []);
 
   const openBrowser = () => {
-    setBrowsing(true);
+    onBrowse(true);
     setShowControls(false);
   };
 
-  // Back to the slideshow with a fresh timer, so the recipe showing gets its full time
-  const closeBrowser = useCallback(() => {
-    setBrowsing(false);
-    setStartedAt(Date.now());
-    setElapsed(0);
-  }, []);
+  const closeBrowser = useCallback(() => onBrowse(false), [onBrowse]);
+
+  // Back on the slideshow with a fresh timer, so the recipe showing gets its full time
+  useEffect(() => {
+    if (!browsing && !covered) {
+      setStartedAt(Date.now());
+      setElapsed(0);
+    }
+  }, [browsing, covered]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (covered) {
+        return;
+      }
       if (browsing) {
         if (e.key === "Escape") closeBrowser();
         return;
@@ -172,7 +187,7 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [go, onExit, browsing, closeBrowser]);
+  }, [go, onExit, browsing, covered, closeBrowser]);
 
   const recipe = order[index];
 
@@ -253,12 +268,12 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
             {paused ? "Play" : "Pause"}
           </Button>
           <Button variant="contained" color="secondary" onClick={() => go(1)}>Next ›</Button>
-          {recipe && <Button variant="contained" href={recipe.href} target="_blank">Open recipe</Button>}
+          {recipe && <Button variant="contained" onClick={() => openRecipe(recipe.id)}>Open recipe</Button>}
           <Button variant="contained" onClick={openBrowser}>All recipes</Button>
           <Button variant="contained" color="inherit" onClick={onExit}>Exit</Button>
         </Stack>
       </Box>
-      {browsing && <RecipeBrowser onClose={closeBrowser} />}
+      {browsing && <RecipeBrowser onClose={closeBrowser} covered={covered} />}
     </>
   );
 };

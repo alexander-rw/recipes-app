@@ -1,0 +1,26 @@
+{
+  "source": "The Mediterranean Dish",
+  "servings": "10 Slices",
+  "ingredients": [
+    {
+      "items": [
+        "1 loaf ciabatta bread, (or similar hearty bread)",
+        "3 tomatoes, (large and very ripe tomatoes are best, I used heirloom tomatoes)",
+        "Extra virgin olive oil,",
+        "1 to 2 garlic cloves, (sliced in half)",
+        "sea salt, (or kosher salt)",
+        "splash of fresh lime juice ((optional))"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "steps": [
+        "Get ready. Turn on your oven’s broiler and position a rack about 6 inches from the heat.",
+        "Toast the bread. Slice the loaf in half lengthwise, then cut it into 2-inch slices. Brush the bread generously with extra virgin olive oil and arrange it on a sheet pan. Broil for up to 3 minutes, until lightly golden brown.",
+        "Grate the tomatoes. Slice a small piece from the tip of each tomato. Grate the cut side over the large holes of a box grater and into a bowl, stopping when only the peel remains. Discard the peels. Season the tomato pulp with salt and an optional splash of lime juice.",
+        "Assemble and serve. While the bread is hot, rub the cut side of the garlic cloves over the surface. Spread the grated tomatoes over the bread and serve immediately."
+      ]
+    }
+  ]
+}

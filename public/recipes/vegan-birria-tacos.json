@@ -1,0 +1,73 @@
+{
+  "source": "Eat Figs, Not Pigs",
+  "author": "Ashley",
+  "servings": "4 servings",
+  "ingredients": [
+    {
+      "title": "Sauce",
+      "items": [
+        "3 dried California Chiles",
+        "3 dried chile de arbol, optional",
+        "2 dried guajillo chiles",
+        "1 dried pasilla chile",
+        "1 large white onion, quartered",
+        "6 cloves garlic",
+        "3 TBS vegetable oil, divided",
+        "4 cups prepared vegan chicken or vegetable broth, divided",
+        "3 whole peppercorns, or ½ tsp ground black pepper",
+        "3 whole cloves",
+        "1 tsp whole cumin",
+        "1 tsp dried oregano",
+        "¼ tsp ground cinnamon",
+        "⅛ tsp allspice",
+        "3 Bay leaves"
+      ]
+    },
+    {
+      "title": "Birria 'meat'",
+      "items": [
+        "2 LBS oyster mushrooms",
+        "2 TBS apple cider vinegar",
+        "2 TBS vegetable oil",
+        "2 tsp garlic powder",
+        "1 tsp Kosher salt"
+      ]
+    },
+    {
+      "title": "Tacos",
+      "items": [
+        "12 corn tortillas",
+        "1 cup vegan mozzarella shreds",
+        "Chopped cilantro, for serving",
+        "Dice onion, for serving",
+        "Lime wedges, for serving"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "title": "Sauce",
+      "steps": [
+        "Cut open the dried chiles with scissors and remove the seeds. Add the chiles to a bowl with hot water to rehydrate, about 30 minutes.",
+        "Meanwhile, place onions and garlic on a parchment paper lined baking tray and massage with 1 tablespoon vegetable oil. Place in the oven on the middle rack. Broil on high for about 25-30 minutes, or until the onions and garlic are darker in color and charred on the outer parts.",
+        "When the chiles are rehydrated, drain them and place them in a blender with roasted onions, garlic, 1 cup broth, remaining 2 tablespoons of oil, and the seasonings. Blend until smooth. Transfer the sauce to a saucepan on medium high heat with the remaining 3 cups of broth and bay leaves. Bring to a boil. Once it reaches a boil, cover, reduce heat to low, and simmer for an hour. Remove bay leaves with tongs, taste and adjust seasonings."
+      ]
+    },
+    {
+      "title": "Birria 'meat'",
+      "steps": [
+        "While the chiles are rehydrating and the onions & garlic are in the oven, start shredding your mushrooms using your hands. You can do this simultaneously, so that by the time you’re done shredding your mushrooms, the peppers are rehydrated, and the onions & garlic are beautifully charred.",
+        "Once the mushrooms are shredded, season it with apple cider vinegar, oil, garlic powder, and salt. Give it a good massage to ensure all the pieces are coated. Cover it and let it marinate while the sauce is simmering.",
+        "After the consommé has been simmering for an hour, it’s time to cook your ‘meat’! While the sauce is still simmering, add a bit of oil to a large skillet on medium high heat. Once the oil is hot and shimmering, add marinated mushrooms in an even layer and cook until the edges begin to crisp up a bit, about 13-15 minutes. Once the mushrooms are crisped around the edges, add about 1.5 – 2 cups of the sauce and cook, stirring often, another 5 minutes or so."
+      ]
+    },
+    {
+      "title": "Tacos",
+      "steps": [
+        "In another pan on medium heat, add a bit more oil. Dip your corn tortilla into the sauce and place onto the pan – repeat with as many tortillas as will comfortably fit into the pan. Add a spoonful of cheese and a a couple tablespoons of the mushroom ‘meat’ onto one side of the tortilla. Cook until the bottom of the tortilla is lightly browned and crispy, about 1-2 minutes. Fold tacos in half, gently pressing with a spatula. Repeat the process with oil, sauce, tortillas, and remaining meat.",
+        "Serve tacos hot with onions, cilantro, fresh lime wedges, and additional sauce for dipping or sipping!"
+      ]
+    }
+  ],
+  "addedByHand": true
+}
