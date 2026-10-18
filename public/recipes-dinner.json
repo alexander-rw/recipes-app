@@ -437,6 +437,7 @@
       "href": "https://www.centralengland.coop/food/recipes/starters/curried-parsnip-and-spinach-soup",
       "timeTakenToCook": 65,
       "mealType": "Main",
+      "image": "./images/parsnip-and-spinach-soup.jpg",
       "id": "parsnip-and-spinach-soup"
     },
     {
@@ -608,20 +609,6 @@
       "id": "za-atar-cacio-e-pepe"
     },
     {
-      "name": "Feta Potatoes",
-      "href": "https://ottolenghi.co.uk/recipes/twice-baked-feta-stuffed-potatoes-with-za-atar-pesto-otk",
-      "timeTakenToCook": 75,
-      "mealType": "Main",
-      "id": "feta-potatoes"
-    },
-    {
-      "name": "Roast Cassava",
-      "href": "https://ottolenghi.co.uk/recipes/roast-cassava-with-roast-garlic-and-coriander-salsa",
-      "timeTakenToCook": 65,
-      "mealType": "Main",
-      "id": "roast-cassava"
-    },
-    {
       "name": "Mee Goreng",
       "href": "https://ottolenghi.co.uk/recipes/mee-goreng",
       "timeTakenToCook": 20,
@@ -642,6 +629,7 @@
       "href": "https://www.coop.co.uk/recipes/roasted-vegetable-toad-in-the-hole",
       "timeTakenToCook": 75,
       "mealType": "Main",
+      "image": "https://images.ctfassets.net/qu53tdnhexvd/6R0b0eSLDjyftOjCcOhkYc/9c30495e03f372ac8af8b66fa81dc2ab/LEFTOVER_VEG_TOAD_IN_THE_HOLE?fm=jpg&q=70&w=1600",
       "id": "roasted-vegetable-toad-in-the-hole"
     },
     {
@@ -697,6 +685,7 @@
       "href": "https://www.gordonramsay.com/gr/recipes/baconjamtoast",
       "timeTakenToCook": 90,
       "mealType": "Main",
+      "image": "https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-T1-STILL.png",
       "id": "bacon-jam-toast"
     },
     {
@@ -1008,6 +997,7 @@
       "href": "https://thewoksoflife.com/hainanese-chicken-rice/#recipe",
       "timeTakenToCook": 155,
       "mealType": "Main",
+      "image": "https://thewoksoflife.com/wp-content/uploads/2023/07/hainan-chicken-rice-7.jpg",
       "id": "hainanese-chicken-rice"
     },
     {
@@ -1071,6 +1061,7 @@
       "href": "https://thewoksoflife.com/smashed-asian-cucumber-salad/#recipe",
       "timeTakenToCook": 10,
       "mealType": "Side",
+      "image": "https://thewoksoflife.com/wp-content/uploads/2015/06/smashed-asian-cucumber-salad-7.jpg",
       "id": "smashed-cucumber-salad"
     },
     {
@@ -1126,6 +1117,7 @@
       "href": "https://www.tiktok.com/@samlowcooks/video/7605022767783611656",
       "timeTakenToCook": 15,
       "mealType": "Main",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcfSZpsq12mDBLR_IFrGZyacgclLKChcMTh2XiYN_iFRpTfWqPvMpjBlo&s=10",
       "id": "seaweed-garlic-noodles"
     },
     {
@@ -1141,6 +1133,7 @@
       "href": "https://mmbonappetit.com/tom-chay-toi/#wpzoom-premium-recipe-card",
       "timeTakenToCook": 55,
       "mealType": "Side",
+      "image": "https://i0.wp.com/mmbonappetit.com/wp-content/uploads/2025/11/Tom-chay-toi-1.jpg?resize=1500%2C1875&ssl=1",
       "id": "vietnamese-garlic-shrimp"
     },
     {
@@ -1460,6 +1453,7 @@
       "href": "https://itschefamani.com/recipe/tripoli-style-lahem-bajin/",
       "timeTakenToCook": 125,
       "mealType": "Side",
+      "image": "https://itschefamani.com/wp-content/uploads/2025/01/IMG_9788-2-scaled.jpg",
       "id": "lahm-b-ajin"
     },
     {
@@ -1467,6 +1461,7 @@
       "href": "https://itschefamani.com/recipe/the-ultimate-kibbeh-dough/",
       "timeTakenToCook": 150,
       "mealType": "Side",
+      "image": "https://itschefamani.com/wp-content/uploads/2024/02/IMG_7508-scaled.jpg",
       "id": "kibbeh"
     },
     {
@@ -1474,6 +1469,7 @@
       "href": "https://itschefamani.com/recipe/mamas-riz-a-jej-spiced-rice/",
       "timeTakenToCook": 135,
       "mealType": "Main",
+      "image": "https://itschefamani.com/wp-content/uploads/2025/10/DSC06115-scaled.jpg",
       "id": "riz-a-jej"
     }
   ]

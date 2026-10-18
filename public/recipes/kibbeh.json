@@ -1,0 +1,60 @@
+{
+  "source": "itschefamani.com",
+  "author": "Chef Amani",
+  "ingredients": [
+    {
+      "title": "For the Kibbeh Dough",
+      "items": [
+        "1 kg lean meat (habra nayeh)",
+        "1 kg brown bulgur (cracked wheat) (fine)",
+        "1 large onion",
+        "1 handful of fresh basil leaves (optional)",
+        "1 tbsp salt (adjust to taste)",
+        "3 tsp kibbeh spices (kamouneh kibbeh) (if kibbeh spices unavailable you can substitue with 2 tsp of ground cumin and 1 tsp of 7 spices)",
+        "1 tbsp red capsicum paste (optional)",
+        "1 L cooking oil (to fry the kibbeh)"
+      ]
+    },
+    {
+      "title": "For the Meat Filling",
+      "items": [
+        "1 kg minced meat (lamb)",
+        "2 onions (finely chopped)",
+        "2 tsp salt (adjust to taste)",
+        "1 tsp pimento ground (adjust to taste)",
+        "½ tsp black pepper (ground)",
+        "½ tsp cinnamon (ground)",
+        "1 tbsp ghee or oil (to cook the meat and onion)",
+        "1 cup fried almond or pine nuts (optional)"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "title": "For the Kibbeh Dough",
+      "steps": [
+        "Begin by soaking the cracked wheat in water for approximately 10 minutes. After soaking, rinse thoroughly and squeeze out any excess water.",
+        "Combine the bulgur and lean meat, grinding them together. Add the onions and basil during the grinding process to ensure a uniformly mixed dough.",
+        "Season the mixture with salt and your chosen spices, adding the optional red capsicum paste for an extra flavor dimension.",
+        "For the best results, let the dough rest overnight in the refrigerator to allow the flavors to fully develop. However, if you're pressed for time, the dough is also ready to use immediately."
+      ]
+    },
+    {
+      "title": "For the Meat Filling",
+      "steps": [
+        "In a pot, heat ghee or oil and cook the onions until soft.",
+        "Add the minced meat to the onions, breaking it apart and cooking until the mixture is fully combined and the onions are translucent.",
+        "Incorporate the salt and Lebanese 7 spices. Turn off the heat and mix in the fried almonds, if using. Let the mixture cool before filling the Kibbeh."
+      ]
+    },
+    {
+      "title": "Shaping and Cooking",
+      "steps": [
+        "Take the Kibbeh dough and shape it into small balls, around 40g each, to ensure uniform size.",
+        "Hollow out each ball, stuff with the meat filling, and carefully seal. Shape into the traditional pointed Kibbeh form or any shape you prefer.",
+        "These can be fried, baked, or grilled according to your preference. For frying, heat oil to 180 degrees Celsius and fry until golden. If freezing, lay them flat on a tray before transferring to ziplock bags for storage."
+      ]
+    }
+  ],
+  "addedByHand": true
+}

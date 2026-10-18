@@ -1,0 +1,82 @@
+{
+  "source": "itschefamani.com",
+  "author": "Chef Amani",
+  "ingredients": [
+    {
+      "title": "For the Meat Topping",
+      "items": [
+        "1 tbsp ghee (to fry the meat)",
+        "1 kg minced meat",
+        "1 kg diced onion (finely chopped or processed)",
+        "3 tsp salt (adjust to taste)",
+        "1 tsp Lebanese 7 spice",
+        "1 cup tahini paste",
+        "1 cup pomegranate molasses",
+        "¼ cup white vinegar",
+        "1 ¼ cup chopped parsley",
+        "¾ cup chopped mint",
+        "Pine nuts for the topping (optional)"
+      ]
+    },
+    {
+      "title": "For the Dough",
+      "items": [
+        "1 kg plain flour",
+        "20 g milk powder",
+        "50 g sugar",
+        "10 g salt",
+        "20 g oil",
+        "500 g water"
+      ]
+    },
+    {
+      "title": "Ghee & oil mixture",
+      "items": [
+        "2 tbsp ghee (you can substitute with butter)",
+        "Cooking oil"
+      ]
+    }
+  ],
+  "method": [
+    {
+      "title": "Prepare the Meat Topping",
+      "steps": [
+        "Heat ghee in a large pan over medium heat and cook the minced meat until browned.",
+        "Add the diced onions and cook until translucent and most of the water has evaporated.",
+        "Remove from heat, season with salt and Lebanese 7 spice.",
+        "Stir in tahini paste, pomegranate molasses, and vinegar until well combined.",
+        "Add chopped parsley and mint, mix gently, and let the topping cool completely."
+      ]
+    },
+    {
+      "title": "Make the Dough",
+      "steps": [
+        "In a large bowl, combine flour, milk powder, sugar, and salt. Add oil and gradually mix in water to form a smooth dough.",
+        "Knead the dough for 3-5 minutes until elastic and smooth.",
+        "Portion the dough into 45g balls, dip each in oil, and place on an oiled tray. Cover with cling wrap and let it rest for 15-20 min.",
+        "In a small boil melt the ghee and top it with oil, set aside."
+      ]
+    },
+    {
+      "title": "Roll and Rest the Dough",
+      "steps": [
+        "Flatten each dough ball with a rolling pin and stack them, brushing with oil and ghee mixture between layers. Cover and let rest for 1 hour."
+      ]
+    },
+    {
+      "title": "Assemble the Lahem B’ajin",
+      "steps": [
+        "Preheat your oven to 230°C (450°F).",
+        "Gently stretch the dough from all sides, folding it over itself to form a square shape. Place the shaped pastries onto an oiled aluminum tray.",
+        "Once all the pastries are shaped, top each one with the prepared meat mixture then sprinkle with pine nuts."
+      ]
+    },
+    {
+      "title": "Bake",
+      "steps": [
+        "Place the prepared Lahem B’ajin on a baking tray and bake for 8-10 minutes until golden brown and crispy."
+      ]
+    }
+  ],
+  "addedByHand": true
+}
