@@ -4,7 +4,7 @@ import { Box, Button, Chip, LinearProgress, Stack, Typography } from "@mui/mater
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { loadRecipesAsync, selectRecipes } from "../../features/recipes/recipeSlice";
 import { headerFont } from "../../styles/mui/theme";
-import { Recipe } from "../../types/Recipe";
+import { Diet, Recipe } from "../../types/Recipe";
 import { RecipeBrowser } from "./RecipeBrowser";
 import { openRecipe } from "../../app/route";
 
@@ -13,6 +13,12 @@ const DEFAULT_INTERVAL_SECONDS = 30;
 // The on-screen controls fade out after this long without a touch
 const CONTROLS_TIMEOUT_MS = 5000;
 const SWIPE_THRESHOLD_PX = 50;
+
+// Recipes with meat or fish get no label
+const DIET_LABELS: Partial<Record<Diet, { label: string; color: "leaf" | "mustard" }>> = {
+  vegan: { label: "Vegan", color: "leaf" },
+  vegetarian: { label: "Vegetarian", color: "mustard" },
+};
 
 const intervalFromUrl = () => {
   const seconds = Number(new URLSearchParams(window.location.search).get("interval"));
@@ -30,6 +36,7 @@ const useClock = () => {
 
 const Slide = ({ recipe }: { recipe: Recipe }) => {
   const [imageFailed, setImageFailed] = useState(false);
+  const diet = recipe.diet && DIET_LABELS[recipe.diet];
 
   return (
     <Box sx={{
@@ -54,9 +61,10 @@ const Slide = ({ recipe }: { recipe: Recipe }) => {
         )}
       </Box>
       <Stack justifyContent="center" spacing={{ xs: 1.5, md: 3 }} sx={{ p: { xs: 3, md: 6 }, minHeight: 0, overflow: "hidden" }}>
-        <Box>
+        <Stack direction="row" spacing={1}>
           <Chip label={recipe.mealType} color="secondary" sx={{ fontSize: { md: "1.1rem" } }} />
-        </Box>
+          {diet && <Chip label={diet.label} color={diet.color} sx={{ fontSize: { md: "1.1rem" } }} />}
+        </Stack>
         <Typography
           variant="h2"
           component="h1"
