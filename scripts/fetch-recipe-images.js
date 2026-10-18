@@ -80,6 +80,8 @@ const main = async () => {
   if (failures.length > 0) {
     console.log(`\nNo preview found for ${failures.length} recipes:`);
     failures.forEach((f) => console.log(`  - ${f}`));
+    // Lets the GitHub workflow know to raise an issue
+    process.exitCode = 1;
   }
 };
 

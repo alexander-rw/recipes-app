@@ -1,0 +1,99 @@
+# When recipes are added to public/recipes-dinner.json, fetches each new one's photo
+# and its ingredients and method (`yarn images` and `yarn details`) and commits them.
+# Anything that can't be fetched is raised as a GitHub issue.
+name: Fetch new recipes
+
+on:
+  push:
+    branches: [main]
+    paths: [public/recipes-dinner.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+# Two pushes close together queue up rather than racing to commit
+concurrency:
+  group: fetch-recipes
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    # Naming bash adds pipefail, so a script's failure isn't hidden by `| tee`
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node 22 has the WebSocket that `yarn details --chrome` needs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      - name: Start Chrome for pages that turn away plain requests
+        run: |
+          google-chrome --headless=new --remote-debugging-port=9222 --no-first-run \
+            --user-data-dir="$RUNNER_TEMP/chrome" about:blank > /dev/null 2>&1 &
+          for _ in $(seq 1 20); do
+            curl -sf http://127.0.0.1:9222/json/version > /dev/null && exit 0
+            sleep 1
+          done
+          echo "Chrome didn't start, so pages that refuse plain requests will fail"
+
+      - name: Fetch photos
+        id: images
+        continue-on-error: true
+        run: yarn --silent images 2>&1 | tee "$RUNNER_TEMP/images.log"
+
+      - name: Fetch ingredients and method
+        id: details
+        continue-on-error: true
+        run: yarn --silent details --chrome 2>&1 | tee "$RUNNER_TEMP/details.log"
+
+      - name: Commit what was fetched
+        run: |
+          git add public/recipes-dinner.json public/recipes
+          if git diff --cached --quiet; then
+            echo "Nothing new to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Fetch photos and recipes for new recipes"
+          git pull --rebase
+          git push
+
+      - name: Raise an issue for anything that couldn't be fetched
+        if: steps.images.outcome == 'failure' || steps.details.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Some recipes couldn't be fetched"
+          body="$RUNNER_TEMP/issue.md"
+          {
+            echo "[This run]($RUN_URL) couldn't fetch everything for the recipes below."
+            echo
+            if [ "${{ steps.images.outcome }}" = failure ]; then
+              echo "**No photo found** — add an \`image\` URL to the recipe in \`public/recipes-dinner.json\`:"
+              grep '^  - ' "$RUNNER_TEMP/images.log" || echo "  - The script stopped early; see the run log"
+              echo
+            fi
+            if [ "${{ steps.details.outcome }}" = failure ]; then
+              echo "**No ingredients or method found** — the recipe still links to its page. To fix one by hand,"
+              echo "write \`public/recipes/<id>.json\` with \`\"addedByHand\": true\` so it isn't replaced:"
+              grep '^  - ' "$RUNNER_TEMP/details.log" || echo "  - The script stopped early; see the run log"
+            fi
+          } > "$body"
+          number=$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body-file "$body"
+          else
+            gh issue create --title "$title" --body-file "$body"
+          fi

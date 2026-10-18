@@ -358,6 +358,8 @@ const main = async () => {
   if (failures.length > 0) {
     console.log(`\nCouldn't read ${failures.length} recipes (they still link to the creator's page):`);
     failures.forEach((f) => console.log(`  - ${f}`));
+    // Lets the GitHub workflow know to raise an issue
+    process.exitCode = 1;
   }
 };
 
