@@ -45,7 +45,7 @@ export const RecipeFilters = () => {
 
   return (
     <Grid container item xs={12} spacing={2} alignItems="flex-end">
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} md={6}>
         <Stack spacing={2}>
           <Box>
             <Typography gutterBottom>Meal type</Typography>
@@ -78,7 +78,7 @@ export const RecipeFilters = () => {
           </Box>
         </Stack>
       </Grid>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} md={6}>
         <Typography gutterBottom id="cook-time-label">
           Cook time: {formatMinutes(fromTime)}–{formatMinutes(sliderTo)} mins
         </Typography>

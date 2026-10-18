@@ -1,5 +1,7 @@
-import { useEffect } from "react";
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Box, Button, Collapse, Container, Grid, Stack, Typography } from "@mui/material";
+import { useAppSelector } from "../../app/hooks";
+import { selectFilters } from "../../features/recipes/recipeSlice";
 import { RecipeFilters } from "../filters/RecipeFilters";
 import { RecipeList } from "../recipes/RecipeList";
 import { headerFont } from "../../styles/mui/theme";
@@ -9,6 +11,11 @@ const IDLE_TIMEOUT_MS = 3 * 60 * 1000;
 
 // Every recipe with the usual filters, laid over the slideshow on the kitchen screen
 export const RecipeBrowser = ({ onClose, covered }: { onClose: () => void; covered: boolean }) => {
+  // Filters start tucked away, as on a small kitchen screen they'd hide every recipe
+  const [showFilters, setShowFilters] = useState(false);
+  const { mealTypes, diet, cookTimeRange } = useAppSelector(selectFilters);
+  const activeFilters = mealTypes.length + (diet ? 1 : 0) + (cookTimeRange ? 1 : 0);
+
   useEffect(() => {
     // No timeout while a recipe is open on top, as someone's probably cooking from it
     if (covered) {
@@ -55,15 +62,30 @@ export const RecipeBrowser = ({ onClose, covered }: { onClose: () => void; cover
             <Button variant="contained" color="secondary" onClick={onClose} sx={{ fontSize: "1.1rem", flexShrink: 0 }}>
               ‹ Slideshow
             </Button>
-            <Typography variant="h4" component="h1" color="primary" sx={{ fontFamily: headerFont }} noWrap>
+            <Typography variant="h4" component="h1" color="primary" sx={{ fontFamily: headerFont, flex: 1 }} noWrap>
               All recipes
             </Typography>
+            <Button
+              variant={showFilters ? "contained" : "outlined"}
+              color="secondary"
+              onClick={() => setShowFilters(s => !s)}
+              aria-expanded={showFilters}
+              sx={{ fontSize: "1.1rem", flexShrink: 0 }}
+            >
+              Filters{activeFilters > 0 && ` (${activeFilters})`}
+            </Button>
           </Stack>
         </Container>
       </Box>
-      <Container maxWidth="xl" sx={{ py: 3 }}>
+      <Container maxWidth="xl" sx={{ pb: 3 }}>
         <Grid container spacing={3}>
-          <RecipeFilters />
+          <Grid item xs={12} sx={{ pt: "0 !important" }}>
+            <Collapse in={showFilters}>
+              <Grid container sx={{ pt: 3 }}>
+                <RecipeFilters />
+              </Grid>
+            </Collapse>
+          </Grid>
           <RecipeList />
         </Grid>
       </Container>

@@ -49,6 +49,9 @@ const hostname = (href: string) => {
   }
 };
 
+// A landscape screen too short to show the photo and still reach the recipe, like a 7" kitchen panel
+const SHORT_LANDSCAPE = "@media (orientation: landscape) and (max-height: 560px)";
+
 const sectionHeading = (text: string) => (
   <Typography variant="h5" component="h2" color="primary" sx={{ fontFamily: headerFont, mb: 1.5 }}>
     {text}
@@ -164,12 +167,14 @@ const RecipeBody = ({ recipe }: { recipe: Recipe }) => {
     : site;
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 }, [SHORT_LANDSCAPE]: { py: 2 } }}>
       <Box sx={{
         display: "grid",
         gap: { xs: 2, sm: 3, md: 4 },
         gridTemplateColumns: { xs: "1fr", sm: "3fr 2fr" },
         alignItems: "center",
+        // A small photo beside the name, so the ingredients start on the first screen
+        [SHORT_LANDSCAPE]: { gridTemplateColumns: "1fr 3fr", gap: 3 },
       }}>
         {recipe.image && !imageFailed && (
           <Box
@@ -183,7 +188,12 @@ const RecipeBody = ({ recipe }: { recipe: Recipe }) => {
         )}
         <Stack spacing={1.5}>
           <Box><Chip label={recipe.mealType} color="secondary" /></Box>
-          <Typography variant="h3" component="h1" color="primary" sx={{ fontFamily: headerFont, lineHeight: 1.1 }}>
+          <Typography
+            variant="h3"
+            component="h1"
+            color="primary"
+            sx={{ fontFamily: headerFont, lineHeight: 1.1, [SHORT_LANDSCAPE]: { fontSize: "2.25rem" } }}
+          >
             {recipe.name}
           </Typography>
           <Typography variant="h6" color="text.secondary">
@@ -195,7 +205,7 @@ const RecipeBody = ({ recipe }: { recipe: Recipe }) => {
         </Stack>
       </Box>
 
-      <Divider sx={{ my: { xs: 3, md: 4 } }} />
+      <Divider sx={{ my: { xs: 3, md: 4 }, [SHORT_LANDSCAPE]: { my: 2 } }} />
 
       {details.status === "loading" && <Typography color="text.secondary">Loading recipe…</Typography>}
 

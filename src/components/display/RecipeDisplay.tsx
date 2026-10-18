@@ -34,6 +34,13 @@ const useClock = () => {
   return now.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" });
 };
 
+const chipSx = {
+  height: "auto",
+  borderRadius: 99,
+  fontSize: "clamp(0.85rem, 3.2vmin, 1.5rem)",
+  "& .MuiChip-label": { px: "0.8em", py: "0.3em" },
+};
+
 const Slide = ({ recipe }: { recipe: Recipe }) => {
   const [imageFailed, setImageFailed] = useState(false);
   const diet = recipe.diet && DIET_LABELS[recipe.diet];
@@ -60,10 +67,14 @@ const Slide = ({ recipe }: { recipe: Recipe }) => {
           />
         )}
       </Box>
-      <Stack justifyContent="center" spacing={{ xs: 1.5, md: 3 }} sx={{ p: { xs: 3, md: 6 }, minHeight: 0, overflow: "hidden" }}>
+      <Stack
+        justifyContent="center"
+        // Sized from the screen's short side, so text fills a 7" panel as well as a TV
+        sx={{ gap: "clamp(12px, 3.5vmin, 32px)", p: "clamp(20px, 6vmin, 56px)", minHeight: 0, overflow: "hidden" }}
+      >
         <Stack direction="row" spacing={1}>
-          <Chip label={recipe.mealType} color="secondary" sx={{ fontSize: { md: "1.1rem" } }} />
-          {diet && <Chip label={diet.label} color={diet.color} sx={{ fontSize: { md: "1.1rem" } }} />}
+          <Chip label={recipe.mealType} color="secondary" sx={chipSx} />
+          {diet && <Chip label={diet.label} color={diet.color} sx={chipSx} />}
         </Stack>
         <Typography
           variant="h2"
@@ -72,6 +83,7 @@ const Slide = ({ recipe }: { recipe: Recipe }) => {
           sx={{
             fontFamily: headerFont,
             fontWeight: 400,
+            fontSize: "clamp(2rem, 9vmin, 4.5rem)",
             lineHeight: 1.1,
             // Long names wrap to four lines at most rather than pushing the time off screen
             display: "-webkit-box",
@@ -82,7 +94,7 @@ const Slide = ({ recipe }: { recipe: Recipe }) => {
         >
           {recipe.name}
         </Typography>
-        <Typography variant="h4" color="text.secondary">
+        <Typography variant="h4" color="text.secondary" sx={{ fontSize: "clamp(1.25rem, 5vmin, 2.5rem)" }}>
           {recipe.timeTakenToCook} mins
         </Typography>
       </Stack>
