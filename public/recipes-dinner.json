@@ -168,6 +168,7 @@
       "timeTakenToCook": 20,
       "mealType": "Main",
       "image": "https://www.simplyrecipes.com/thmb/YXIrmsOBXh5Cc5MAiBJgTaYO_0I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Quesadilla-LEAD-1-b8e325610a7c46e1b6b6c2208d7ed4ee.jpg",
+      "diet": "vegetarian",
       "id": "quesadillas"
     },
     {
@@ -536,6 +537,7 @@
       "timeTakenToCook": 20,
       "mealType": "Main",
       "image": "https://staging.tasty-yummies.com/wp-content/uploads/2018/02/LeftoversFrittata-5.jpg",
+      "diet": "vegetarian",
       "id": "use-it-up-frittata"
     },
     {
@@ -598,6 +600,7 @@
       "timeTakenToCook": 30,
       "mealType": "Main",
       "image": "https://www.feastingathome.com/wp-content/uploads/2016/04/easy-authentic-pad-thai-recipe-100-7.jpg",
+      "diet": "vegan",
       "id": "pad-thai"
     },
     {
@@ -642,6 +645,7 @@
       "timeTakenToCook": 30,
       "mealType": "Main",
       "image": "https://www.eatingwell.com/thmb/mD1Xt8NSsd2tATtsvzMgwROEEgU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-banh-mi-with-crispy-tofu-1906-8031494-2000-9476d20bbd5f4cb98a23637b28d42989.jpg",
+      "diet": "vegetarian",
       "id": "tofu-banh-mi"
     },
     {
@@ -902,6 +906,7 @@
       "timeTakenToCook": 25,
       "mealType": "Main",
       "image": "https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/nadiya-hussain-savoury-french-toast-fc12c927-a814-43b7-983c-f88a9e2a4a74_s900x0_c2007x1172_l0x830.jpg",
+      "diet": "vegetarian",
       "id": "cheesy-french-toast"
     },
     {

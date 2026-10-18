@@ -1,4 +1,4 @@
-import { Box, Button, Slider, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import { Box, Button, Slider, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
@@ -11,7 +11,6 @@ import {
   setCookTimeRange,
   setDietFilter,
   setMealTypeFilter,
-  setSearch,
 } from "../../features/recipes/recipeSlice";
 import { CookTimeHistogram } from "./CookTimeHistogram";
 
@@ -107,16 +106,7 @@ export const RecipeFilters = () => {
           />
         </Box>
       </Grid>
-      <Grid container item xs={12} justifyContent="space-between" alignItems="center" columnGap={2} rowGap={1}>
-        <TextField
-          type="search"
-          size="small"
-          color="secondary"
-          label="Search recipes"
-          value={search}
-          onChange={e => dispatch(setSearch(e.target.value))}
-          sx={{ flex: 1, maxWidth: { sm: 400 } }}
-        />
+      <Grid container item xs={12} justifyContent="flex-end">
         <Button color="secondary" disabled={!hasFilters} onClick={() => dispatch(clearFilters())}>
           Clear filters
         </Button>

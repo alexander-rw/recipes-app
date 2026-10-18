@@ -4,9 +4,11 @@ import {
   loadRecipesAsync,
   RecipeSort,
   selectRecipeLoading,
+  selectFilters,
   selectRecipes,
   selectSortBy,
   selectSortedRecipes,
+  setSearch,
   setSortBy,
 } from "../../features/recipes/recipeSlice";
 
@@ -27,6 +29,7 @@ export const RecipeList = () => {
   const totalCount = useAppSelector(selectRecipes).recipes.length;
   const isLoaded = useAppSelector(selectRecipeLoading);
   const sortBy = useAppSelector(selectSortBy);
+  const { search } = useAppSelector(selectFilters);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -36,9 +39,20 @@ export const RecipeList = () => {
   return (
     <Grid container item xs={12} spacing={1}>
       <Grid container item xs={12} justifyContent="space-between" alignItems="center" rowGap={1} sx={{ mb: 1 }}>
-        <Typography variant="body2">
-          Showing {recipes.length} of {totalCount} recipes
-        </Typography>
+        <Stack direction="row" spacing={2} alignItems="center" sx={{ width: { xs: "100%", sm: "auto" } }}>
+          <TextField
+            type="search"
+            size="small"
+            color="secondary"
+            label="Search recipes"
+            value={search}
+            onChange={e => dispatch(setSearch(e.target.value))}
+            sx={{ flex: { xs: 1, sm: "none" }, minWidth: 0, width: { sm: 280 } }}
+          />
+          <Typography variant="body2" sx={{ flexShrink: 0 }}>
+            Showing {recipes.length} of {totalCount} recipes
+          </Typography>
+        </Stack>
         <Stack direction="row" spacing={2} alignItems="center" sx={{ width: { xs: "100%", sm: "auto" } }}>
           <TextField
             select
