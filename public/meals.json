@@ -210,6 +210,7 @@
     {
       "country": "PH",
       "status": "eaten",
+      "dish": "Tempura Cod Pandesal",
       "where": "restaurant",
       "place": "Belly (Kentish Town)",
       "mapsUrl": "https://www.google.com/maps?cid=8230024827235080999"
@@ -217,6 +218,7 @@
     {
       "country": "SE",
       "status": "eaten",
+      "dish": "Swedish Cinnamon Bun",
       "where": "restaurant",
       "place": "Fabrique (Hoxton)",
       "mapsUrl": "https://www.google.com/maps?cid=17472128276912556560"
@@ -268,7 +270,8 @@
       "status": "eaten",
       "where": "restaurant",
       "place": "Pannenkoekenboot (Nijmegen)",
-      "mapsUrl": "https://www.google.com/maps?cid=10663502224720005235"
+      "mapsUrl": "https://www.google.com/maps?cid=10663502224720005235",
+      "date": "2023-11-05"
     }
   ]
 }
