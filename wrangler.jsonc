@@ -1,0 +1,13 @@
+// Cloudflare Workers Builds deploys the static CRA build as an assets-only Worker
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "recipes-app",
+  "compatibility_date": "2026-10-01",
+  "build": {
+    "command": "yarn build"
+  },
+  "assets": {
+    "directory": "./build",
+    "not_found_handling": "single-page-application"
+  }
+}
