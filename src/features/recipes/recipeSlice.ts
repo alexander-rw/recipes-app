@@ -14,6 +14,8 @@ export const COOK_TIME_CAP = 160;
 export type CookTimeRange = [number, number | null];
 
 export interface RecipeFilters {
+  // Matched against recipe names; empty shows everything
+  search: string;
   // An empty list means every meal type is shown
   mealTypes: string[];
   // null means the full range of cook times is shown
@@ -31,6 +33,7 @@ export interface RecipeState {
 export type RecipeSort = "nameAsc" | "nameDesc" | "timeAsc" | "timeDesc";
 
 const initialFilters: RecipeFilters = {
+  search: "",
   mealTypes: [],
   cookTimeRange: null,
 };
@@ -54,13 +57,20 @@ const recipeComparators: Record<RecipeSort, (a: Recipe, b: Recipe) => number> = 
   timeDesc: (a, b) => b.timeTakenToCook - a.timeTakenToCook || byName(a, b),
 };
 
-const filterRecipes = (recipes: Recipe[], { mealTypes, cookTimeRange }: RecipeFilters) =>
-  recipes.filter(r =>
-    (mealTypes.length === 0 || mealTypes.includes(r.mealType))
+// Accent-insensitive, so "creme" finds Crème Brûlée
+const normalise = (text: string) =>
+  text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+const filterRecipes = (recipes: Recipe[], { search, mealTypes, cookTimeRange }: RecipeFilters) => {
+  const query = normalise(search.trim());
+  return recipes.filter(r =>
+    (query === "" || normalise(r.name).includes(query))
+    && (mealTypes.length === 0 || mealTypes.includes(r.mealType))
     && (cookTimeRange == null
       || (r.timeTakenToCook >= cookTimeRange[0]
         && (cookTimeRange[1] == null || r.timeTakenToCook <= cookTimeRange[1])))
   );
+};
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
@@ -98,6 +108,9 @@ export const recipeSlice = createSlice({
         : matching;
       state.selectedRecipe = sample(candidates) ?? null;
     },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.filters.search = action.payload;
+    },
     setMealTypeFilter: (state, action: PayloadAction<string[]>) => {
       state.filters.mealTypes = action.payload;
     },
@@ -132,6 +145,7 @@ export const recipeSlice = createSlice({
 export const {
   setRecipes,
   randomizeRecipe,
+  setSearch,
   setMealTypeFilter,
   setCookTimeRange,
   clearFilters,

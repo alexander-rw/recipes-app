@@ -1,4 +1,4 @@
-import { Box, Button, Slider, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import { Box, Button, Slider, TextField, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
@@ -9,6 +9,7 @@ import {
   selectRecipesForCookTimeFilter,
   setCookTimeRange,
   setMealTypeFilter,
+  setSearch,
 } from "../../features/recipes/recipeSlice";
 import { CookTimeHistogram } from "./CookTimeHistogram";
 
@@ -19,11 +20,11 @@ export const RecipeFilters = () => {
   const mealTypes = useAppSelector(selectMealTypes);
   const cookTimeRecipes = useAppSelector(selectRecipesForCookTimeFilter);
   const { min: minTime, max: maxTime, isCapped } = useAppSelector(selectCookTimeBounds);
-  const { mealTypes: selectedMealTypes, cookTimeRange } = useAppSelector(selectFilters);
+  const { search, mealTypes: selectedMealTypes, cookTimeRange } = useAppSelector(selectFilters);
 
   const [fromTime, toTime] = cookTimeRange ?? [minTime, null];
   const sliderTo = toTime ?? maxTime;
-  const hasFilters = selectedMealTypes.length > 0 || cookTimeRange != null;
+  const hasFilters = search !== "" || selectedMealTypes.length > 0 || cookTimeRange != null;
 
   const formatMinutes = (value: number) => (isCapped && value >= maxTime ? `${maxTime}+` : `${value}`);
 
@@ -38,6 +39,18 @@ export const RecipeFilters = () => {
 
   return (
     <Grid container item xs={12} spacing={2} alignItems="flex-end">
+      <Grid item xs={12}>
+        <TextField
+          type="search"
+          size="small"
+          color="secondary"
+          label="Search recipes"
+          value={search}
+          onChange={e => dispatch(setSearch(e.target.value))}
+          fullWidth
+          sx={{ maxWidth: { sm: 400 } }}
+        />
+      </Grid>
       <Grid item xs={12} sm={6}>
         <Typography gutterBottom>Meal type</Typography>
         <ToggleButtonGroup
