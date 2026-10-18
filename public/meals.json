@@ -262,6 +262,13 @@
       "where": "restaurant",
       "place": "House of MoMo (Stoke Newington)",
       "mapsUrl": "https://www.google.com/maps?cid=17316092362422860511"
+    },
+    {
+      "country": "NL",
+      "status": "eaten",
+      "where": "restaurant",
+      "place": "Pannenkoekenboot (Nijmegen)",
+      "mapsUrl": "https://www.google.com/maps?cid=10663502224720005235"
     }
   ]
 }
