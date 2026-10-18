@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { loadRecipesAsync, selectRecipes } from "../../features/recipes/recipeSlice";
 import { headerFont } from "../../styles/mui/theme";
 import { Recipe } from "../../types/Recipe";
+import { RecipeBrowser } from "./RecipeBrowser";
 
 // How long each recipe stays up, overridable with ?interval=<seconds>
 const DEFAULT_INTERVAL_SECONDS = 30;
@@ -95,6 +96,7 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
 
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [browsing, setBrowsing] = useState(false);
   const [showControls, setShowControls] = useState(false);
   const [startedAt, setStartedAt] = useState(() => Date.now());
   const [elapsed, setElapsed] = useState(0);
@@ -113,7 +115,7 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
 
   // Advance on a timer, ticking often enough to drive the progress bar
   useEffect(() => {
-    if (paused || order.length < 2) {
+    if (paused || browsing || order.length < 2) {
       return;
     }
     const timer = window.setInterval(() => {
@@ -125,7 +127,7 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
       }
     }, 250);
     return () => window.clearInterval(timer);
-  }, [paused, order.length, startedAt, intervalMs, go]);
+  }, [paused, browsing, order.length, startedAt, intervalMs, go]);
 
   // Load the next photo early so it doesn't pop in
   useEffect(() => {
@@ -145,8 +147,24 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
 
   useEffect(() => () => window.clearTimeout(hideTimer.current), []);
 
+  const openBrowser = () => {
+    setBrowsing(true);
+    setShowControls(false);
+  };
+
+  // Back to the slideshow with a fresh timer, so the recipe showing gets its full time
+  const closeBrowser = useCallback(() => {
+    setBrowsing(false);
+    setStartedAt(Date.now());
+    setElapsed(0);
+  }, []);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (browsing) {
+        if (e.key === "Escape") closeBrowser();
+        return;
+      }
       if (e.key === "ArrowRight") go(1);
       else if (e.key === "ArrowLeft") go(-1);
       else if (e.key === " ") setPaused(p => !p);
@@ -154,89 +172,93 @@ export const RecipeDisplay = ({ onExit }: { onExit: () => void }) => {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [go, onExit]);
+  }, [go, onExit, browsing, closeBrowser]);
 
   const recipe = order[index];
 
   return (
-    <Box
-      onPointerDown={revealControls}
-      onTouchStart={e => { touchStartX.current = e.touches[0].clientX; }}
-      onTouchEnd={e => {
-        const dx = e.changedTouches[0].clientX - (touchStartX.current ?? e.changedTouches[0].clientX);
-        if (Math.abs(dx) > SWIPE_THRESHOLD_PX) {
-          go(dx < 0 ? 1 : -1);
-        }
-        touchStartX.current = null;
-      }}
-      sx={{
-        position: "fixed",
-        inset: 0,
-        bgcolor: "background.paper",
-        overflow: "hidden",
-        userSelect: "none",
-        // No pointer on the wall screen unless someone is using a mouse
-        cursor: showControls ? "auto" : "none",
-      }}
-    >
-      {recipe
-        ? <Slide recipe={recipe} key={recipe.href} />
-        : (
-          <Stack alignItems="center" justifyContent="center" sx={{ height: "100%" }}>
-            <Typography variant="h4" color="text.secondary">
-              {isLoaded ? "No recipes yet" : "Loading recipes…"}
-            </Typography>
-          </Stack>
-        )}
-
-      <Typography
-        variant="h5"
+    <>
+      <Box
+        onPointerDown={revealControls}
+        onTouchStart={e => { touchStartX.current = e.touches[0].clientX; }}
+        onTouchEnd={e => {
+          const dx = e.changedTouches[0].clientX - (touchStartX.current ?? e.changedTouches[0].clientX);
+          if (Math.abs(dx) > SWIPE_THRESHOLD_PX) {
+            go(dx < 0 ? 1 : -1);
+          }
+          touchStartX.current = null;
+        }}
         sx={{
-          position: "absolute",
-          top: 16,
-          right: 20,
-          px: 1.5,
-          py: 0.5,
-          borderRadius: 1,
-          bgcolor: "rgba(248, 244, 244, 0.85)",
-          fontWeight: "fontWeightMedium",
+          position: "fixed",
+          inset: 0,
+          bgcolor: "background.paper",
+          overflow: "hidden",
+          userSelect: "none",
+          // No pointer on the wall screen unless someone is using a mouse
+          cursor: showControls ? "auto" : "none",
         }}
       >
-        {clock}
-      </Typography>
+        {recipe
+          ? <Slide recipe={recipe} key={recipe.href} />
+          : (
+            <Stack alignItems="center" justifyContent="center" sx={{ height: "100%" }}>
+              <Typography variant="h4" color="text.secondary">
+                {isLoaded ? "No recipes yet" : "Loading recipes…"}
+              </Typography>
+            </Stack>
+          )}
 
-      <LinearProgress
-        variant="determinate"
-        color="secondary"
-        value={paused ? 0 : Math.min(100, (elapsed / intervalMs) * 100)}
-        sx={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 6, bgcolor: "transparent" }}
-      />
+        <Typography
+          variant="h5"
+          sx={{
+            position: "absolute",
+            top: 16,
+            right: 20,
+            px: 1.5,
+            py: 0.5,
+            borderRadius: 1,
+            bgcolor: "rgba(248, 244, 244, 0.85)",
+            fontWeight: "fontWeightMedium",
+          }}
+        >
+          {clock}
+        </Typography>
 
-      <Stack
-        direction="row"
-        spacing={1.5}
-        justifyContent="center"
-        sx={{
-          position: "absolute",
-          left: 0,
-          right: 0,
-          bottom: 24,
-          px: 2,
-          flexWrap: "wrap",
-          opacity: showControls ? 1 : 0,
-          pointerEvents: showControls ? "auto" : "none",
-          transition: "opacity 300ms",
-          "& .MuiButton-root": { minWidth: 96, minHeight: 56, fontSize: "1.1rem", boxShadow: 3 },
-        }}
-      >
-        <Button variant="contained" color="secondary" onClick={() => go(-1)}>‹ Back</Button>
-        <Button variant="contained" color="secondary" onClick={() => setPaused(p => !p)}>
-          {paused ? "Play" : "Pause"}
-        </Button>
-        <Button variant="contained" color="secondary" onClick={() => go(1)}>Next ›</Button>
-        {recipe && <Button variant="contained" href={recipe.href} target="_blank">Open recipe</Button>}
-        <Button variant="contained" color="inherit" onClick={onExit}>Exit</Button>
-      </Stack>
-    </Box>
+        <LinearProgress
+          variant="determinate"
+          color="secondary"
+          value={paused ? 0 : Math.min(100, (elapsed / intervalMs) * 100)}
+          sx={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 6, bgcolor: "transparent" }}
+        />
+
+        <Stack
+          direction="row"
+          spacing={1.5}
+          justifyContent="center"
+          sx={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            bottom: 24,
+            px: 2,
+            flexWrap: "wrap",
+            opacity: showControls ? 1 : 0,
+            pointerEvents: showControls ? "auto" : "none",
+            transition: "opacity 300ms",
+            "& .MuiButton-root": { minWidth: 96, minHeight: 56, fontSize: "1.1rem", boxShadow: 3 },
+          }}
+        >
+          <Button variant="contained" color="secondary" onClick={() => go(-1)}>‹ Back</Button>
+          <Button variant="contained" color="secondary" onClick={() => setPaused(p => !p)}>
+            {paused ? "Play" : "Pause"}
+          </Button>
+          <Button variant="contained" color="secondary" onClick={() => go(1)}>Next ›</Button>
+          {recipe && <Button variant="contained" href={recipe.href} target="_blank">Open recipe</Button>}
+          <Button variant="contained" onClick={openBrowser}>All recipes</Button>
+          <Button variant="contained" color="inherit" onClick={onExit}>Exit</Button>
+        </Stack>
+      </Box>
+      {browsing && <RecipeBrowser onClose={closeBrowser} />}
+    </>
   );
 };
