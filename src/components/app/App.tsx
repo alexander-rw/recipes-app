@@ -10,13 +10,18 @@ import { theme } from "../../styles/mui/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { RecipeFilters } from "../filters/RecipeFilters";
 import { WorldView } from "../world/WorldView";
+import { RecipeDisplay } from "../display/RecipeDisplay";
 
 import "../../styles/index.css";
 
-type View = "recipes" | "world";
+type View = "recipes" | "world" | "display";
 
-// The view lives in the URL hash, so #world can be bookmarked and survives a refresh
-const viewFromHash = (): View => (window.location.hash === "#world" ? "world" : "recipes");
+// The view lives in the URL hash, so #world can be bookmarked and survives a refresh.
+// #display is the full-screen slideshow for a kitchen screen
+const viewFromHash = (): View => {
+  const hash = window.location.hash.slice(1);
+  return hash === "world" || hash === "display" ? hash : "recipes";
+};
 
 export const App = () => {
   const [view, setView] = useState<View>(viewFromHash);
@@ -28,14 +33,23 @@ export const App = () => {
   }, []);
 
   const changeView = (next: View) => {
-    if (next === "world") {
-      window.location.hash = "world";
+    if (next !== "recipes") {
+      window.location.hash = next;
     } else {
       // Drop the hash entirely rather than leaving a bare "#"
       window.history.pushState(null, "", window.location.pathname + window.location.search);
     }
     setView(next);
   };
+
+  if (view === "display") {
+    return (
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <RecipeDisplay onExit={() => changeView("recipes")} />
+      </ThemeProvider>
+    );
+  }
 
   return (
     <>
