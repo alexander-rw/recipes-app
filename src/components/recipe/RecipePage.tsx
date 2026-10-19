@@ -21,10 +21,13 @@ import { Recipe, RecipeDetails } from "../../types/Recipe";
 type DetailsState =
   | { status: "loading" }
   | { status: "missing" }
+  // Couldn't reach the site, as opposed to the recipe having no saved details
+  | { status: "failed" }
   | { status: "loaded"; details: RecipeDetails };
 
-const useRecipeDetails = (id: string): DetailsState => {
+const useRecipeDetails = (id: string): [DetailsState, () => void] => {
   const [state, setState] = useState<DetailsState>({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let current = true;
@@ -34,11 +37,13 @@ const useRecipeDetails = (id: string): DetailsState => {
       .then(({ data }) => current && setState(
         Array.isArray(data?.ingredients) ? { status: "loaded", details: data } : { status: "missing" }
       ))
-      .catch(() => current && setState({ status: "missing" }));
+      .catch(error => current && setState(
+        axios.isAxiosError(error) && error.response?.status === 404 ? { status: "missing" } : { status: "failed" }
+      ));
     return () => { current = false; };
-  }, [id]);
+  }, [id, attempt]);
 
-  return state;
+  return [state, () => setAttempt(a => a + 1)];
 };
 
 const hostname = (href: string) => {
@@ -162,7 +167,7 @@ const Method = ({ groups }: { groups: RecipeDetails["method"] }) => {
 
 const RecipeBody = ({ recipe, kitchen }: { recipe: Recipe; kitchen: boolean }) => {
   const compact = kitchen ? KITCHEN_LANDSCAPE : SHORT_LANDSCAPE;
-  const details = useRecipeDetails(recipe.id);
+  const [details, retry] = useRecipeDetails(recipe.id);
   const [imageFailed, setImageFailed] = useState(false);
   const site = details.status === "loaded" ? details.details.source : hostname(recipe.href);
   const byline = details.status === "loaded" && details.details.author && details.details.author !== site
@@ -211,6 +216,18 @@ const RecipeBody = ({ recipe, kitchen }: { recipe: Recipe; kitchen: boolean }) =
       <Divider sx={{ my: { xs: 3, md: 4 }, [compact]: { my: 2 } }} />
 
       {details.status === "loading" && <Typography color="text.secondary">Loading recipe…</Typography>}
+
+      {details.status === "failed" && (
+        <Paper variant="outlined" sx={{ p: 3 }}>
+          <Typography variant="h6" gutterBottom>Couldn't load this recipe</Typography>
+          <Typography color="text.secondary" sx={{ mb: 2 }}>
+            Check the internet connection, then try again.
+          </Typography>
+          <Button variant="contained" color="secondary" onClick={retry} sx={{ minHeight: 48 }}>
+            Try again
+          </Button>
+        </Paper>
+      )}
 
       {details.status === "missing" && (
         <Paper variant="outlined" sx={{ p: 3 }}>
