@@ -22,7 +22,7 @@ export const App = () => {
   const changeView = (next: View) => navigate({ view: next, browsing: false, recipeId: null });
 
   // Shown over the current view, which stays as it was underneath
-  const recipePage = recipeId && <RecipePage recipeId={recipeId} />;
+  const recipePage = recipeId && <RecipePage recipeId={recipeId} kitchen={view === "display"} />;
 
   if (view === "display") {
     return (
@@ -32,7 +32,6 @@ export const App = () => {
           browsing={route.browsing}
           onBrowse={browsing => navigate({ ...route, browsing })}
           covered={recipeId != null}
-          onExit={() => changeView("recipes")}
         />
         {recipePage}
       </ThemeProvider>

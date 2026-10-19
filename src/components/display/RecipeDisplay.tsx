@@ -108,11 +108,11 @@ interface RecipeDisplayProps {
   onBrowse: (browsing: boolean) => void;
   // A recipe is open on top, so the slideshow waits and leaves the keys alone
   covered: boolean;
-  onExit: () => void;
 }
 
-// A full-screen slideshow of recipes for a kitchen screen, shown at #display
-export const RecipeDisplay = ({ browsing, onBrowse, covered, onExit }: RecipeDisplayProps) => {
+// A full-screen slideshow of recipes for a kitchen screen, shown at #display. There's no way
+// out to the rest of the site, so a stray tap can't leave the kitchen screen on the recipe list.
+export const RecipeDisplay = ({ browsing, onBrowse, covered }: RecipeDisplayProps) => {
   const dispatch = useAppDispatch();
   const { recipes, isLoaded } = useAppSelector(selectRecipes);
   const intervalMs = useMemo(intervalFromUrl, []);
@@ -203,11 +203,10 @@ export const RecipeDisplay = ({ browsing, onBrowse, covered, onExit }: RecipeDis
       if (e.key === "ArrowRight") go(1);
       else if (e.key === "ArrowLeft") go(-1);
       else if (e.key === " ") setPaused(p => !p);
-      else if (e.key === "Escape") onExit();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [go, onExit, browsing, covered, closeBrowser]);
+  }, [go, browsing, covered, closeBrowser]);
 
   const recipe = order[index];
 
@@ -293,7 +292,6 @@ export const RecipeDisplay = ({ browsing, onBrowse, covered, onExit }: RecipeDis
           <Button variant="contained" color="secondary" onClick={() => go(1)}>Next ›</Button>
           {recipe && <Button variant="contained" onClick={() => openRecipe(recipe.id)}>Open recipe</Button>}
           <Button variant="contained" onClick={openBrowser}>All recipes</Button>
-          <Button variant="contained" color="inherit" onClick={onExit}>Exit</Button>
         </Stack>
       </Box>
       {browsing && <RecipeBrowser onClose={closeBrowser} covered={covered} />}

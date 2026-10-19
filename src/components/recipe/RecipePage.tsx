@@ -51,6 +51,8 @@ const hostname = (href: string) => {
 
 // A landscape screen too short to show the photo and still reach the recipe, like a 7" kitchen panel
 const SHORT_LANDSCAPE = "@media (orientation: landscape) and (max-height: 560px)";
+// On the kitchen display every landscape screen gets the compact layout, as someone's cooking from it
+const KITCHEN_LANDSCAPE = "@media (orientation: landscape)";
 
 const sectionHeading = (text: string) => (
   <Typography variant="h5" component="h2" color="primary" sx={{ fontFamily: headerFont, mb: 1.5 }}>
@@ -158,7 +160,8 @@ const Method = ({ groups }: { groups: RecipeDetails["method"] }) => {
   );
 };
 
-const RecipeBody = ({ recipe }: { recipe: Recipe }) => {
+const RecipeBody = ({ recipe, kitchen }: { recipe: Recipe; kitchen: boolean }) => {
+  const compact = kitchen ? KITCHEN_LANDSCAPE : SHORT_LANDSCAPE;
   const details = useRecipeDetails(recipe.id);
   const [imageFailed, setImageFailed] = useState(false);
   const site = details.status === "loaded" ? details.details.source : hostname(recipe.href);
@@ -167,14 +170,14 @@ const RecipeBody = ({ recipe }: { recipe: Recipe }) => {
     : site;
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 }, [SHORT_LANDSCAPE]: { py: 2 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 }, [compact]: { py: 2 } }}>
       <Box sx={{
         display: "grid",
         gap: { xs: 2, sm: 3, md: 4 },
         gridTemplateColumns: { xs: "1fr", sm: "3fr 2fr" },
         alignItems: "center",
         // A small photo beside the name, so the ingredients start on the first screen
-        [SHORT_LANDSCAPE]: { gridTemplateColumns: "1fr 3fr", gap: 3 },
+        [compact]: { gridTemplateColumns: "1fr 3fr", gap: 3 },
       }}>
         {recipe.image && !imageFailed && (
           <Box
@@ -192,7 +195,7 @@ const RecipeBody = ({ recipe }: { recipe: Recipe }) => {
             variant="h3"
             component="h1"
             color="primary"
-            sx={{ fontFamily: headerFont, lineHeight: 1.1, [SHORT_LANDSCAPE]: { fontSize: "2.25rem" } }}
+            sx={{ fontFamily: headerFont, lineHeight: 1.1, [compact]: { fontSize: "2.25rem" } }}
           >
             {recipe.name}
           </Typography>
@@ -205,7 +208,7 @@ const RecipeBody = ({ recipe }: { recipe: Recipe }) => {
         </Stack>
       </Box>
 
-      <Divider sx={{ my: { xs: 3, md: 4 }, [SHORT_LANDSCAPE]: { my: 2 } }} />
+      <Divider sx={{ my: { xs: 3, md: 4 }, [compact]: { my: 2 } }} />
 
       {details.status === "loading" && <Typography color="text.secondary">Loading recipe…</Typography>}
 
@@ -215,9 +218,11 @@ const RecipeBody = ({ recipe }: { recipe: Recipe }) => {
           <Typography color="text.secondary" sx={{ mb: 2 }}>
             Its ingredients and method couldn't be saved from the original page.
           </Typography>
-          <Button variant="contained" href={recipe.href} target="_blank" rel="noopener">
-            Open on {site} ↗
-          </Button>
+          {!kitchen && (
+            <Button variant="contained" href={recipe.href} target="_blank" rel="noopener">
+              Open on {site} ↗
+            </Button>
+          )}
         </Paper>
       )}
 
@@ -242,8 +247,14 @@ const RecipeBody = ({ recipe }: { recipe: Recipe }) => {
   );
 };
 
+interface RecipePageProps {
+  recipeId: string;
+  // Opened from the kitchen display, which has no browser controls to get back from another site
+  kitchen?: boolean;
+}
+
 // A recipe's ingredients and method on the site, opened over whichever page it was opened from
-export const RecipePage = ({ recipeId }: { recipeId: string }) => {
+export const RecipePage = ({ recipeId, kitchen = false }: RecipePageProps) => {
   const dispatch = useAppDispatch();
   const { recipes, isLoaded } = useAppSelector(selectRecipes);
   const recipe = recipes.find(r => r.id === recipeId);
@@ -271,9 +282,9 @@ export const RecipePage = ({ recipeId }: { recipeId: string }) => {
         <Container maxWidth="lg">
           <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={2} sx={{ py: 1.5 }}>
             <Button variant="contained" color="secondary" onClick={closeRecipe} sx={{ minHeight: 48, fontSize: "1.05rem", flexShrink: 0 }}>
-              ‹ Home
+              {kitchen ? "‹ Back" : "‹ Home"}
             </Button>
-            {recipe && (
+            {recipe && !kitchen && (
               <Button
                 variant="outlined"
                 href={recipe.href}
@@ -290,7 +301,7 @@ export const RecipePage = ({ recipeId }: { recipeId: string }) => {
         </Container>
       </Box>
       {recipe
-        ? <RecipeBody recipe={recipe} key={recipe.id} />
+        ? <RecipeBody recipe={recipe} kitchen={kitchen} key={recipe.id} />
         : (
           <Container maxWidth="lg" sx={{ py: 4 }}>
             <Typography variant="h6" color="text.secondary">
