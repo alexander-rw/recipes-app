@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { Tab, Tabs } from "@mui/material";
 
-import { theme } from "../../styles/mui/theme";
+import { displayTheme, theme } from "../../styles/mui/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { RecipeFilters } from "../filters/RecipeFilters";
 import { WorldView } from "../world/WorldView";
@@ -26,7 +26,7 @@ export const App = () => {
 
   if (view === "display") {
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={displayTheme}>
         <CssBaseline />
         <RecipeDisplay
           browsing={route.browsing}

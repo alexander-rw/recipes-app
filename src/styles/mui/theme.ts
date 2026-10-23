@@ -72,3 +72,22 @@ const themeOptions: ThemeOptions = {
 
 // Scale headings down on smaller screens
 export const theme = responsiveFontSizes(createTheme(themeOptions));
+
+// The kitchen screen darkens reds and washes pale tints out to white, so the display gets a
+// brighter red and a stronger blush. ?red=, ?page= and ?paper= (hex, no #) try other values.
+const displayColour = (param: string, fallback: string) => {
+  const value = new URLSearchParams(window.location.search).get(param);
+  return value && /^[0-9a-f]{6}$/i.test(value) ? `#${value}` : fallback;
+};
+
+export const displayTheme = responsiveFontSizes(createTheme({
+  ...themeOptions,
+  palette: {
+    ...themeOptions.palette,
+    primary: { main: displayColour("red", '#d81b16'), contrastText: '#ffffff' },
+    background: {
+      default: displayColour("page", '#ead0cb'),
+      paper: displayColour("paper", '#f2dfdb'),
+    },
+  },
+}));

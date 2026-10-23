@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { shuffle } from "lodash";
-import { Box, Button, Chip, LinearProgress, Stack, Typography } from "@mui/material";
+import { alpha, Box, Button, Chip, LinearProgress, Stack, Typography } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { loadRecipesAsync, selectRecipes } from "../../features/recipes/recipeSlice";
 import { headerFont } from "../../styles/mui/theme";
@@ -250,7 +250,7 @@ export const RecipeDisplay = ({ browsing, onBrowse, covered }: RecipeDisplayProp
             px: 2,
             py: 0.5,
             borderRadius: 2,
-            bgcolor: "rgba(248, 244, 244, 0.85)",
+            bgcolor: theme => alpha(theme.palette.background.paper, 0.85),
             fontWeight: "fontWeightMedium",
             // Readable from across the kitchen, growing with the screen
             fontSize: "clamp(2.25rem, 8vmin, 5rem)",
