@@ -444,8 +444,9 @@
     {
       "name": "Stuffed Portobello Mushrooms",
       "href": "https://www.themediterraneandish.com/stuffed-portobello-mushrooms/",
-      "timeTakenToCook": 15,
+      "timeTakenToCook": 40,
       "mealType": "Main",
+      "image": "https://www.themediterraneandish.com/wp-content/uploads/2025/02/TMD-Stuffed-Portobello-Mushroom-Leads-03.jpg",
       "diet": "vegetarian",
       "id": "stuffed-portobello-mushrooms"
     },
