@@ -118,13 +118,13 @@
       "id": "cacio-e-pepe-gnocchi"
     },
     {
-      "name": "Fajitas",
-      "href": "https://www.bbcgoodfood.com/recipes/veggie-fajitas",
-      "timeTakenToCook": 15,
+      "name": "Shrimp Fajitas",
+      "href": "https://downshiftology.com/recipes/shrimp-fajitas/",
+      "timeTakenToCook": 25,
       "mealType": "Main",
-      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/veggie-fajitas-d49e108.jpg?resize=440%2C230",
-      "diet": "vegetarian",
-      "id": "fajitas"
+      "image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2021/01/Shrimp-Fajitas-main.jpg",
+      "diet": "meat",
+      "id": "shrimp-fajitas"
     },
     {
       "name": "Yaki Udon",
@@ -424,15 +424,6 @@
       "id": "quiche"
     },
     {
-      "name": "Paneer Pulao",
-      "href": "https://www.deliciousmagazine.co.uk/recipes/spinach-and-paneer-pulao/",
-      "timeTakenToCook": 35,
-      "mealType": "Main",
-      "image": "https://www.deliciousmagazine.co.uk/wp-content/uploads/2022/04/96_TOBY_SCOTT_QUICK-SPINACH-TURMERIC-AND-PANEER-PILAF-TEXT-PAGE-1-1.jpg",
-      "diet": "vegetarian",
-      "id": "paneer-pulao"
-    },
-    {
       "name": "Pasta alla Vodka",
       "href": "https://www.bbcgoodfood.com/recipes/pasta-alla-vodka",
       "timeTakenToCook": 30,
@@ -442,49 +433,30 @@
       "id": "pasta-alla-vodka"
     },
     {
-      "name": "Korean Barbecue Tofu",
-      "href": "https://www.deliciousmagazine.co.uk/recipes/korean-style-clay-pot-barbecue-tofu/",
-      "timeTakenToCook": 35,
-      "mealType": "Main",
-      "image": "https://www.deliciousmagazine.co.uk/wp-content/uploads/2020/04/koren-style-pot.jpg",
-      "diet": "vegan",
-      "id": "korean-barbecue-tofu"
-    },
-    {
-      "name": "Egg, Spinach, & Potato Curry",
-      "href": "https://www.deliciousmagazine.co.uk/recipes/aromatic-egg-spinach-and-potato-curry/",
-      "timeTakenToCook": 20,
-      "mealType": "Main",
-      "image": "https://www.deliciousmagazine.co.uk/wp-content/uploads/2019/06/egg-curry.jpg",
-      "diet": "vegetarian",
-      "id": "egg-spinach-and-potato-curry"
-    },
-    {
       "name": "Miso-glazed Aubergine",
-      "href": "https://www.deliciousmagazine.co.uk/recipes/miso-glazed-aubergines/",
-      "timeTakenToCook": 25,
+      "href": "https://healthylivingjames.co.uk/the-best-aubergine-miso-nasu-dengaku/",
+      "timeTakenToCook": 45,
       "mealType": "Main",
-      "image": "https://www.deliciousmagazine.co.uk/wp-content/uploads/2018/07/798019-1-eng-GB_miso-glazed-aubergines.jpg",
-      "diet": "vegetarian",
+      "image": "https://healthylivingjames.co.uk/wp-content/uploads/2023/02/Aubergine-Miso.jpg",
+      "diet": "vegan",
       "id": "miso-glazed-aubergine"
     },
     {
-      "name": "Portobello Burgers",
-      "href": "https://www.deliciousmagazine.co.uk/recipes/portobello-mushroom-burgers/",
+      "name": "Stuffed Portobello Mushrooms",
+      "href": "https://www.themediterraneandish.com/stuffed-portobello-mushrooms/",
       "timeTakenToCook": 15,
       "mealType": "Main",
-      "image": "https://www.deliciousmagazine.co.uk/wp-content/uploads/2018/08/485771-1-eng-GB_portobello-mushroom-burgers.jpg",
       "diet": "vegetarian",
-      "id": "portobello-burgers"
+      "id": "stuffed-portobello-mushrooms"
     },
     {
-      "name": "Khichdi",
-      "href": "https://www.deliciousmagazine.co.uk/recipes/bengali-khichdi/",
-      "timeTakenToCook": 90,
+      "name": "Dal Khichdi",
+      "href": "https://www.indianhealthyrecipes.com/dal-khichdi-recipe/",
+      "timeTakenToCook": 35,
       "mealType": "Main",
-      "image": "https://www.deliciousmagazine.co.uk/wp-content/uploads/2020/08/960x1200-08.12.19_ChetnaVeg_D8_Bengali_037.jpg",
+      "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/06/khichdi-recipe.jpg",
       "diet": "vegetarian",
-      "id": "khichdi"
+      "id": "dal-khichdi"
     },
     {
       "name": "Parsnip & Spinach Soup",
