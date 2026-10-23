@@ -27,10 +27,12 @@
     },
     {
       "country": "GE",
-      "status": "planned",
+      "status": "eaten",
+      "dish": "Khinkali",
       "where": "restaurant",
       "place": "Kartuli",
-      "mapsUrl": "https://www.google.com/maps?cid=17727867503298350939"
+      "mapsUrl": "https://www.google.com/maps?cid=17727867503298350939",
+      "date": "2026-10-22"
     },
     {
       "country": "IN",
