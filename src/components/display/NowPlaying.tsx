@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { alpha, Box, IconButton, Stack, SvgIcon, Typography } from "@mui/material";
 
-// The kitchen Pi runs go-librespot as a Spotify Connect speaker, with its API on this port.
+// The kitchen Pi runs Spotify Soloist as a Connect speaker, with its WebSocket API on this port.
 // Only the kitchen screen asks for it (?spotify in its URL), so other browsers never try.
-const PLAYER_URL = "http://localhost:3678";
-const POLL_MS = 2000;
+const PLAYER_URL = "ws://127.0.0.1:3679";
+const RECONNECT_MS = 5000;
 // A song left paused this long stops being shown
 const HIDE_PAUSED_AFTER_MS = 15 * 60 * 1000;
 
@@ -18,65 +18,123 @@ const ICONS = {
 
 const Icon = ({ name }: { name: keyof typeof ICONS }) => <SvgIcon><path d={ICONS[name]} /></SvgIcon>;
 
-interface PlayerStatus {
-  paused: boolean;
-  stopped: boolean;
-  track?: {
-    name: string;
-    artist_names: string[];
-    album_cover_url?: string;
-  } | null;
+// The parts of Soloist's entity (track, artist, album) that the card uses
+interface Entity {
+  decorations?: {
+    identity?: { name?: string };
+    visual_identity?: { cover?: { url: string; size: string }[] };
+    creators?: { entity: Entity }[];
+  };
 }
+
+type PlaybackStatus = "idle" | "playing" | "paused" | "buffering";
+
+interface Track {
+  name: string;
+  artists: string[];
+  coverUrl?: string;
+}
+
+interface PlayerStatus {
+  status: PlaybackStatus;
+  track: Track | null;
+}
+
+const toTrack = (item?: Entity | null): Track | null => {
+  const name = item?.decorations?.identity?.name;
+  if (!name) {
+    return null;
+  }
+  const covers = item.decorations?.visual_identity?.cover ?? [];
+  return {
+    name,
+    artists: (item.decorations?.creators ?? [])
+      .map(creator => creator.entity.decorations?.identity?.name)
+      .filter((artist): artist is string => !!artist),
+    coverUrl: (covers.find(cover => cover.size === "large") ?? covers[0])?.url,
+  };
+};
 
 export const spotifyEnabled = () => new URLSearchParams(window.location.search).has("spotify");
 
 const usePlayerStatus = () => {
-  const [status, setStatus] = useState<PlayerStatus | null>(null);
-
-  const refresh = useCallback(async () => {
-    try {
-      const response = await fetch(`${PLAYER_URL}/status`);
-      // 204 means nobody is connected to the speaker
-      setStatus(response.status === 200 ? await response.json() : null);
-    } catch {
-      setStatus(null);
-    }
-  }, []);
+  const [player, setPlayer] = useState<PlayerStatus | null>(null);
+  const socket = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    refresh();
-    const timer = window.setInterval(refresh, POLL_MS);
-    return () => window.clearInterval(timer);
-  }, [refresh]);
+    let closed = false;
+    let retry: number | undefined;
 
-  const command = useCallback(async (action: "playpause" | "next" | "prev") => {
+    const connect = () => {
+      const ws = new WebSocket(PLAYER_URL);
+      socket.current = ws;
+      ws.onmessage = event => {
+        const message = JSON.parse(event.data);
+        switch (message.type) {
+          case "auth_state":
+            // Nobody has picked the speaker in the Spotify app yet
+            if (!message.logged_in) {
+              setPlayer(null);
+            }
+            break;
+          case "playback_state":
+            setPlayer({ status: message.status, track: toTrack(message.item) });
+            break;
+          case "track_changed":
+            setPlayer(p => ({ status: p?.status ?? "playing", track: toTrack(message.item) }));
+            break;
+          case "playback_changed":
+            setPlayer(p => p && { ...p, status: message.status });
+            break;
+        }
+      };
+      // Soloist restarts now and then (and isn't up yet at boot), so keep trying
+      ws.onclose = () => {
+        setPlayer(null);
+        if (!closed) {
+          retry = window.setTimeout(connect, RECONNECT_MS);
+        }
+      };
+    };
+
+    connect();
+    return () => {
+      closed = true;
+      window.clearTimeout(retry);
+      socket.current?.close();
+    };
+  }, []);
+
+  const command = useCallback((action: "playpause" | "next" | "prev") => {
+    const name = action === "next" ? "skip_next"
+      : action === "prev" ? "skip_prev"
+      : player?.status === "paused" ? "play" : "pause";
     if (action === "playpause") {
-      setStatus(s => s && { ...s, paused: !s.paused });
+      setPlayer(p => p && { ...p, status: name === "play" ? "playing" : "paused" });
     }
-    try {
-      await fetch(`${PLAYER_URL}/player/${action}`, { method: "POST" });
-    } finally {
-      refresh();
+    if (socket.current?.readyState === WebSocket.OPEN) {
+      socket.current.send(JSON.stringify({ type: "command", command: name }));
     }
-  }, [refresh]);
+  }, [player?.status]);
 
-  return { status, command };
+  return { player, command };
 };
 
 // What's playing on the kitchen speaker, in the corner of the slideshow
 export const NowPlaying = () => {
-  const { status, command } = usePlayerStatus();
+  const { player, command } = usePlayerStatus();
   const pausedSince = useRef<number | null>(null);
 
-  const track = status && !status.stopped ? status.track : null;
-  if (!status?.paused) {
+  const track = player && player.status !== "idle" ? player.track : null;
+  const paused = player?.status === "paused";
+  if (!paused) {
     pausedSince.current = null;
   } else if (pausedSince.current === null) {
     pausedSince.current = Date.now();
   }
   const pausedTooLong = pausedSince.current !== null && Date.now() - pausedSince.current > HIDE_PAUSED_AFTER_MS;
 
-  if (!status || !track || pausedTooLong) {
+  if (!track || pausedTooLong) {
     return null;
   }
 
@@ -105,10 +163,10 @@ export const NowPlaying = () => {
         "@keyframes nowPlayingIn": { from: { opacity: 0 }, to: { opacity: 1 } },
       }}
     >
-      {track.album_cover_url && (
+      {track.coverUrl && (
         <Box
           component="img"
-          src={track.album_cover_url}
+          src={track.coverUrl}
           alt=""
           sx={{ width: 72, height: 72, borderRadius: 1, flexShrink: 0, display: "block" }}
         />
@@ -118,15 +176,15 @@ export const NowPlaying = () => {
           {track.name}
         </Typography>
         <Typography noWrap color="text.secondary" sx={{ fontSize: "1.05rem" }}>
-          {track.artist_names.join(", ")}
+          {track.artists.join(", ")}
         </Typography>
       </Box>
       <Stack direction="row" sx={{ flexShrink: 0 }}>
         <IconButton aria-label="Previous song" onClick={() => command("prev")} sx={buttonSx}>
           <Icon name="prev" />
         </IconButton>
-        <IconButton aria-label={status.paused ? "Play" : "Pause"} onClick={() => command("playpause")} sx={buttonSx}>
-          <Icon name={status.paused ? "play" : "pause"} />
+        <IconButton aria-label={paused ? "Play" : "Pause"} onClick={() => command("playpause")} sx={buttonSx}>
+          <Icon name={paused ? "play" : "pause"} />
         </IconButton>
         <IconButton aria-label="Next song" onClick={() => command("next")} sx={buttonSx}>
           <Icon name="next" />
