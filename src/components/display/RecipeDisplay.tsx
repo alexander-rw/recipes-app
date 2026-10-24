@@ -14,6 +14,8 @@ const DEFAULT_INTERVAL_SECONDS = 30;
 // The on-screen controls fade out after this long without a touch
 const CONTROLS_TIMEOUT_MS = 5000;
 const SWIPE_THRESHOLD_PX = 50;
+// How often to try loading the recipes again when there is no connection
+const LOAD_RETRY_MS = 10 * 1000;
 
 // Recipes with meat or fish get no label
 const DIET_LABELS: Partial<Record<Diet, { label: string; color: "leaf" | "mustard" }>> = {
@@ -134,9 +136,15 @@ export const RecipeDisplay = ({ browsing, onBrowse, covered }: RecipeDisplayProp
   const hideTimer = useRef<number>();
   const touchStartX = useRef<number | null>(null);
 
+  // The screen can come up before the Wi-Fi does, so keep trying until the recipes arrive
   useEffect(() => {
+    if (isLoaded) {
+      return;
+    }
     dispatch(loadRecipesAsync());
-  }, [dispatch]);
+    const retry = window.setInterval(() => dispatch(loadRecipesAsync()), LOAD_RETRY_MS);
+    return () => window.clearInterval(retry);
+  }, [dispatch, isLoaded]);
 
   const go = useCallback((step: number) => {
     setIndex(i => order.length === 0 ? 0 : (i + step + order.length) % order.length);
