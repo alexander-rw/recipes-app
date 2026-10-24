@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { alpha, Box, IconButton, Stack, SvgIcon, Typography } from "@mui/material";
+import { alpha, Box, IconButton, Slider, Stack, SvgIcon, Typography } from "@mui/material";
 
 // The kitchen Pi runs Spotify Soloist as a Connect speaker, with its WebSocket API on this port.
 // Only the kitchen screen asks for it (?spotify in its URL), so other browsers never try.
@@ -8,12 +8,17 @@ const RECONNECT_MS = 5000;
 // A song left paused this long stops being shown
 const HIDE_PAUSED_AFTER_MS = 15 * 60 * 1000;
 
-// Material icon paths, to save pulling in the whole icon package for four of them
+// How far the volume buttons either side of the slider move it
+const VOLUME_STEP = 10;
+
+// Material icon paths, to save pulling in the whole icon package for a handful of them
 const ICONS = {
   play: "M8 5v14l11-7z",
   pause: "M6 19h4V5H6v14zm8-14v14h4V5h-4z",
   next: "M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z",
   prev: "M6 6h2v12H6zm3.5 6l8.5 6V6z",
+  volumeDown: "M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z",
+  volumeUp: "M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z",
 };
 
 const Icon = ({ name }: { name: keyof typeof ICONS }) => <SvgIcon><path d={ICONS[name]} /></SvgIcon>;
@@ -38,6 +43,8 @@ interface Track {
 interface PlayerStatus {
   status: PlaybackStatus;
   track: Track | null;
+  // 0-100
+  volume: number;
 }
 
 const toTrack = (item?: Entity | null): Track | null => {
@@ -78,13 +85,17 @@ const usePlayerStatus = () => {
             }
             break;
           case "playback_state":
-            setPlayer({ status: message.status, track: toTrack(message.item) });
+            setPlayer({ status: message.status, track: toTrack(message.item), volume: message.volume ?? 100 });
             break;
           case "track_changed":
-            setPlayer(p => ({ status: p?.status ?? "playing", track: toTrack(message.item) }));
+            setPlayer(p => ({ status: p?.status ?? "playing", track: toTrack(message.item), volume: p?.volume ?? 100 }));
             break;
           case "playback_changed":
             setPlayer(p => p && { ...p, status: message.status });
+            break;
+          // Also sent when the volume is changed from the Spotify app
+          case "volume_changed":
+            setPlayer(p => p && { ...p, volume: message.volume });
             break;
         }
       };
@@ -105,6 +116,12 @@ const usePlayerStatus = () => {
     };
   }, []);
 
+  const send = (message: object) => {
+    if (socket.current?.readyState === WebSocket.OPEN) {
+      socket.current.send(JSON.stringify({ type: "command", ...message }));
+    }
+  };
+
   const command = useCallback((action: "playpause" | "next" | "prev") => {
     const name = action === "next" ? "skip_next"
       : action === "prev" ? "skip_prev"
@@ -112,21 +129,26 @@ const usePlayerStatus = () => {
     if (action === "playpause") {
       setPlayer(p => p && { ...p, status: name === "play" ? "playing" : "paused" });
     }
-    if (socket.current?.readyState === WebSocket.OPEN) {
-      socket.current.send(JSON.stringify({ type: "command", command: name }));
-    }
+    send({ command: name });
   }, [player?.status]);
 
-  return { player, command };
+  const setVolume = useCallback((volume: number) => {
+    const clamped = Math.max(0, Math.min(100, Math.round(volume)));
+    setPlayer(p => p && { ...p, volume: clamped });
+    send({ command: "set_volume", volume: clamped });
+  }, []);
+
+  return { player, command, setVolume };
 };
 
 // What's playing on the kitchen speaker, in the corner of the slideshow
 export const NowPlaying = () => {
-  const { player, command } = usePlayerStatus();
+  const { player, command, setVolume } = usePlayerStatus();
   const pausedSince = useRef<number | null>(null);
 
   const track = player && player.status !== "idle" ? player.track : null;
   const paused = player?.status === "paused";
+  const volume = player?.volume ?? 100;
   if (!paused) {
     pausedSince.current = null;
   } else if (pausedSince.current === null) {
@@ -139,12 +161,13 @@ export const NowPlaying = () => {
   }
 
   const buttonSx = { width: 56, height: 56, color: "text.primary", "& svg": { fontSize: 36 } };
+  const volumeButtonSx = { width: 48, height: 48, color: "text.secondary", "& svg": { fontSize: 28 } };
 
   return (
     <Stack
       direction="row"
       alignItems="center"
-      spacing={1.5}
+      spacing={2}
       // Taps here are for the music, not the slideshow's controls or swipes
       onPointerDown={e => e.stopPropagation()}
       onTouchStart={e => e.stopPropagation()}
@@ -153,7 +176,7 @@ export const NowPlaying = () => {
         position: "absolute",
         top: 16,
         left: 20,
-        maxWidth: "min(560px, 55vw)",
+        width: "min(560px, 55vw)",
         p: 1,
         pr: 1.5,
         borderRadius: 2,
@@ -164,32 +187,80 @@ export const NowPlaying = () => {
       }}
     >
       {track.coverUrl && (
+        // The cover spins like a CD while the song plays, and stops where it is when paused
         <Box
-          component="img"
-          src={track.coverUrl}
-          alt=""
-          sx={{ width: 72, height: 72, borderRadius: 1, flexShrink: 0, display: "block" }}
-        />
+          sx={{
+            position: "relative",
+            width: 112,
+            height: 112,
+            flexShrink: 0,
+            borderRadius: "50%",
+            overflow: "hidden",
+            boxShadow: 2,
+            animation: "nowPlayingSpin 8s linear infinite",
+            animationPlayState: player?.status === "playing" ? "running" : "paused",
+            "@keyframes nowPlayingSpin": { from: { transform: "rotate(0deg)" }, to: { transform: "rotate(360deg)" } },
+            // The hole in the middle of the disc
+            "&::after": {
+              content: '""',
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              width: 18,
+              height: 18,
+              transform: "translate(-50%, -50%)",
+              borderRadius: "50%",
+              bgcolor: "background.paper",
+              boxShadow: "inset 0 0 0 3px rgba(0, 0, 0, 0.15)",
+            },
+          }}
+        >
+          <Box component="img" src={track.coverUrl} alt="" sx={{ width: "100%", height: "100%", display: "block" }} />
+        </Box>
       )}
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: "fontWeightBold", fontSize: "1.25rem", lineHeight: 1.3 }}>
-          {track.name}
-        </Typography>
-        <Typography noWrap color="text.secondary" sx={{ fontSize: "1.05rem" }}>
-          {track.artists.join(", ")}
-        </Typography>
+        <Stack direction="row" alignItems="center" spacing={1}>
+          <Box sx={{ minWidth: 0, flex: 1 }}>
+            <Typography noWrap sx={{ fontWeight: "fontWeightBold", fontSize: "1.25rem", lineHeight: 1.3 }}>
+              {track.name}
+            </Typography>
+            <Typography noWrap color="text.secondary" sx={{ fontSize: "1.05rem" }}>
+              {track.artists.join(", ")}
+            </Typography>
+          </Box>
+          <Stack direction="row" sx={{ flexShrink: 0 }}>
+            <IconButton aria-label="Previous song" onClick={() => command("prev")} sx={buttonSx}>
+              <Icon name="prev" />
+            </IconButton>
+            <IconButton aria-label={paused ? "Play" : "Pause"} onClick={() => command("playpause")} sx={buttonSx}>
+              <Icon name={paused ? "play" : "pause"} />
+            </IconButton>
+            <IconButton aria-label="Next song" onClick={() => command("next")} sx={buttonSx}>
+              <Icon name="next" />
+            </IconButton>
+          </Stack>
+        </Stack>
+        <Stack direction="row" alignItems="center" spacing={1}>
+          <IconButton aria-label="Quieter" onClick={() => setVolume(volume - VOLUME_STEP)} sx={volumeButtonSx}>
+            <Icon name="volumeDown" />
+          </IconButton>
+          <Slider
+            aria-label="Volume"
+            color="secondary"
+            value={volume}
+            onChange={(_, value) => setVolume(value as number)}
+            sx={{
+              mx: 1,
+              // A bigger thumb and track for fingers
+              height: 8,
+              "& .MuiSlider-thumb": { width: 28, height: 28 },
+            }}
+          />
+          <IconButton aria-label="Louder" onClick={() => setVolume(volume + VOLUME_STEP)} sx={volumeButtonSx}>
+            <Icon name="volumeUp" />
+          </IconButton>
+        </Stack>
       </Box>
-      <Stack direction="row" sx={{ flexShrink: 0 }}>
-        <IconButton aria-label="Previous song" onClick={() => command("prev")} sx={buttonSx}>
-          <Icon name="prev" />
-        </IconButton>
-        <IconButton aria-label={paused ? "Play" : "Pause"} onClick={() => command("playpause")} sx={buttonSx}>
-          <Icon name={paused ? "play" : "pause"} />
-        </IconButton>
-        <IconButton aria-label="Next song" onClick={() => command("next")} sx={buttonSx}>
-          <Icon name="next" />
-        </IconButton>
-      </Stack>
     </Stack>
   );
 };

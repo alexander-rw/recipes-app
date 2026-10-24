@@ -280,7 +280,8 @@ export const RecipeDisplay = ({ browsing, onBrowse, covered }: RecipeDisplayProp
             position: "absolute",
             left: 0,
             right: 0,
-            bottom: 24,
+            // Clear of the speaker's clip along the bottom edge of the screen
+            bottom: 56,
             px: 2,
             flexWrap: "wrap",
             opacity: showControls ? 1 : 0,
