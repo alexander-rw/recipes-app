@@ -11,6 +11,7 @@ import { RecipeFilters } from "../filters/RecipeFilters";
 import { WorldView } from "../world/WorldView";
 import { RecipeDisplay } from "../display/RecipeDisplay";
 import { RecipePage } from "../recipe/RecipePage";
+import { NowPlaying, spotifyEnabled } from "../display/NowPlaying";
 import { navigate, useRoute, View } from "../../app/route";
 
 import "../../styles/index.css";
@@ -24,6 +25,10 @@ export const App = () => {
   // Shown over the current view, which stays as it was underneath
   const recipePage = recipeId && <RecipePage recipeId={recipeId} kitchen={view === "display"} />;
 
+  // One player for every page, so it keeps its connection to the speaker while moving between them
+  const onSlideshow = view === "display" && !route.browsing && recipeId == null;
+  const nowPlaying = spotifyEnabled() && <NowPlaying floating={!onSlideshow} />;
+
   if (view === "display") {
     return (
       <ThemeProvider theme={displayTheme}>
@@ -34,6 +39,7 @@ export const App = () => {
           covered={recipeId != null}
         />
         {recipePage}
+        {nowPlaying}
       </ThemeProvider>
     );
   }
@@ -68,6 +74,7 @@ export const App = () => {
           </Grid>
         </Container>
         {recipePage}
+        {nowPlaying}
       </ThemeProvider>
     </>
   );

@@ -141,8 +141,9 @@ const usePlayerStatus = () => {
   return { player, command, setVolume };
 };
 
-// What's playing on the kitchen speaker, in the corner of the slideshow
-export const NowPlaying = () => {
+// What's playing on the kitchen speaker, on every page: in the slideshow's top corner, and
+// floating bottom right over the other pages so it stays clear of their headers
+export const NowPlaying = ({ floating = false }: { floating?: boolean }) => {
   const { player, command, setVolume } = usePlayerStatus();
   const pausedSince = useRef<number | null>(null);
 
@@ -168,14 +169,14 @@ export const NowPlaying = () => {
       direction="row"
       alignItems="center"
       spacing={2}
-      // Taps here are for the music, not the slideshow's controls or swipes
-      onPointerDown={e => e.stopPropagation()}
-      onTouchStart={e => e.stopPropagation()}
-      onTouchEnd={e => e.stopPropagation()}
       sx={{
-        position: "absolute",
-        top: 16,
-        left: 20,
+        position: "fixed",
+        ...(floating
+          // Above the speaker's clip along the bottom edge of the screen
+          ? { bottom: 72, right: 20 }
+          : { top: 16, left: 20 }),
+        // Over recipes and the recipe browser, which are dialogs
+        zIndex: 1350,
         width: "min(560px, 55vw)",
         p: 1,
         pr: 1.5,

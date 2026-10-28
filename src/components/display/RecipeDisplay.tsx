@@ -6,7 +6,6 @@ import { loadRecipesAsync, selectRecipes } from "../../features/recipes/recipeSl
 import { headerFont } from "../../styles/mui/theme";
 import { Diet, Recipe } from "../../types/Recipe";
 import { RecipeBrowser } from "./RecipeBrowser";
-import { NowPlaying, spotifyEnabled } from "./NowPlaying";
 import { openRecipe } from "../../app/route";
 
 // How long each recipe stays up, overridable with ?interval=<seconds>
@@ -119,7 +118,6 @@ export const RecipeDisplay = ({ browsing, onBrowse, covered }: RecipeDisplayProp
   const dispatch = useAppDispatch();
   const { recipes, isLoaded } = useAppSelector(selectRecipes);
   const intervalMs = useMemo(intervalFromUrl, []);
-  const spotify = useMemo(spotifyEnabled, []);
   const clock = useClock();
 
   // Recipes with a photo come first, each group in a fresh random order
@@ -270,8 +268,6 @@ export const RecipeDisplay = ({ browsing, onBrowse, covered }: RecipeDisplayProp
         >
           {clock}
         </Typography>
-
-        {spotify && <NowPlaying />}
 
         <LinearProgress
           variant="determinate"
