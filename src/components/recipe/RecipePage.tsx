@@ -16,6 +16,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { closeRecipe } from "../../app/route";
 import { loadRecipesAsync, selectRecipes } from "../../features/recipes/recipeSlice";
 import { headerFont } from "../../styles/mui/theme";
+import { floatingClearance } from "../display/NowPlaying";
 import { Recipe, RecipeDetails } from "../../types/Recipe";
 
 type DetailsState =
@@ -175,7 +176,12 @@ const RecipeBody = ({ recipe, kitchen }: { recipe: Recipe; kitchen: boolean }) =
     : site;
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 }, [compact]: { py: 2 } }}>
+    // On the kitchen screen the end of the method has to scroll clear of the now-playing card
+    <Container maxWidth="lg" sx={{
+      py: { xs: 2, md: 4 },
+      [compact]: { py: 2 },
+      ...(kitchen && { "&&": { pb: `${floatingClearance()}px` } }),
+    }}>
       <Box sx={{
         display: "grid",
         gap: { xs: 2, sm: 3, md: 4 },

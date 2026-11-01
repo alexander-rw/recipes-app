@@ -64,6 +64,14 @@ const toTrack = (item?: Entity | null): Track | null => {
 
 export const spotifyEnabled = () => new URLSearchParams(window.location.search).has("spotify");
 
+// Above the speaker's clip along the bottom edge of the screen
+const FLOATING_BOTTOM = 72;
+// The cover's height plus the card's padding
+const CARD_HEIGHT = 128;
+
+// Space to leave at the end of a page under the floating card, so its last lines can be scrolled above it
+export const floatingClearance = () => spotifyEnabled() ? FLOATING_BOTTOM + CARD_HEIGHT + 24 : 0;
+
 const usePlayerStatus = () => {
   const [player, setPlayer] = useState<PlayerStatus | null>(null);
   const socket = useRef<WebSocket | null>(null);
@@ -172,8 +180,7 @@ export const NowPlaying = ({ floating = false }: { floating?: boolean }) => {
       sx={{
         position: "fixed",
         ...(floating
-          // Above the speaker's clip along the bottom edge of the screen
-          ? { bottom: 72, right: 20 }
+          ? { bottom: FLOATING_BOTTOM, right: 20 }
           : { top: 16, left: 20 }),
         // Over recipes and the recipe browser, which are dialogs
         zIndex: 1350,

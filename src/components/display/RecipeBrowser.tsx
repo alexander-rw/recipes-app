@@ -5,6 +5,7 @@ import { selectFilters } from "../../features/recipes/recipeSlice";
 import { RecipeFilters } from "../filters/RecipeFilters";
 import { RecipeList } from "../recipes/RecipeList";
 import { headerFont } from "../../styles/mui/theme";
+import { floatingClearance } from "./NowPlaying";
 
 // Left alone this long, the screen goes back to the slideshow
 const IDLE_TIMEOUT_MS = 3 * 60 * 1000;
@@ -77,7 +78,7 @@ export const RecipeBrowser = ({ onClose, covered }: { onClose: () => void; cover
           </Stack>
         </Container>
       </Box>
-      <Container maxWidth="xl" sx={{ pb: 3 }}>
+      <Container maxWidth="xl" sx={{ pb: `${Math.max(24, floatingClearance())}px` }}>
         <Grid container spacing={3}>
           <Grid item xs={12} sx={{ pt: "0 !important" }}>
             <Collapse in={showFilters}>
