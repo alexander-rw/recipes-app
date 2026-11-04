@@ -45,6 +45,8 @@ interface PlayerStatus {
   track: Track | null;
   // 0-100
   volume: number;
+  // False once another device takes over or Spotify drops the speaker after a while unused
+  active: boolean;
 }
 
 const toTrack = (item?: Entity | null): Track | null => {
@@ -85,6 +87,10 @@ const usePlayerStatus = () => {
       socket.current = ws;
       ws.onmessage = event => {
         const message = JSON.parse(event.data);
+        // Soloist keeps reporting the last song as paused after it stops being the active device
+        if (typeof message.is_active === "boolean" && message.type !== "playback_state") {
+          setPlayer(p => p && { ...p, active: message.is_active });
+        }
         switch (message.type) {
           case "auth_state":
             // Nobody has picked the speaker in the Spotify app yet
@@ -93,10 +99,20 @@ const usePlayerStatus = () => {
             }
             break;
           case "playback_state":
-            setPlayer({ status: message.status, track: toTrack(message.item), volume: message.volume ?? 100 });
+            setPlayer({
+              status: message.status,
+              track: toTrack(message.item),
+              volume: message.volume ?? 100,
+              active: message.is_active ?? true,
+            });
             break;
           case "track_changed":
-            setPlayer(p => ({ status: p?.status ?? "playing", track: toTrack(message.item), volume: p?.volume ?? 100 }));
+            setPlayer(p => ({
+              status: p?.status ?? "playing",
+              track: toTrack(message.item),
+              volume: p?.volume ?? 100,
+              active: message.is_active ?? true,
+            }));
             break;
           case "playback_changed":
             setPlayer(p => p && { ...p, status: message.status });
@@ -154,8 +170,17 @@ const usePlayerStatus = () => {
 export const NowPlaying = ({ floating = false }: { floating?: boolean }) => {
   const { player, command, setVolume } = usePlayerStatus();
   const pausedSince = useRef<number | null>(null);
+  // Re-render once a pause has gone on long enough to hide the card, since nothing else will
+  const [, setTick] = useState(0);
+  useEffect(() => {
+    if (player?.status !== "paused") {
+      return;
+    }
+    const timer = window.setTimeout(() => setTick(t => t + 1), HIDE_PAUSED_AFTER_MS + 1000);
+    return () => window.clearTimeout(timer);
+  }, [player?.status]);
 
-  const track = player && player.status !== "idle" ? player.track : null;
+  const track = player && player.active && player.status !== "idle" ? player.track : null;
   const paused = player?.status === "paused";
   const volume = player?.volume ?? 100;
   if (!paused) {
