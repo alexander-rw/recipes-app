@@ -12,6 +12,7 @@ import { WorldView } from "../world/WorldView";
 import { RecipeDisplay } from "../display/RecipeDisplay";
 import { RecipePage } from "../recipe/RecipePage";
 import { NowPlaying, spotifyEnabled } from "../display/NowPlaying";
+import { keyboardEnabled, OnScreenKeyboard } from "../display/OnScreenKeyboard";
 import { navigate, useRoute, View } from "../../app/route";
 
 import "../../styles/index.css";
@@ -28,6 +29,7 @@ export const App = () => {
   // One player for every page, so it keeps its connection to the speaker while moving between them
   const onSlideshow = view === "display" && !route.browsing && recipeId == null;
   const nowPlaying = spotifyEnabled() && <NowPlaying floating={!onSlideshow} />;
+  const keyboard = keyboardEnabled() && <OnScreenKeyboard />;
 
   if (view === "display") {
     return (
@@ -40,6 +42,7 @@ export const App = () => {
         />
         {recipePage}
         {nowPlaying}
+        {keyboard}
       </ThemeProvider>
     );
   }
@@ -75,6 +78,7 @@ export const App = () => {
         </Container>
         {recipePage}
         {nowPlaying}
+        {keyboard}
       </ThemeProvider>
     </>
   );
