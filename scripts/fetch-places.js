@@ -69,12 +69,13 @@ const main = async () => {
     const address = location[4] || null;
     const [lat, lng] = [location[5][2], location[5][3]];
     const outcode = address?.match(/\b([A-Z]{1,2}\d[A-Z\d]?) \d[A-Z]{2}\b/)?.[1] ?? null;
-    const [type, cuisine] = tags[name] ?? [null, null];
+    const [type, cuisine, price] = tags[name] ?? [null, null, null];
     return {
       id: toUnsigned(location[6][1]),
       name,
       type,
       cuisine,
+      price,
       address,
       outcode,
       lat,

@@ -8,8 +8,9 @@ It has four parts:
   the site with its ingredients and method, so there's no need to scroll past someone's life story.
 - **Around the world**: a map of the countries we've eaten a meal from, at home or out, and the
   ones we're planning.
-- **Places to eat** (`#eat`): our Google Maps list of places to eat in London, searchable by name,
-  food or area, filtered by kind of place and part of London, and sortable by distance from you.
+- **Places to eat** (`#eat`): our Google Maps list of places to eat in London on a map, searchable
+  by name, food or area, filtered by kind of place, price and part of London, and sortable by
+  distance from you.
   It's only on the main site, not the kitchen display.
 - **Kitchen display** (`#display`): a full-screen slideshow of recipes for a touchscreen in the
   kitchen, with a browser for finding a recipe to cook from.
@@ -118,12 +119,18 @@ yarn places
 
 This saves the list to `public/places.json`. Google doesn't say what kind of place each one is, so
 that comes from `scripts/place-tags.json`, which maps each place's name on the list to
-`[type, cuisine]`. `type` is `restaurant`, `cafe`, `bakery`, `bar`, `dessert`, `market`, `shop` or
-`other`. `yarn places` lists any places that aren't in it yet; add them and run it again. A note
+`[type, cuisine, price]`. `type` is `restaurant`, `cafe`, `bakery`, `bar`, `dessert`, `market`,
+`shop` or `other`. `price` is 1 to 4 for £ to ££££, roughly what one person spends: £ under £15,
+££ £15–30, £££ £30–60, ££££ over £60. The prices are our own estimates, as Google's list doesn't
+include them either. `yarn places` lists any places that aren't in it yet; add them and run it again. A note
 added to a place on the Google Maps list shows on its card.
 
 The area names ("Peckham") come from the postcode district, using the table in
 `scripts/fetch-places.js`. `yarn places` warns about any district that isn't in the table.
+
+The map uses [OpenFreeMap](https://openfreemap.org)'s Positron style with MapLibre, which needs no
+API key. `PlacesMap.tsx` hides its road names, railways and other clutter and tints it to match the
+site.
 
 ## The kitchen display
 

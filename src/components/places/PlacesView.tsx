@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import axios from "axios";
 import Grid from "@mui/material/Grid";
 import {
@@ -6,29 +6,25 @@ import {
   Box,
   Button,
   Card,
+  CardActionArea,
   CardContent,
   MenuItem,
   Stack,
   TextField,
   ToggleButton,
   ToggleButtonGroup,
+  Tooltip,
   Typography,
 } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import { Place, PlaceType, Region } from "../../types/Place";
+import { placeEmoji, PRICE_HINTS, priceLabel, TYPE_COLORS, TYPE_LABELS, typeColor } from "./placeStyle";
+
+// The map library is big, so it only downloads when this tab is opened
+const PlacesMap = lazy(() => import("./PlacesMap"));
 
 const placesUrl = "./places.json";
 const listUrl = "https://maps.app.goo.gl/fgfBsvrhSPUmbPjD8";
-
-const TYPE_LABELS: Record<PlaceType, string> = {
-  restaurant: "Restaurant",
-  cafe: "Café",
-  bakery: "Bakery",
-  bar: "Bar",
-  dessert: "Sweet treats",
-  market: "Market",
-  shop: "Shop",
-  other: "Other",
-};
 
 // The filter buttons. Markets, shops and the odd one out share one, as there are only a few of each
 type TypeFilter = "all" | "restaurant" | "cafe" | "bakery" | "bar" | "dessert" | "more";
@@ -43,8 +39,9 @@ const TYPE_FILTERS: { value: TypeFilter; label: string; types?: PlaceType[] }[] 
 ];
 
 const REGIONS: Region[] = ["Central", "North", "East", "South", "West"];
+const PRICES = [1, 2, 3, 4];
 
-type Sort = "newest" | "name" | "nearest";
+type Sort = "newest" | "name" | "nearest" | "cheapest";
 
 // Lower case without accents, so "cafe" finds "Café"
 const normalise = (text: string) => text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -65,26 +62,79 @@ const formatDistance = (km: number) => (km < 1 ? `${Math.round(km * 1000 / 50) *
 
 const mapsLink = (place: Place) => `https://maps.google.com/?cid=${place.id}`;
 
-const PlaceCard = ({ place, distance }: { place: Place; distance?: number }) => (
-  <Card variant="outlined" sx={{ width: "100%", display: "flex", flexDirection: "column" }}>
-    <CardContent sx={{ flexGrow: 1 }}>
-      <Typography variant="h6" fontWeight="fontWeightBold" lineHeight={1.2}>{place.name}</Typography>
-      <Typography variant="body2" color="secondary" fontWeight="fontWeightMedium" sx={{ mt: 0.5 }}>
-        {[place.type && TYPE_LABELS[place.type], place.cuisine].filter(Boolean).join(" · ")}
-      </Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-        {[place.area, distance != null && `${formatDistance(distance)} away`].filter(Boolean).join(" · ")}
-      </Typography>
-      {place.address && <Typography variant="body2" color="text.secondary">{place.address}</Typography>}
-      {place.note && <Typography variant="body2" sx={{ mt: 1 }}>{place.note}</Typography>}
-    </CardContent>
-    <Box sx={{ px: 2, pb: 2 }}>
-      <Button size="small" variant="outlined" color="secondary" href={mapsLink(place)} target="_blank" rel="noopener">
-        Open in Maps
-      </Button>
-    </Box>
-  </Card>
-);
+interface CardProps {
+  place: Place;
+  distance?: number;
+  selected: boolean;
+  onSelect: () => void;
+}
+
+const PlaceCard = ({ place, distance, selected, onSelect }: CardProps) => {
+  const color = typeColor(place);
+  return (
+    <Card
+      variant="outlined"
+      id={`place-${place.id}`}
+      sx={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        scrollMarginTop: 16,
+        borderColor: selected ? color : "divider",
+        boxShadow: selected ? `0 0 0 2px ${color}` : "none",
+        transition: "box-shadow 150ms, transform 150ms",
+        "&:hover": { transform: "translateY(-2px)", boxShadow: `0 6px 16px ${alpha(color, 0.18)}` },
+      }}
+    >
+      <CardActionArea onClick={onSelect} sx={{ flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "stretch" }}>
+        {/* A band in the colour of the kind of place, with an emoji for its food */}
+        <Box
+          sx={{
+            height: 72,
+            px: 2,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            background: `linear-gradient(135deg, ${alpha(color, 0.22)}, ${alpha(color, 0.08)})`,
+            borderBottom: `3px solid ${color}`,
+          }}
+        >
+          <Typography component="span" sx={{ fontSize: "2.4rem", lineHeight: 1 }} aria-hidden>
+            {placeEmoji(place)}
+          </Typography>
+          {place.price && (
+            <Tooltip title={PRICE_HINTS[place.price]}>
+              <Typography
+                component="span"
+                sx={{ fontWeight: 600, color, bgcolor: "background.paper", borderRadius: 5, px: 1.25, py: 0.25, fontSize: "0.9rem" }}
+              >
+                {priceLabel(place.price)}
+              </Typography>
+            </Tooltip>
+          )}
+        </Box>
+        <CardContent sx={{ flexGrow: 1, width: "100%" }}>
+          <Typography variant="overline" sx={{ color, fontWeight: 600, lineHeight: 1.6, letterSpacing: "0.06em" }}>
+            {[place.type && TYPE_LABELS[place.type], place.cuisine].filter(Boolean).join(" · ")}
+          </Typography>
+          <Typography variant="h6" fontWeight="fontWeightBold" lineHeight={1.2}>{place.name}</Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+            📍 {[place.area, distance != null && `${formatDistance(distance)} away`].filter(Boolean).join(" · ")}
+          </Typography>
+          {place.address && (
+            <Typography variant="body2" color="text.secondary" sx={{ opacity: 0.8 }}>{place.address}</Typography>
+          )}
+          {place.note && <Typography variant="body2" sx={{ mt: 1 }}>{place.note}</Typography>}
+        </CardContent>
+      </CardActionArea>
+      <Box sx={{ px: 2, pb: 2 }}>
+        <Button size="small" variant="outlined" color="secondary" href={mapsLink(place)} target="_blank" rel="noopener">
+          Open in Maps
+        </Button>
+      </Box>
+    </Card>
+  );
+};
 
 export const PlacesView = () => {
   const [places, setPlaces] = useState<Place[] | null>(null);
@@ -92,9 +142,13 @@ export const PlacesView = () => {
   const [search, setSearch] = useState("");
   const [typeFilter, setTypeFilter] = useState<TypeFilter>("all");
   const [region, setRegion] = useState<Region | "">("");
+  const [prices, setPrices] = useState<number[]>([]);
   const [sort, setSort] = useState<Sort>("newest");
   const [here, setHere] = useState<{ lat: number; lng: number } | null>(null);
   const [locationError, setLocationError] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  // Only scroll the list when a pin is clicked, not when a card is
+  const scrollToCard = useRef(false);
 
   useEffect(() => {
     axios.get(placesUrl)
@@ -130,14 +184,18 @@ export const PlacesView = () => {
       .filter(({ place, text }) =>
         (!types || (place.type != null && types.includes(place.type))) &&
         (!region || place.region === region) &&
+        (prices.length === 0 || (place.price != null && prices.includes(place.price))) &&
         words.every(word => text.includes(word)))
       .map(({ place }) => ({ place, distance: here ? distanceKm(here, place) : undefined }));
 
     if (sort === "nearest" && here) return matching.sort((a, b) => a.distance! - b.distance!);
     if (sort === "name") return matching.sort((a, b) => a.place.name.localeCompare(b.place.name));
+    if (sort === "cheapest") return matching.sort((a, b) => (a.place.price ?? 5) - (b.place.price ?? 5));
     // The list comes newest first
     return matching;
-  }, [indexed, search, typeFilter, region, sort, here]);
+  }, [indexed, search, typeFilter, region, prices, sort, here]);
+
+  const resultPlaces = useMemo(() => results.map(r => r.place), [results]);
 
   // Cuisines to suggest under the search box, most common first
   const topCuisines = useMemo(() => {
@@ -146,11 +204,19 @@ export const PlacesView = () => {
     return Array.from(counts.entries()).sort((a, b) => b[1] - a[1]).slice(0, 12).map(([cuisine]) => cuisine);
   }, [places]);
 
-  const isFiltered = search !== "" || typeFilter !== "all" || region !== "";
+  // A pin was clicked: show its card
+  useEffect(() => {
+    if (!selectedId || !scrollToCard.current) return;
+    scrollToCard.current = false;
+    document.getElementById(`place-${selectedId}`)?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }, [selectedId]);
+
+  const isFiltered = search !== "" || typeFilter !== "all" || region !== "" || prices.length > 0;
   const clearFilters = () => {
     setSearch("");
     setTypeFilter("all");
     setRegion("");
+    setPrices([]);
   };
 
   if (loadFailed) {
@@ -201,24 +267,45 @@ export const PlacesView = () => {
             >
               <MenuItem value="newest">Newest on the list</MenuItem>
               <MenuItem value="name">Name</MenuItem>
+              <MenuItem value="cheapest">Cheapest first</MenuItem>
               <MenuItem value="nearest">Nearest to me</MenuItem>
             </TextField>
             {isFiltered && <Button color="secondary" onClick={clearFilters}>Clear filters</Button>}
           </Stack>
-          <ToggleButtonGroup
-            size="small"
-            color="secondary"
-            exclusive
-            value={typeFilter}
-            onChange={(_, value: TypeFilter | null) => value && setTypeFilter(value)}
-            sx={{ flexWrap: "wrap" }}
-          >
-            {TYPE_FILTERS.map(f => (
-              <ToggleButton value={f.value} key={f.value} sx={{ textTransform: "none", px: 1.5 }}>
-                {f.label}
-              </ToggleButton>
-            ))}
-          </ToggleButtonGroup>
+          <Stack direction={{ xs: "column", md: "row" }} spacing={2} alignItems={{ md: "center" }}>
+            <ToggleButtonGroup
+              size="small"
+              color="secondary"
+              exclusive
+              value={typeFilter}
+              onChange={(_, value: TypeFilter | null) => value && setTypeFilter(value)}
+              sx={{ flexWrap: "wrap" }}
+            >
+              {TYPE_FILTERS.map(f => {
+                const dot = f.types && TYPE_COLORS[f.types[0]];
+                return (
+                  <ToggleButton value={f.value} key={f.value} sx={{ textTransform: "none", px: 1.5, gap: 0.75 }}>
+                    {dot && <Box component="span" sx={{ width: 9, height: 9, borderRadius: "50%", bgcolor: dot }} />}
+                    {f.label}
+                  </ToggleButton>
+                );
+              })}
+            </ToggleButtonGroup>
+            {/* Several prices can be picked at once, e.g. £ and ££ */}
+            <ToggleButtonGroup
+              size="small"
+              color="secondary"
+              value={prices}
+              onChange={(_, value: number[]) => setPrices(value)}
+              aria-label="Price"
+            >
+              {PRICES.map(price => (
+                <ToggleButton value={price} key={price} title={PRICE_HINTS[price]} sx={{ px: 1.5, fontWeight: 600, letterSpacing: "0.02em" }}>
+                  {priceLabel(price as Place["price"])}
+                </ToggleButton>
+              ))}
+            </ToggleButtonGroup>
+          </Stack>
           <Stack direction="row" spacing={1} alignItems="center" sx={{ flexWrap: "wrap", rowGap: 1 }}>
             <Typography variant="body2" color="text.secondary">Try:</Typography>
             {topCuisines.map(cuisine => (
@@ -236,6 +323,7 @@ export const PlacesView = () => {
           {locationError && <Alert severity="warning" onClose={() => setLocationError(null)}>{locationError}</Alert>}
         </Stack>
       </Grid>
+
       <Grid item xs={12}>
         <Typography variant="body2">
           Showing {results.length} of {places.length} places from{" "}
@@ -243,11 +331,40 @@ export const PlacesView = () => {
           {sort === "nearest" && !here && !locationError && " · finding your location…"}
         </Typography>
       </Grid>
-      {results.map(({ place, distance }) => (
-        <Grid container item xs={12} sm={6} md={4} lg={3} alignItems="stretch" key={place.id}>
-          <PlaceCard place={place} distance={distance} />
-        </Grid>
-      ))}
+
+      {/* The map sits above the list on phones and stays beside it on wider screens */}
+      <Grid item xs={12} md={5} lg={4} sx={{ order: { md: 2 } }}>
+        <Box sx={{ position: { md: "sticky" }, top: { md: 16 }, height: { xs: 320, md: "calc(100vh - 32px)" } }}>
+          <Suspense fallback={null}>
+            <PlacesMap
+              places={resultPlaces}
+              selectedId={selectedId}
+              here={here}
+              onSelect={id => {
+                scrollToCard.current = true;
+                setSelectedId(id);
+              }}
+            />
+          </Suspense>
+        </Box>
+      </Grid>
+      <Grid container item xs={12} md={7} lg={8} spacing={2} alignContent="flex-start" sx={{ order: { md: 1 } }}>
+        {results.length === 0 && (
+          <Grid item xs={12}>
+            <Typography color="text.secondary" sx={{ py: 4 }}>Nothing matches. Try fewer filters.</Typography>
+          </Grid>
+        )}
+        {results.map(({ place, distance }) => (
+          <Grid container item xs={12} sm={6} lg={4} alignItems="stretch" key={place.id}>
+            <PlaceCard
+              place={place}
+              distance={distance}
+              selected={place.id === selectedId}
+              onSelect={() => setSelectedId(place.id)}
+            />
+          </Grid>
+        ))}
+      </Grid>
     </Grid>
   );
 };

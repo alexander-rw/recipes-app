@@ -9,6 +9,8 @@ export type Place = {
   name: string;
   type: PlaceType | null;
   cuisine: string | null;
+  // 1 to 4, for £ to ££££: roughly what one person spends, from under £15 to over £60
+  price: 1 | 2 | 3 | 4 | null;
   address: string | null;
   // Postcode district, e.g. "SE15"
   outcode: string | null;
