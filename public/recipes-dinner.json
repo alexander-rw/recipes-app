@@ -7,7 +7,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2011/02/veggie-shepherds-pie-with-sweet-potato-mash-ced560e.jpg?resize=1200%2C630",
       "diet": "vegetarian",
-      "id": "sweet-potato-shepherd-s-pie"
+      "id": "sweet-potato-shepherd-s-pie",
+      "keyIngredients": [
+        "Cheese",
+        "Lentils",
+        "Sweet potato",
+        "Tomatoes",
+        "Carrots"
+      ]
     },
     {
       "name": "Sweet Potato Curry",
@@ -16,7 +23,15 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/satay-sweet-potato-curry-17cc62d.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "sweet-potato-curry"
+      "id": "sweet-potato-curry",
+      "keyIngredients": [
+        "Coconut milk",
+        "Rice",
+        "Sweet potato",
+        "Spinach",
+        "Lime",
+        "Peanuts"
+      ]
     },
     {
       "name": "Kimchi fried rice",
@@ -25,7 +40,16 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/kimchi-cdc377b.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "kimchi-fried-rice"
+      "id": "kimchi-fried-rice",
+      "keyIngredients": [
+        "Eggs",
+        "Rice",
+        "Kimchi",
+        "Broccoli",
+        "Carrots",
+        "Lime",
+        "Coriander"
+      ]
     },
     {
       "name": "Broccoli Bread bake",
@@ -34,7 +58,13 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/tenderstem-broccoli-bread-bake-3f8e401.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "broccoli-bread-bake"
+      "id": "broccoli-bread-bake",
+      "keyIngredients": [
+        "Cheese",
+        "Milk",
+        "Bread",
+        "Broccoli"
+      ]
     },
     {
       "name": "Paneer Makhani",
@@ -43,7 +73,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2022/04/Paneer-makhani-58d47fd.jpg?resize=900%2C471",
       "diet": "vegetarian",
-      "id": "paneer-makhani"
+      "id": "paneer-makhani",
+      "keyIngredients": [
+        "Cheese",
+        "Paneer",
+        "Cream",
+        "Tomatoes",
+        "Cashews"
+      ]
     },
     {
       "name": "Minestrone",
@@ -52,7 +89,15 @@
       "mealType": "Main",
       "image": "https://ichef.bbci.co.uk/food/ic/food_16x9_448/recipes/minestrone_23211_16x9.jpg",
       "diet": "vegan",
-      "id": "minestrone"
+      "id": "minestrone",
+      "keyIngredients": [
+        "Beans",
+        "Pasta",
+        "Tomatoes",
+        "Cabbage",
+        "Carrots",
+        "Celery"
+      ]
     },
     {
       "name": "Miso Mushroom Risotto",
@@ -61,7 +106,14 @@
       "mealType": "Main",
       "image": "https://rainbowplantlife.com/wp-content/uploads/2023/01/Mushroom-Risotto-new-cover-photo-5x4-1-of-1.jpg",
       "diet": "vegan",
-      "id": "miso-mushroom-risotto"
+      "id": "miso-mushroom-risotto",
+      "keyIngredients": [
+        "Rice",
+        "Mushrooms",
+        "Leeks",
+        "Parsley",
+        "Miso"
+      ]
     },
     {
       "name": "Saffron Risotto",
@@ -70,7 +122,11 @@
       "mealType": "Main",
       "image": "https://www.insidetherustickitchen.com/wp-content/uploads/2019/07/Saffron-Risotto-740px-Inside-the-Rustic-Kitchen-10.jpg",
       "diet": "meat",
-      "id": "saffron-risotto"
+      "id": "saffron-risotto",
+      "keyIngredients": [
+        "Cheese",
+        "Rice"
+      ]
     },
     {
       "name": "Palak Paneer",
@@ -79,7 +135,16 @@
       "mealType": "Main",
       "image": "https://www.cookwithmanali.com/wp-content/uploads/2019/08/Palak-Paneer.jpg",
       "diet": "vegetarian",
-      "id": "palak-paneer"
+      "id": "palak-paneer",
+      "keyIngredients": [
+        "Cheese",
+        "Paneer",
+        "Cream",
+        "Tomatoes",
+        "Spinach",
+        "Lemon",
+        "Cashews"
+      ]
     },
     {
       "name": "Tomato Soup",
@@ -88,7 +153,13 @@
       "mealType": "Main",
       "image": "https://diethood.com/wp-content/uploads/2019/07/tomato-soup-diethood-8.jpg",
       "diet": "vegetarian",
-      "id": "tomato-soup"
+      "id": "tomato-soup",
+      "keyIngredients": [
+        "Cheese",
+        "Cream",
+        "Tomatoes",
+        "Basil"
+      ]
     },
     {
       "name": "Nasi Goreng",
@@ -97,7 +168,17 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nasi-goreng-be31186.jpg?resize=440%2C230",
       "diet": "meat",
-      "id": "nasi-goreng"
+      "id": "nasi-goreng",
+      "keyIngredients": [
+        "Chicken",
+        "Prawns",
+        "Eggs",
+        "Green beans",
+        "Rice",
+        "Tomatoes",
+        "Carrots",
+        "Cucumber"
+      ]
     },
     {
       "name": "Teriyaki Tofu",
@@ -106,7 +187,11 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/charred-spring-onions-teriyaki-tofu-1635424.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "teriyaki-tofu"
+      "id": "teriyaki-tofu",
+      "keyIngredients": [
+        "Tofu",
+        "Rice"
+      ]
     },
     {
       "name": "Cacio e Pepe Gnocchi",
@@ -115,7 +200,12 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-cacio-e-pepe-a1392fd.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "cacio-e-pepe-gnocchi"
+      "id": "cacio-e-pepe-gnocchi",
+      "keyIngredients": [
+        "Cheese",
+        "Gnocchi",
+        "Lettuce"
+      ]
     },
     {
       "name": "Shrimp Fajitas",
@@ -124,7 +214,15 @@
       "mealType": "Main",
       "image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2021/01/Shrimp-Fajitas-main.jpg",
       "diet": "meat",
-      "id": "shrimp-fajitas"
+      "id": "shrimp-fajitas",
+      "keyIngredients": [
+        "Prawns",
+        "Cream",
+        "Tortillas",
+        "Peppers",
+        "Avocado",
+        "Lime"
+      ]
     },
     {
       "name": "Yaki Udon",
@@ -133,7 +231,12 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/yaki-udon-66710d8.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "yaki-udon"
+      "id": "yaki-udon",
+      "keyIngredients": [
+        "Noodles",
+        "Mushrooms",
+        "Cabbage"
+      ]
     },
     {
       "name": "Spiral Pie",
@@ -142,7 +245,22 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/veggie-spiral-pie-with-spiced-tomato-sauce-chopped-salad-49d8d9f.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "spiral-pie"
+      "id": "spiral-pie",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Feta",
+        "Yoghurt",
+        "Lentils",
+        "Rice",
+        "Tomatoes",
+        "Spinach",
+        "Cucumber",
+        "Lemon",
+        "Mint",
+        "Parsley",
+        "Dill"
+      ]
     },
     {
       "name": "Carbonara",
@@ -151,7 +269,13 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg?resize=440%2C230",
       "diet": "meat",
-      "id": "carbonara"
+      "id": "carbonara",
+      "keyIngredients": [
+        "Pork",
+        "Eggs",
+        "Cheese",
+        "Pasta"
+      ]
     },
     {
       "name": "Spinach Cannelloni",
@@ -160,7 +284,15 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1259591_6-6382b2d.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "spinach-cannelloni"
+      "id": "spinach-cannelloni",
+      "keyIngredients": [
+        "Cheese",
+        "Mozzarella",
+        "Milk",
+        "Tomatoes",
+        "Spinach",
+        "Basil"
+      ]
     },
     {
       "name": "Quesadillas",
@@ -169,7 +301,17 @@
       "mealType": "Main",
       "image": "https://www.simplyrecipes.com/thmb/YXIrmsOBXh5Cc5MAiBJgTaYO_0I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Quesadilla-LEAD-1-b8e325610a7c46e1b6b6c2208d7ed4ee.jpg",
       "diet": "vegetarian",
-      "id": "quesadillas"
+      "id": "quesadillas",
+      "keyIngredients": [
+        "Chicken",
+        "Cheese",
+        "Tortillas",
+        "Tomatoes",
+        "Mushrooms",
+        "Avocado",
+        "Lettuce",
+        "Olives"
+      ]
     },
     {
       "name": "Mexican-style Stuffed Peppers",
@@ -178,7 +320,15 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mexican-style-stuffed-peppers-23ce35d.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "mexican-style-stuffed-peppers"
+      "id": "mexican-style-stuffed-peppers",
+      "keyIngredients": [
+        "Cheese",
+        "Beans",
+        "Rice",
+        "Peppers",
+        "Lime",
+        "Coriander"
+      ]
     },
     {
       "name": "Kale & Pesto Pasta",
@@ -187,7 +337,12 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/creamy-pesto-kale-pasta-d582e18.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "kale-and-pesto-pasta"
+      "id": "kale-and-pesto-pasta",
+      "keyIngredients": [
+        "Cheese",
+        "Pasta",
+        "Kale"
+      ]
     },
     {
       "name": "Tomato & Mascarpone Risotto",
@@ -196,7 +351,13 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/tomato-mascarpone-risotto-b090efa.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "tomato-and-mascarpone-risotto"
+      "id": "tomato-and-mascarpone-risotto",
+      "keyIngredients": [
+        "Cheese",
+        "Rice",
+        "Tomatoes",
+        "Basil"
+      ]
     },
     {
       "name": "Okonomiyaki",
@@ -205,7 +366,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/veggie-okonomiyaki-de8fe85.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "okonomiyaki"
+      "id": "okonomiyaki",
+      "keyIngredients": [
+        "Eggs",
+        "Milk",
+        "Cabbage",
+        "Pak choi",
+        "Lime"
+      ]
     },
     {
       "name": "Caponata",
@@ -214,7 +382,16 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/caponata-pasta-a0027c4.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "caponata"
+      "id": "caponata",
+      "keyIngredients": [
+        "Cheese",
+        "Pasta",
+        "Tomatoes",
+        "Peppers",
+        "Aubergine",
+        "Basil",
+        "Capers"
+      ]
     },
     {
       "name": "Spinach, Sweet Potato, & Lentil Dhal",
@@ -223,7 +400,12 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/spinach-sweet-potato-and-lentil-dhal-be8fae5.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "spinach-sweet-potato-and-lentil-dhal"
+      "id": "spinach-sweet-potato-and-lentil-dhal",
+      "keyIngredients": [
+        "Lentils",
+        "Sweet potato",
+        "Spinach"
+      ]
     },
     {
       "name": "Sweet and Sour Tofu",
@@ -232,7 +414,12 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/sweet-and-sour-tofu-51da0af.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "sweet-and-sour-tofu"
+      "id": "sweet-and-sour-tofu",
+      "keyIngredients": [
+        "Tofu",
+        "Rice",
+        "Peppers"
+      ]
     },
     {
       "name": "Vegetable Enchiladas",
@@ -241,7 +428,15 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2011/01/Vegetarian-enchiladas-50345cc.jpg?resize=1200%2C630",
       "diet": "vegetarian",
-      "id": "vegetable-enchiladas"
+      "id": "vegetable-enchiladas",
+      "keyIngredients": [
+        "Cheese",
+        "Yoghurt",
+        "Lentils",
+        "Tortillas",
+        "Tomatoes",
+        "Carrots"
+      ]
     },
     {
       "name": "Pineapple Fried Rice",
@@ -250,7 +445,12 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/pineapple-fried-rice-25ff2b3.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "pineapple-fried-rice"
+      "id": "pineapple-fried-rice",
+      "keyIngredients": [
+        "Eggs",
+        "Rice",
+        "Peas"
+      ]
     },
     {
       "name": "Cauliflower Steaks",
@@ -259,7 +459,15 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/cauliflower-steaks-2bccad0.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "cauliflower-steaks"
+      "id": "cauliflower-steaks",
+      "keyIngredients": [
+        "Cauliflower",
+        "Peppers",
+        "Parsley",
+        "Almonds",
+        "Olives",
+        "Capers"
+      ]
     },
     {
       "name": "Butternut Biryani",
@@ -268,7 +476,17 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/butternut-biryani-678b20e.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "butternut-biryani"
+      "id": "butternut-biryani",
+      "keyIngredients": [
+        "Yoghurt",
+        "Rice",
+        "Mushrooms",
+        "Squash",
+        "Cucumber",
+        "Coriander",
+        "Mint",
+        "Almonds"
+      ]
     },
     {
       "name": "Jollof Rice",
@@ -277,7 +495,12 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/jollof-rice-d838187.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "jollof-rice"
+      "id": "jollof-rice",
+      "keyIngredients": [
+        "Rice",
+        "Tomatoes",
+        "Peppers"
+      ]
     },
     {
       "name": "Miso Ramen",
@@ -286,7 +509,15 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/miso-ramen-514e2ca.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "miso-ramen"
+      "id": "miso-ramen",
+      "keyIngredients": [
+        "Tofu",
+        "Noodles",
+        "Mushrooms",
+        "Pak choi",
+        "Sweetcorn",
+        "Miso"
+      ]
     },
     {
       "name": "Tofu & Noodle Stir Fry",
@@ -295,7 +526,15 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-281698_10-61fa89d.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "tofu-and-noodle-stir-fry"
+      "id": "tofu-and-noodle-stir-fry",
+      "keyIngredients": [
+        "Tofu",
+        "Noodles",
+        "Peppers",
+        "Peas",
+        "Lime",
+        "Coriander"
+      ]
     },
     {
       "name": "Mushroom Couscous",
@@ -304,7 +543,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-265502_12-3d9c12b.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "mushroom-couscous"
+      "id": "mushroom-couscous",
+      "keyIngredients": [
+        "Chickpeas",
+        "Couscous",
+        "Tomatoes",
+        "Mushrooms",
+        "Parsley"
+      ]
     },
     {
       "name": "Shakshuka",
@@ -313,7 +559,12 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-12141_11-fd804a3.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "shakshuka"
+      "id": "shakshuka",
+      "keyIngredients": [
+        "Eggs",
+        "Tomatoes",
+        "Coriander"
+      ]
     },
     {
       "name": "Club Sandwich",
@@ -322,7 +573,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-3292_12-57d39a9.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "club-sandwich"
+      "id": "club-sandwich",
+      "keyIngredients": [
+        "Bread",
+        "Tomatoes",
+        "Carrots",
+        "Lettuce",
+        "Lemon"
+      ]
     },
     {
       "name": "Beer Mac 'n' Cheese",
@@ -331,7 +589,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/beer-mac-n-cheese-465a83b.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "beer-mac-n-cheese"
+      "id": "beer-mac-n-cheese",
+      "keyIngredients": [
+        "Cheese",
+        "Mozzarella",
+        "Milk",
+        "Pasta",
+        "Spinach"
+      ]
     },
     {
       "name": "Vegan Jambalaya",
@@ -340,7 +605,17 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/smoky-spiced-veggie-rice-67e83d8.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "vegan-jambalaya"
+      "id": "vegan-jambalaya",
+      "keyIngredients": [
+        "Beans",
+        "Rice",
+        "Tomatoes",
+        "Carrots",
+        "Peppers",
+        "Sweetcorn",
+        "Celery",
+        "Cashews"
+      ]
     },
     {
       "name": "Gnocchi & Tomato Bake",
@@ -349,7 +624,15 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-10785_12-ef97513.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "gnocchi-and-tomato-bake"
+      "id": "gnocchi-and-tomato-bake",
+      "keyIngredients": [
+        "Cheese",
+        "Mozzarella",
+        "Gnocchi",
+        "Tomatoes",
+        "Peppers",
+        "Basil"
+      ]
     },
     {
       "name": "Lentil & Spinach Pie",
@@ -358,7 +641,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/spiced-lentil-spinach-pies-a1ae301.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "lentil-and-spinach-pie"
+      "id": "lentil-and-spinach-pie",
+      "keyIngredients": [
+        "Eggs",
+        "Lentils",
+        "Spinach",
+        "Lemon",
+        "Coriander"
+      ]
     },
     {
       "name": "Mushroom Cottage Pie",
@@ -367,7 +657,16 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-781471_11-052eb84.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "mushroom-cottage-pie"
+      "id": "mushroom-cottage-pie",
+      "keyIngredients": [
+        "Milk",
+        "Potatoes",
+        "Tomatoes",
+        "Mushrooms",
+        "Carrots",
+        "Celery",
+        "Parsnips"
+      ]
     },
     {
       "name": "Mushroom Rarebit",
@@ -376,7 +675,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-284515_12-66e6cfe.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "mushroom-rarebit"
+      "id": "mushroom-rarebit",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Milk",
+        "Potatoes",
+        "Mushrooms"
+      ]
     },
     {
       "name": "Leek & Mushroom Quiche",
@@ -385,7 +691,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-20584_10-12f1c30.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "leek-and-mushroom-quiche"
+      "id": "leek-and-mushroom-quiche",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Cream",
+        "Mushrooms",
+        "Leeks"
+      ]
     },
     {
       "name": "Moussaka",
@@ -394,7 +707,18 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/2/2019/06/Olive_VeggieMoussaka-b91289a.jpg?crop=9px%2C1450px%2C4106px%2C3730px&resize=1200%2C630",
       "diet": "vegetarian",
-      "id": "moussaka"
+      "id": "moussaka",
+      "keyIngredients": [
+        "Mince",
+        "Eggs",
+        "Cheese",
+        "Feta",
+        "Milk",
+        "Potatoes",
+        "Tomatoes",
+        "Aubergine",
+        "Parsley"
+      ]
     },
     {
       "name": "Vegetable Paella",
@@ -403,7 +727,16 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/2/2020/04/Sunblush-tomato-paellla-dcf247c-scaled.jpg?resize=1200%2C630",
       "diet": "vegan",
-      "id": "vegetable-paella"
+      "id": "vegetable-paella",
+      "keyIngredients": [
+        "Rice",
+        "Tomatoes",
+        "Peppers",
+        "Courgette",
+        "Lemon",
+        "Parsley",
+        "Olives"
+      ]
     },
     {
       "name": "Vegetable Wellington",
@@ -412,7 +745,11 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/2/2015/10/15453.jpg?resize=600%2C314",
       "diet": "vegetarian",
-      "id": "vegetable-wellington"
+      "id": "vegetable-wellington",
+      "keyIngredients": [
+        "Eggs",
+        "Walnuts"
+      ]
     },
     {
       "name": "Quiche",
@@ -421,7 +758,12 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/2/2020/03/OLI_2020-EasterIssue_Everyday-CheeseOnionQuiche_02920-9994d77.jpg?resize=1200%2C630",
       "diet": "vegetarian",
-      "id": "quiche"
+      "id": "quiche",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Milk"
+      ]
     },
     {
       "name": "Pasta alla Vodka",
@@ -430,7 +772,14 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2021/04/Pasta-alla-vodka-f1d2e1c.jpg?resize=1000%2C524",
       "diet": "vegetarian",
-      "id": "pasta-alla-vodka"
+      "id": "pasta-alla-vodka",
+      "keyIngredients": [
+        "Cheese",
+        "Cream",
+        "Pasta",
+        "Bananas",
+        "Basil"
+      ]
     },
     {
       "name": "Miso-glazed Aubergine",
@@ -439,7 +788,11 @@
       "mealType": "Main",
       "image": "https://healthylivingjames.co.uk/wp-content/uploads/2023/02/Aubergine-Miso.jpg",
       "diet": "vegan",
-      "id": "miso-glazed-aubergine"
+      "id": "miso-glazed-aubergine",
+      "keyIngredients": [
+        "Aubergine",
+        "Miso"
+      ]
     },
     {
       "name": "Stuffed Portobello Mushrooms",
@@ -448,7 +801,13 @@
       "mealType": "Main",
       "image": "https://www.themediterraneandish.com/wp-content/uploads/2025/02/TMD-Stuffed-Portobello-Mushroom-Leads-03.jpg",
       "diet": "vegetarian",
-      "id": "stuffed-portobello-mushrooms"
+      "id": "stuffed-portobello-mushrooms",
+      "keyIngredients": [
+        "Cheese",
+        "Tomatoes",
+        "Mushrooms",
+        "Spinach"
+      ]
     },
     {
       "name": "Dal Khichdi",
@@ -457,7 +816,15 @@
       "mealType": "Main",
       "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/06/khichdi-recipe.jpg",
       "diet": "vegetarian",
-      "id": "dal-khichdi"
+      "id": "dal-khichdi",
+      "keyIngredients": [
+        "Lentils",
+        "Green beans",
+        "Rice",
+        "Potatoes",
+        "Tomatoes",
+        "Carrots"
+      ]
     },
     {
       "name": "Parsnip & Spinach Soup",
@@ -466,7 +833,13 @@
       "mealType": "Main",
       "image": "./images/parsnip-and-spinach-soup.jpg",
       "diet": "vegetarian",
-      "id": "parsnip-and-spinach-soup"
+      "id": "parsnip-and-spinach-soup",
+      "keyIngredients": [
+        "Cream",
+        "Potatoes",
+        "Spinach",
+        "Parsnips"
+      ]
     },
     {
       "name": "Gochujang-Sesame Noodles",
@@ -475,7 +848,13 @@
       "mealType": "Main",
       "image": "https://www.eatfigsnotpigs.com/wp-content/uploads/2021/09/Garlic-Sesame-Gochujang-Noodles_0458.jpg",
       "diet": "vegan",
-      "id": "gochujang-sesame-noodles"
+      "id": "gochujang-sesame-noodles",
+      "keyIngredients": [
+        "Tofu",
+        "Noodles",
+        "Mushrooms",
+        "Gochujang"
+      ]
     },
     {
       "name": "Tofu Scramble",
@@ -484,7 +863,13 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/tofu_scramble-eaa0c64.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "tofu-scramble"
+      "id": "tofu-scramble",
+      "keyIngredients": [
+        "Tofu",
+        "Bread",
+        "Tomatoes",
+        "Parsley"
+      ]
     },
     {
       "name": "Cashew & Mushroom Udon",
@@ -493,7 +878,13 @@
       "mealType": "Main",
       "image": "https://tiffycooks.com/wp-content/uploads/2021/09/creamy-mushroom-udon-Garnished_1vyFHlFDBHZltADAfJrjYUyx5zsEgMZ19.webp",
       "diet": "vegetarian",
-      "id": "cashew-and-mushroom-udon"
+      "id": "cashew-and-mushroom-udon",
+      "keyIngredients": [
+        "Cream",
+        "Milk",
+        "Noodles",
+        "Mushrooms"
+      ]
     },
     {
       "name": "Tofu Tikka Masala",
@@ -502,7 +893,16 @@
       "mealType": "Main",
       "image": "https://rainbowplantlife.com/wp-content/uploads/2021/10/Tofu-tikka-masala-in-pan-with-spoon-updated-1-of-1-scaled.jpg",
       "diet": "vegan",
-      "id": "tofu-tikka-masala"
+      "id": "tofu-tikka-masala",
+      "keyIngredients": [
+        "Coconut milk",
+        "Tofu",
+        "Rice",
+        "Bread",
+        "Tomatoes",
+        "Lemon",
+        "Coriander"
+      ]
     },
     {
       "name": "Use-It-Up Frittata",
@@ -511,7 +911,20 @@
       "mealType": "Main",
       "image": "https://farm5.staticflickr.com/4605/39808217444_c2f8675985_c.jpg",
       "diet": "vegetarian",
-      "id": "use-it-up-frittata"
+      "id": "use-it-up-frittata",
+      "keyIngredients": [
+        "Pork",
+        "Sausages",
+        "Fish",
+        "Eggs",
+        "Cheese",
+        "Coconut milk",
+        "Potatoes",
+        "Spinach",
+        "Kale",
+        "Peppers",
+        "Courgette"
+      ]
     },
     {
       "name": "Mushroom and Onion Tart",
@@ -520,7 +933,12 @@
       "mealType": "Main",
       "image": "https://img.hellofresh.com/hellofresh_s3/image/garlic-mushroom-and-onion-marmalade-tart-6041d2aa-7714ab2d.jpg",
       "diet": "vegetarian",
-      "id": "mushroom-and-onion-tart"
+      "id": "mushroom-and-onion-tart",
+      "keyIngredients": [
+        "Cheese",
+        "Cream",
+        "Mushrooms"
+      ]
     },
     {
       "name": "Mushroom Pasanda",
@@ -529,7 +947,15 @@
       "mealType": "Main",
       "image": "https://img.hellofresh.com/hellofresh_s3/image/mushroom-pasanda-cb63a386-4050cafd.jpg",
       "diet": "vegetarian",
-      "id": "mushroom-pasanda"
+      "id": "mushroom-pasanda",
+      "keyIngredients": [
+        "Cream",
+        "Green beans",
+        "Rice",
+        "Mushrooms",
+        "Cauliflower",
+        "Coriander"
+      ]
     },
     {
       "name": "Cashew Lasagne",
@@ -538,7 +964,16 @@
       "mealType": "Main",
       "image": "https://veggiefunkitchen.com/wp-content/uploads/2019/01/IMG_1779.jpg",
       "diet": "vegan",
-      "id": "cashew-lasagne"
+      "id": "cashew-lasagne",
+      "keyIngredients": [
+        "Pasta",
+        "Mushrooms",
+        "Spinach",
+        "Carrots",
+        "Courgette",
+        "Cashews",
+        "Miso"
+      ]
     },
     {
       "name": "King Oyster Mushroom Scallops",
@@ -547,7 +982,13 @@
       "mealType": "Main",
       "image": "https://www.theedgyveg.com/wp-content/uploads/2020/08/P1499448WEB-e1599680741109.jpg",
       "diet": "vegan",
-      "id": "king-oyster-mushroom-scallops"
+      "id": "king-oyster-mushroom-scallops",
+      "keyIngredients": [
+        "Mushrooms",
+        "Lemon",
+        "Parsley",
+        "Miso"
+      ]
     },
     {
       "name": "Miso Brown Butter Pasta",
@@ -556,7 +997,13 @@
       "mealType": "Main",
       "image": "https://images.food52.com/GvVc3t20dmOUMMGztwTEIVu6_tc=/26d8e194-17d1-4d83-92ab-d2648121711c--miso-brown-butter-pasta-2.jpg",
       "diet": "vegetarian",
-      "id": "miso-brown-butter-pasta"
+      "id": "miso-brown-butter-pasta",
+      "keyIngredients": [
+        "Cheese",
+        "Pasta",
+        "Walnuts",
+        "Miso"
+      ]
     },
     {
       "name": "Silken Tofu",
@@ -565,7 +1012,10 @@
       "mealType": "Main",
       "image": "https://www.cookerru.com/wp-content/uploads/2021/04/korean-silken-tofu-1-web-scaled.jpg",
       "diet": "vegan",
-      "id": "silken-tofu"
+      "id": "silken-tofu",
+      "keyIngredients": [
+        "Tofu"
+      ]
     },
     {
       "name": "Pad Thai",
@@ -574,7 +1024,15 @@
       "mealType": "Main",
       "image": "https://www.feastingathome.com/wp-content/uploads/2016/04/easy-authentic-pad-thai-recipe-100-7.jpg",
       "diet": "vegan",
-      "id": "pad-thai"
+      "id": "pad-thai",
+      "keyIngredients": [
+        "Chicken",
+        "Prawns",
+        "Tofu",
+        "Noodles",
+        "Lime",
+        "Peanuts"
+      ]
     },
     {
       "name": "Agedashi Tofu",
@@ -583,7 +1041,10 @@
       "mealType": "Main",
       "image": "https://pickledplum.com/wp-content/uploads/2018/01/agedashi-tofu-520-e1742521153741.jpg",
       "diet": "meat",
-      "id": "agedashi-tofu"
+      "id": "agedashi-tofu",
+      "keyIngredients": [
+        "Tofu"
+      ]
     },
     {
       "name": "Mapo Tofu",
@@ -592,7 +1053,13 @@
       "mealType": "Main",
       "image": "https://rasamalaysia.com/wp-content/uploads/2019/04/mapo-tofu2.jpg",
       "diet": "meat",
-      "id": "mapo-tofu"
+      "id": "mapo-tofu",
+      "keyIngredients": [
+        "Pork",
+        "Mince",
+        "Tofu",
+        "Leeks"
+      ]
     },
     {
       "name": "Bokkeumbap",
@@ -601,7 +1068,14 @@
       "mealType": "Main",
       "image": "https://somebodyfeedseb.com/wp-content/uploads/2021/09/2021.07.13-Bokkeumbap-8641.jpg",
       "diet": "vegetarian",
-      "id": "bokkeumbap"
+      "id": "bokkeumbap",
+      "keyIngredients": [
+        "Eggs",
+        "Rice",
+        "Cabbage",
+        "Broccoli",
+        "Gochujang"
+      ]
     },
     {
       "name": "Mushroom Stroganoff",
@@ -610,7 +1084,14 @@
       "mealType": "Main",
       "image": "https://www.sainsburysmagazine.co.uk/media/6882/download/Mushroom-stroganoff.jpg?v=1",
       "diet": "vegetarian",
-      "id": "mushroom-stroganoff"
+      "id": "mushroom-stroganoff",
+      "keyIngredients": [
+        "Cream",
+        "Rice",
+        "Mushrooms",
+        "Lemon",
+        "Parsley"
+      ]
     },
     {
       "name": "Tofu Banh Mi",
@@ -619,7 +1100,15 @@
       "mealType": "Main",
       "image": "https://www.eatingwell.com/thmb/mD1Xt8NSsd2tATtsvzMgwROEEgU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-banh-mi-with-crispy-tofu-1906-8031494-2000-9476d20bbd5f4cb98a23637b28d42989.jpg",
       "diet": "vegetarian",
-      "id": "tofu-banh-mi"
+      "id": "tofu-banh-mi",
+      "keyIngredients": [
+        "Tofu",
+        "Bread",
+        "Carrots",
+        "Cucumber",
+        "Lime",
+        "Coriander"
+      ]
     },
     {
       "name": "Black Pepper Tofu",
@@ -628,7 +1117,10 @@
       "mealType": "Main",
       "image": "https://ottolenghi.co.uk/cdn/shop/files/black_pepper_tofu.jpg?v=1717600064",
       "diet": "vegetarian",
-      "id": "black-pepper-tofu"
+      "id": "black-pepper-tofu",
+      "keyIngredients": [
+        "Tofu"
+      ]
     },
     {
       "name": "Potato & Gochujang Eggs",
@@ -637,7 +1129,14 @@
       "mealType": "Main",
       "image": "https://ottolenghi.co.uk/cdn/shop/files/Potato-and-gochujang-braised-eggs.jpg?v=1715244794",
       "diet": "vegetarian",
-      "id": "potato-and-gochujang-eggs"
+      "id": "potato-and-gochujang-eggs",
+      "keyIngredients": [
+        "Eggs",
+        "Potatoes",
+        "Lime",
+        "Miso",
+        "Gochujang"
+      ]
     },
     {
       "name": "Saffron Pasta",
@@ -646,7 +1145,12 @@
       "mealType": "Main",
       "image": "https://ottolenghi.co.uk/cdn/shop/files/Saffron-pasta-with-chipotle-shallots-and-pickled-chillies.jpg?v=1715244793",
       "diet": "vegetarian",
-      "id": "saffron-pasta"
+      "id": "saffron-pasta",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Parsley"
+      ]
     },
     {
       "name": "Za'atar Cacio e Pepe",
@@ -655,7 +1159,11 @@
       "mealType": "Main",
       "image": "https://ottolenghi.co.uk/cdn/shop/files/Za_atar_cacio_e_pepe.jpg?v=1716188208",
       "diet": "vegetarian",
-      "id": "za-atar-cacio-e-pepe"
+      "id": "za-atar-cacio-e-pepe",
+      "keyIngredients": [
+        "Cheese",
+        "Pasta"
+      ]
     },
     {
       "name": "Mee Goreng",
@@ -664,7 +1172,15 @@
       "mealType": "Main",
       "image": "https://ottolenghi.co.uk/cdn/shop/files/mee-goreng_15da9aae-2a68-4f57-ae12-a3648fc6e9aa.jpg?v=1715244806",
       "diet": "vegetarian",
-      "id": "mee-goreng"
+      "id": "mee-goreng",
+      "keyIngredients": [
+        "Tofu",
+        "Green beans",
+        "Noodles",
+        "Pak choi",
+        "Lettuce",
+        "Lemon"
+      ]
     },
     {
       "name": "Ricotta Tart",
@@ -673,7 +1189,12 @@
       "mealType": "Main",
       "image": "https://ottolenghi.co.uk/cdn/shop/files/Ricotta_tart.jpg?v=1716187438",
       "diet": "vegetarian",
-      "id": "ricotta-tart"
+      "id": "ricotta-tart",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Basil"
+      ]
     },
     {
       "name": "Roasted Vegetable Toad in the Hole",
@@ -682,7 +1203,14 @@
       "mealType": "Main",
       "image": "https://images.ctfassets.net/qu53tdnhexvd/6R0b0eSLDjyftOjCcOhkYc/9c30495e03f372ac8af8b66fa81dc2ab/LEFTOVER_VEG_TOAD_IN_THE_HOLE?fm=jpg&q=70&w=1600",
       "diet": "vegetarian",
-      "id": "roasted-vegetable-toad-in-the-hole"
+      "id": "roasted-vegetable-toad-in-the-hole",
+      "keyIngredients": [
+        "Eggs",
+        "Milk",
+        "Broccoli",
+        "Carrots",
+        "Beetroot"
+      ]
     },
     {
       "name": "Telur Masak Kicap",
@@ -691,7 +1219,10 @@
       "mealType": "Main",
       "image": "https://farahjeats.com/wp-content/uploads/2023/01/telur-masak-kicap-edited.png",
       "diet": "vegetarian",
-      "id": "telur-masak-kicap"
+      "id": "telur-masak-kicap",
+      "keyIngredients": [
+        "Eggs"
+      ]
     },
     {
       "name": "Tandoori Tofu Wrap",
@@ -700,7 +1231,17 @@
       "mealType": "Main",
       "image": "https://cookingwithparita.com/wp-content/uploads/2021/07/tandoori-tofu-wrap-4.jpg",
       "diet": "vegan",
-      "id": "tandoori-tofu-wrap"
+      "id": "tandoori-tofu-wrap",
+      "keyIngredients": [
+        "Tofu",
+        "Bread",
+        "Tomatoes",
+        "Cucumber",
+        "Lettuce",
+        "Lemon",
+        "Coriander",
+        "Cashews"
+      ]
     },
     {
       "name": "Crispy Sage Tofu",
@@ -709,7 +1250,10 @@
       "mealType": "Main",
       "image": "https://justinesnacks.com/wp-content/uploads/2021/11/what-to-make-on-thanksgiving-when-you-are-vegan-819x1024.jpg",
       "diet": "vegan",
-      "id": "crispy-sage-tofu"
+      "id": "crispy-sage-tofu",
+      "keyIngredients": [
+        "Tofu"
+      ]
     },
     {
       "name": "Creamy Red Lentil Curry",
@@ -718,7 +1262,13 @@
       "mealType": "Main",
       "image": "https://heartfultable.com/wp-content/uploads/2019/09/Creamy-Red-Lentil-Curry-7.jpg",
       "diet": "vegan",
-      "id": "creamy-red-lentil-curry"
+      "id": "creamy-red-lentil-curry",
+      "keyIngredients": [
+        "Coconut milk",
+        "Lentils",
+        "Tomatoes",
+        "Cashews"
+      ]
     },
     {
       "name": "Vegan Birria Tacos",
@@ -727,7 +1277,13 @@
       "mealType": "Main",
       "image": "https://www.eatfigsnotpigs.com/wp-content/uploads/2020/04/Vegan-Birria-Tacos-9013-scaled.jpg",
       "diet": "vegan",
-      "id": "vegan-birria-tacos"
+      "id": "vegan-birria-tacos",
+      "keyIngredients": [
+        "Tortillas",
+        "Mushrooms",
+        "Lime",
+        "Coriander"
+      ]
     },
     {
       "name": "BBQ Pulled Tofu",
@@ -736,7 +1292,10 @@
       "mealType": "Main",
       "image": "https://itdoesnttastelikechicken.com/wp-content/uploads/2020/05/vegan-BBQ-shredded-tofu-pulled-chicken-best-baked-recipe-sandwich-facebook.jpg",
       "diet": "vegan",
-      "id": "bbq-pulled-tofu"
+      "id": "bbq-pulled-tofu",
+      "keyIngredients": [
+        "Tofu"
+      ]
     },
     {
       "name": "Bacon Jam Toast",
@@ -745,7 +1304,12 @@
       "mealType": "Main",
       "image": "https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-T1-STILL.png",
       "diet": "meat",
-      "id": "bacon-jam-toast"
+      "id": "bacon-jam-toast",
+      "keyIngredients": [
+        "Pork",
+        "Eggs",
+        "Cream"
+      ]
     },
     {
       "name": "Plantain Tacos",
@@ -754,7 +1318,15 @@
       "mealType": "Main",
       "image": "https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2019/08/vegan-tacos-plate.jpg",
       "diet": "vegan",
-      "id": "plantain-tacos"
+      "id": "plantain-tacos",
+      "keyIngredients": [
+        "Beans",
+        "Sweetcorn",
+        "Avocado",
+        "Lime",
+        "Coriander",
+        "Cashews"
+      ]
     },
     {
       "name": "Cucumber Halloumi Salad",
@@ -763,7 +1335,12 @@
       "mealType": "Main",
       "image": "https://mob-cdn.ams3.digitaloceanspaces.com/recipes/2025/9/_1200x630_crop_center-center_82_none/Smashed-Cucumber-Halloumi-and-Tahini-Salad.jpg?mtime=1757077527",
       "diet": "vegetarian",
-      "id": "cucumber-halloumi-salad"
+      "id": "cucumber-halloumi-salad",
+      "keyIngredients": [
+        "Cheese",
+        "Cucumber",
+        "Tahini"
+      ]
     },
     {
       "name": "Kimchi Potato Skins",
@@ -772,7 +1349,13 @@
       "mealType": "Main",
       "image": "https://mob-cdn.ams3.digitaloceanspaces.com/recipes/2022/07/_1200x630_crop_center-center_82_none/849A9837-1.jpg?mtime=1657182936",
       "diet": "vegetarian",
-      "id": "kimchi-potato-skins"
+      "id": "kimchi-potato-skins",
+      "keyIngredients": [
+        "Cheese",
+        "Potatoes",
+        "Kimchi",
+        "Parsley"
+      ]
     },
     {
       "name": "Yoghurt and Za'atar Fried Eggs",
@@ -781,7 +1364,13 @@
       "mealType": "Main",
       "image": "https://mob-cdn.ams3.digitaloceanspaces.com/recipes/2023/10/_1200x630_crop_center-center_82_none/Fried-Eggs-with-Yoghurt-and-Za%E2%80%99atar.jpg?mtime=1697187804",
       "diet": "vegetarian",
-      "id": "yoghurt-and-za-atar-fried-eggs"
+      "id": "yoghurt-and-za-atar-fried-eggs",
+      "keyIngredients": [
+        "Eggs",
+        "Yoghurt",
+        "Bread",
+        "Mint"
+      ]
     },
     {
       "name": "Feta Stuffed Jacket Potatos",
@@ -790,7 +1379,16 @@
       "mealType": "Main",
       "image": "https://mob-cdn.ams3.digitaloceanspaces.com/recipes/_1200x630_crop_center-center_82_none/9K8A5904-4.jpg?mtime=1645528817",
       "diet": "vegetarian",
-      "id": "feta-stuffed-jacket-potatos"
+      "id": "feta-stuffed-jacket-potatos",
+      "keyIngredients": [
+        "Cheese",
+        "Feta",
+        "Milk",
+        "Potatoes",
+        "Lemon",
+        "Parsley",
+        "Dill"
+      ]
     },
     {
       "name": "Kimchi Mac & Cheese",
@@ -799,7 +1397,15 @@
       "mealType": "Main",
       "image": "https://mob-cdn.ams3.digitaloceanspaces.com/recipes/2021/08/_1200x630_crop_center-center_82_none/KIMCHI-MAC-AND-CHEESE-RESHOOT3253-3.jpg?mtime=1770996225",
       "diet": "vegetarian",
-      "id": "kimchi-mac-and-cheese"
+      "id": "kimchi-mac-and-cheese",
+      "keyIngredients": [
+        "Cheese",
+        "Milk",
+        "Pasta",
+        "Kimchi",
+        "Parsley",
+        "Gochujang"
+      ]
     },
     {
       "name": "Labneh Pitta Salad",
@@ -808,7 +1414,16 @@
       "mealType": "Main",
       "image": "https://mob-cdn.ams3.digitaloceanspaces.com/recipes/_1200x630_crop_center-center_82_none/464A6A54-6A70-4A21-B0E5-86FC16B2A185-2.jpg?mtime=1787603777",
       "diet": "vegetarian",
-      "id": "labneh-pitta-salad"
+      "id": "labneh-pitta-salad",
+      "keyIngredients": [
+        "Yoghurt",
+        "Bread",
+        "Courgette",
+        "Peas",
+        "Lettuce",
+        "Lemon",
+        "Mint"
+      ]
     },
     {
       "name": "Mushroom Cheese Tacos",
@@ -817,7 +1432,15 @@
       "mealType": "Main",
       "image": "https://mob-cdn.ams3.digitaloceanspaces.com/recipes/_1200x630_crop_center-center_82_none/9K8A6666.jpg?mtime=1594271496",
       "diet": "vegetarian",
-      "id": "mushroom-cheese-tacos"
+      "id": "mushroom-cheese-tacos",
+      "keyIngredients": [
+        "Cheese",
+        "Tortillas",
+        "Mushrooms",
+        "Cabbage",
+        "Lime",
+        "Parsley"
+      ]
     },
     {
       "name": "Mayak Eggs",
@@ -826,7 +1449,10 @@
       "mealType": "Main",
       "image": "https://www.cookerru.com/wp-content/uploads/2021/03/mayak-eggs-feature-1-main-scaled.jpg",
       "diet": "vegetarian",
-      "id": "mayak-eggs"
+      "id": "mayak-eggs",
+      "keyIngredients": [
+        "Eggs"
+      ]
     },
     {
       "name": "Corn Ribs",
@@ -835,7 +1461,10 @@
       "mealType": "Main",
       "image": "https://www.yuzubakes.com/sites/yuzubakes.com/files/styles/social_meta_facebook/public/corn-ribs-served-with-vegan-toppings.jpg",
       "diet": "vegan",
-      "id": "corn-ribs"
+      "id": "corn-ribs",
+      "keyIngredients": [
+        "Sweetcorn"
+      ]
     },
     {
       "name": "Banana Akara",
@@ -844,7 +1473,10 @@
       "mealType": "Side",
       "image": "https://www.196flavors.com/wp-content/uploads/2014/03/SIERRA-LEONE-AKARA-4_sm-FP.jpg",
       "diet": "vegan",
-      "id": "banana-akara"
+      "id": "banana-akara",
+      "keyIngredients": [
+        "Bananas"
+      ]
     },
     {
       "name": "Molokhia",
@@ -853,7 +1485,12 @@
       "mealType": "Main",
       "image": "https://feelgoodfoodie.net/wp-content/uploads/2020/09/Molokhia-10.jpg",
       "diet": "meat",
-      "id": "molokhia"
+      "id": "molokhia",
+      "keyIngredients": [
+        "Chicken",
+        "Lemon",
+        "Coriander"
+      ]
     },
     {
       "name": "Granat Soup",
@@ -862,7 +1499,13 @@
       "mealType": "Main",
       "image": "https://feelgoodfoodie.net/wp-content/uploads/2019/03/Peanut-Soup-16-1.jpg",
       "diet": "vegan",
-      "id": "granat-soup"
+      "id": "granat-soup",
+      "keyIngredients": [
+        "Chicken",
+        "Sweet potato",
+        "Spinach",
+        "Peanuts"
+      ]
     },
     {
       "name": "Oyster Mushroom Shawarma",
@@ -871,7 +1514,18 @@
       "mealType": "Main",
       "image": "https://yumveganlunchideas.com/wp-content/uploads/2019/11/Vegan-Sharwarma-Doner-Kebab-7-scaled-1024x783.jpg",
       "diet": "vegan",
-      "id": "oyster-mushroom-shawarma"
+      "id": "oyster-mushroom-shawarma",
+      "keyIngredients": [
+        "Bread",
+        "Tomatoes",
+        "Mushrooms",
+        "Cabbage",
+        "Cucumber",
+        "Lettuce",
+        "Lemon",
+        "Dill",
+        "Olives"
+      ]
     },
     {
       "name": "Cheesy French Toast",
@@ -880,7 +1534,14 @@
       "mealType": "Main",
       "image": "https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/nadiya-hussain-savoury-french-toast-fc12c927-a814-43b7-983c-f88a9e2a4a74_s900x0_c2007x1172_l0x830.jpg",
       "diet": "vegetarian",
-      "id": "cheesy-french-toast"
+      "id": "cheesy-french-toast",
+      "keyIngredients": [
+        "Pork",
+        "Eggs",
+        "Cheese",
+        "Milk",
+        "Bread"
+      ]
     },
     {
       "name": "Masala French Toast",
@@ -889,7 +1550,14 @@
       "mealType": "Main",
       "image": "https://ministryofcurry.com/wp-content/uploads/2020/07/masala-french-toast_-2.jpg",
       "diet": "vegetarian",
-      "id": "masala-french-toast"
+      "id": "masala-french-toast",
+      "keyIngredients": [
+        "Eggs",
+        "Milk",
+        "Bread",
+        "Coriander",
+        "Mint"
+      ]
     },
     {
       "name": "Mushroom Cheese Crepes",
@@ -898,7 +1566,14 @@
       "mealType": "Main",
       "image": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/37/33/90/picXzxvSw.jpg",
       "diet": "vegetarian",
-      "id": "mushroom-cheese-crepes"
+      "id": "mushroom-cheese-crepes",
+      "keyIngredients": [
+        "Cheese",
+        "Mozzarella",
+        "Mushrooms",
+        "Spinach",
+        "Parsley"
+      ]
     },
     {
       "name": "Peanut Butter Ramen",
@@ -907,7 +1582,14 @@
       "mealType": "Main",
       "image": "https://www.realsimple.com/thmb/MJLZr3K7-H23XEEMcSxEnzndA3A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/RS0425DINN_thai-peanut-butter-ramen_31-193c4eab772c438db3339e1eb0336638.jpg",
       "diet": "vegan",
-      "id": "peanut-butter-ramen"
+      "id": "peanut-butter-ramen",
+      "keyIngredients": [
+        "Noodles",
+        "Lime",
+        "Coriander",
+        "Peanuts",
+        "Gochujang"
+      ]
     },
     {
       "name": "Kale Lasagne",
@@ -916,7 +1598,16 @@
       "mealType": "Main",
       "image": "https://www.tastingtable.com/img/gallery/kale-lasagna-recipe/l-intro-1644941006.jpg",
       "diet": "vegetarian",
-      "id": "kale-lasagne"
+      "id": "kale-lasagne",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Mozzarella",
+        "Pasta",
+        "Noodles",
+        "Mushrooms",
+        "Kale"
+      ]
     },
     {
       "name": "Tagine",
@@ -925,7 +1616,19 @@
       "mealType": "Main",
       "image": "https://images.ctfassets.net/18q9nqfz1jg6/72WZlXUijaHoG8wUR8LYP/f19324240f019941e2e85d531438cfa7/31514870.jpg?w=700&h=700&fit=fill&fm=avif&q=90",
       "diet": "vegan",
-      "id": "tagine"
+      "id": "tagine",
+      "keyIngredients": [
+        "Green beans",
+        "Rice",
+        "Tomatoes",
+        "Cabbage",
+        "Carrots",
+        "Aubergine",
+        "Squash",
+        "Celery",
+        "Lemon",
+        "Mint"
+      ]
     },
     {
       "name": "Baked Gnocchi",
@@ -934,7 +1637,13 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2022/12/Creamy-Baked-Gnocchi-Spinach-and-Squash-4b38d7b.jpg?resize=900%2C471",
       "diet": "vegetarian",
-      "id": "baked-gnocchi"
+      "id": "baked-gnocchi",
+      "keyIngredients": [
+        "Cheese",
+        "Gnocchi",
+        "Spinach",
+        "Squash"
+      ]
     },
     {
       "name": "Saag Aloo Pie",
@@ -943,7 +1652,15 @@
       "mealType": "Main",
       "image": "https://img.hellofresh.com/hellofresh_s3/image/HF220907_R41_W42_UK_V12431-3_KB_Main_low-07241b4a.jpg",
       "diet": "vegetarian",
-      "id": "saag-aloo-pie"
+      "id": "saag-aloo-pie",
+      "keyIngredients": [
+        "Cream",
+        "Lentils",
+        "Potatoes",
+        "Spinach",
+        "Cauliflower",
+        "Carrots"
+      ]
     },
     {
       "name": "Ssamjang Fried Rice",
@@ -952,7 +1669,15 @@
       "mealType": "Main",
       "image": "https://img.hellofresh.com/hellofresh_s3/image/korean-ssamjang-veggie-fried-rice-ea2ac05b.jpg",
       "diet": "vegetarian",
-      "id": "ssamjang-fried-rice"
+      "id": "ssamjang-fried-rice",
+      "keyIngredients": [
+        "Eggs",
+        "Rice",
+        "Mushrooms",
+        "Carrots",
+        "Sweetcorn",
+        "Lemon"
+      ]
     },
     {
       "name": "Black Garlic Pasta",
@@ -961,7 +1686,13 @@
       "mealType": "Main",
       "image": "https://www.vanillabeancuisine.com/wp-content/uploads/2022/07/Black-Garlic-Pasta-FEAT-IMAGE.jpg",
       "diet": "vegetarian",
-      "id": "black-garlic-pasta"
+      "id": "black-garlic-pasta",
+      "keyIngredients": [
+        "Cheese",
+        "Pasta",
+        "Mushrooms",
+        "Parsley"
+      ]
     },
     {
       "name": "Black Garlic Chilli Oil Noodles",
@@ -970,7 +1701,10 @@
       "mealType": "Main",
       "image": "https://woonheng.com/wp-content/uploads/2022/01/Black-Garlic-Chili-Oil-Noodles-9548-e1642545353974.jpg",
       "diet": "vegan",
-      "id": "black-garlic-chilli-oil-noodles"
+      "id": "black-garlic-chilli-oil-noodles",
+      "keyIngredients": [
+        "Noodles"
+      ]
     },
     {
       "name": "Shorbet Adas",
@@ -979,7 +1713,15 @@
       "mealType": "Main",
       "image": "https://plantbasedfolk.com/wp-content/uploads/2019/10/Lebanese-Lentil-Soup-Recipe.jpg",
       "diet": "vegan",
-      "id": "shorbet-adas"
+      "id": "shorbet-adas",
+      "keyIngredients": [
+        "Lentils",
+        "Rice",
+        "Carrots",
+        "Celery",
+        "Lemon",
+        "Parsley"
+      ]
     },
     {
       "name": "Garlic Miso Mussels",
@@ -988,7 +1730,12 @@
       "mealType": "Main",
       "image": "https://www.servingdumplings.com/wp-content/uploads/2020/09/mussels-w-spicy-miso-1_insta-7312447e.jpg",
       "diet": "meat",
-      "id": "garlic-miso-mussels"
+      "id": "garlic-miso-mussels",
+      "keyIngredients": [
+        "Bread",
+        "Tomatoes",
+        "Miso"
+      ]
     },
     {
       "name": "Green Goddess Pizza",
@@ -997,7 +1744,17 @@
       "mealType": "Main",
       "image": "https://www.halfbakedharvest.com/wp-content/uploads/2020/05/Garden-Greens-Goddess-Pizza-1.jpg",
       "diet": "vegetarian",
-      "id": "green-goddess-pizza"
+      "id": "green-goddess-pizza",
+      "keyIngredients": [
+        "Cheese",
+        "Kale",
+        "Courgette",
+        "Squash",
+        "Lemon",
+        "Basil",
+        "Mint",
+        "Dill"
+      ]
     },
     {
       "name": "French Onion Mac and Cheese",
@@ -1006,7 +1763,12 @@
       "mealType": "Main",
       "image": "https://www.howsweeteats.com/wp-content/uploads/2023/11/french-onion-mac-and-cheese-12.jpg",
       "diet": "vegetarian",
-      "id": "french-onion-mac-and-cheese"
+      "id": "french-onion-mac-and-cheese",
+      "keyIngredients": [
+        "Cheese",
+        "Milk",
+        "Pasta"
+      ]
     },
     {
       "name": "Chocolate Caramel Chia Mousse",
@@ -1015,7 +1777,11 @@
       "mealType": "Breakfast",
       "image": "https://avocadoskillet.com/wp-content/uploads/2025/08/IMG_2025-08-21-133752.jpeg",
       "diet": "vegetarian",
-      "id": "chocolate-caramel-chia-mousse"
+      "id": "chocolate-caramel-chia-mousse",
+      "keyIngredients": [
+        "Yoghurt",
+        "Chocolate"
+      ]
     },
     {
       "name": "Tropical Tuna Tartare",
@@ -1024,7 +1790,12 @@
       "mealType": "Main",
       "image": "https://ucarecdn.com/bbef8b19-985f-43cc-8214-82cb61773a4c/-/crop/999x1350/1,0/-/preview/",
       "diet": "meat",
-      "id": "tropical-tuna-tartare"
+      "id": "tropical-tuna-tartare",
+      "keyIngredients": [
+        "Fish",
+        "Lime",
+        "Mint"
+      ]
     },
     {
       "name": "Pomme Boulangere",
@@ -1033,7 +1804,11 @@
       "mealType": "Side",
       "image": "https://ichef.bbci.co.uk/food/ic/food_16x9_448/recipes/boulangre_potatoes_44898_16x9.jpg",
       "diet": "vegetarian",
-      "id": "pomme-boulangere"
+      "id": "pomme-boulangere",
+      "keyIngredients": [
+        "Cheese",
+        "Potatoes"
+      ]
     },
     {
       "name": "Arayes",
@@ -1042,7 +1817,17 @@
       "mealType": "Main",
       "image": "https://www.recipetineats.com/tachyon/2023/07/Arayes_2-close-up.jpg",
       "diet": "meat",
-      "id": "arayes"
+      "id": "arayes",
+      "keyIngredients": [
+        "Beef",
+        "Lamb",
+        "Mince",
+        "Yoghurt",
+        "Bread",
+        "Lemon",
+        "Parsley",
+        "Tahini"
+      ]
     },
     {
       "name": "Rice Paper Pancakes",
@@ -1051,7 +1836,11 @@
       "mealType": "Main",
       "image": "https://hermanathome.com/wp-content/uploads/2026/08/Rice-Paper-Shrimp-Pancakes-Featured.jpg",
       "diet": "meat",
-      "id": "rice-paper-pancakes"
+      "id": "rice-paper-pancakes",
+      "keyIngredients": [
+        "Prawns",
+        "Eggs"
+      ]
     },
     {
       "name": "Banana Sticky Toffee Pudding",
@@ -1060,7 +1849,14 @@
       "mealType": "Dessert",
       "image": "https://static01.nyt.com/images/2026/03/24/multimedia/CS-Sticky-banana-toffee-pudding-1-zmtg/CS-Sticky-banana-toffee-pudding-1-zmtg-facebookJumbo.jpg",
       "diet": "vegetarian",
-      "id": "banana-sticky-toffee-pudding"
+      "id": "banana-sticky-toffee-pudding",
+      "keyIngredients": [
+        "Eggs",
+        "Cream",
+        "Milk",
+        "Bananas",
+        "Walnuts"
+      ]
     },
     {
       "name": "Adobo Cabbage",
@@ -1069,7 +1865,11 @@
       "mealType": "Main",
       "image": "https://masienda.com/cdn/shop/articles/ConvertOut-Resized-CabbageAdobada3_Klein_Oct24_jpg_jpg_7e43ac19-3a83-4c20-9509-753c49eb67f9.jpg?v=1739291569",
       "diet": "vegetarian",
-      "id": "adobo-cabbage"
+      "id": "adobo-cabbage",
+      "keyIngredients": [
+        "Cabbage",
+        "Coriander"
+      ]
     },
     {
       "name": "Garlic Mushroom Dutch Baby",
@@ -1078,7 +1878,12 @@
       "mealType": "Breakfast",
       "image": "https://myfoodbook.com.au/sites/default/files/styles/schema_img_meta/public/recipe_photo/dutch_baby_garlic_mushroom_chives_myfoodbook.jpg",
       "diet": "vegetarian",
-      "id": "garlic-mushroom-dutch-baby"
+      "id": "garlic-mushroom-dutch-baby",
+      "keyIngredients": [
+        "Eggs",
+        "Milk",
+        "Mushrooms"
+      ]
     },
     {
       "name": "Banh Mi Burger",
@@ -1087,7 +1892,15 @@
       "mealType": "Main",
       "image": "https://images.themodernproper.com/production/posts/2017/Banh-Mi-Burger-7.jpg?w=1200&h=630&q=82&fm=jpg&fit=crop&dm=1599771220&s=02c685bbe95d2a495fa7a829b1f06946",
       "diet": "meat",
-      "id": "banh-mi-burger"
+      "id": "banh-mi-burger",
+      "keyIngredients": [
+        "Pork",
+        "Mince",
+        "Bread",
+        "Cucumber",
+        "Coriander",
+        "Basil"
+      ]
     },
     {
       "name": "Hainanese Chicken Rice",
@@ -1096,7 +1909,12 @@
       "mealType": "Main",
       "image": "https://thewoksoflife.com/wp-content/uploads/2023/07/hainan-chicken-rice-7.jpg",
       "diet": "meat",
-      "id": "hainanese-chicken-rice"
+      "id": "hainanese-chicken-rice",
+      "keyIngredients": [
+        "Chicken",
+        "Rice",
+        "Lime"
+      ]
     },
     {
       "name": "Courgette Lemon Pasta",
@@ -1105,7 +1923,15 @@
       "mealType": "Main",
       "image": "https://dishedbykate.com/wp-content/uploads/2023/08/Courgette-pasta.jpg",
       "diet": "vegetarian",
-      "id": "courgette-lemon-pasta"
+      "id": "courgette-lemon-pasta",
+      "keyIngredients": [
+        "Cheese",
+        "Pasta",
+        "Courgette",
+        "Lemon",
+        "Basil",
+        "Mint"
+      ]
     },
     {
       "name": "Green Sauce Pasta",
@@ -1114,7 +1940,15 @@
       "mealType": "Main",
       "image": "https://www.delishknowledge.com/wp-content/uploads/Pasta-in-Green-Sauce_8-1524x2286.jpg",
       "diet": "vegetarian",
-      "id": "green-sauce-pasta"
+      "id": "green-sauce-pasta",
+      "keyIngredients": [
+        "Cheese",
+        "Pasta",
+        "Spinach",
+        "Lemon",
+        "Basil",
+        "Cashews"
+      ]
     },
     {
       "name": "Pan con tomate",
@@ -1123,7 +1957,12 @@
       "mealType": "Main",
       "image": "https://www.themediterraneandish.com/wp-content/uploads/2021/09/pan-con-tomate-recipe-8.jpg",
       "diet": "vegan",
-      "id": "pan-con-tomate"
+      "id": "pan-con-tomate",
+      "keyIngredients": [
+        "Bread",
+        "Tomatoes",
+        "Lime"
+      ]
     },
     {
       "name": "Chicken Pho",
@@ -1132,7 +1971,13 @@
       "mealType": "Main",
       "image": "https://www.recipetineats.com/tachyon/2020/05/Chicken-Pho_2.jpg",
       "diet": "meat",
-      "id": "chicken-pho"
+      "id": "chicken-pho",
+      "keyIngredients": [
+        "Chicken",
+        "Noodles",
+        "Lime",
+        "Coriander"
+      ]
     },
     {
       "name": "Lamb Birria Tacos",
@@ -1141,7 +1986,14 @@
       "mealType": "Main",
       "image": "https://www.twopurplefigs.com/wp-content/uploads/2022/06/Lamb-Birria-27.jpg",
       "diet": "meat",
-      "id": "lamb-birria-tacos"
+      "id": "lamb-birria-tacos",
+      "keyIngredients": [
+        "Lamb",
+        "Cheese",
+        "Tortillas",
+        "Tomatoes",
+        "Coriander"
+      ]
     },
     {
       "name": "Baklava Cheesecake",
@@ -1150,7 +2002,13 @@
       "mealType": "Dessert",
       "image": "https://buttermilkbysam.com/wp-content/uploads/2021/11/baklava-cheesecake-2.jpg",
       "diet": "vegetarian",
-      "id": "baklava-cheesecake"
+      "id": "baklava-cheesecake",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Cream",
+        "Lemon"
+      ]
     },
     {
       "name": "Namoura",
@@ -1159,7 +2017,13 @@
       "mealType": "Dessert",
       "image": "https://feelgoodfoodie.net/wp-content/uploads/2022/04/Namoura-11.jpg",
       "diet": "vegetarian",
-      "id": "namoura"
+      "id": "namoura",
+      "keyIngredients": [
+        "Milk",
+        "Lemon",
+        "Almonds",
+        "Tahini"
+      ]
     },
     {
       "name": "Smashed Cucumber Salad",
@@ -1168,7 +2032,11 @@
       "mealType": "Side",
       "image": "https://thewoksoflife.com/wp-content/uploads/2015/06/smashed-asian-cucumber-salad-7.jpg",
       "diet": "vegan",
-      "id": "smashed-cucumber-salad"
+      "id": "smashed-cucumber-salad",
+      "keyIngredients": [
+        "Cucumber",
+        "Coriander"
+      ]
     },
     {
       "name": "Gochujang Brussel Sprouts",
@@ -1177,7 +2045,12 @@
       "mealType": "Side",
       "image": "https://minimalistbaker.com/wp-content/uploads/2018/07/AMAZING-Gochujang-Stir-Fried-Brussels-Sprouts-8-ingredients-30-minutes-BIG-flavor-vegan-glutenfree-korean-recipe-brusselssprouts-minimalistbaker-6.jpg",
       "diet": "vegan",
-      "id": "gochujang-brussel-sprouts"
+      "id": "gochujang-brussel-sprouts",
+      "keyIngredients": [
+        "Brussels sprouts",
+        "Peanuts",
+        "Gochujang"
+      ]
     },
     {
       "name": "Whipped Ricotta",
@@ -1186,7 +2059,14 @@
       "mealType": "Side",
       "image": "https://www.forkinthekitchen.com/wp-content/uploads/2021/04/210324.whipped.ricotta.update-5845-5.jpg",
       "diet": "vegetarian",
-      "id": "whipped-ricotta"
+      "id": "whipped-ricotta",
+      "keyIngredients": [
+        "Cheese",
+        "Bread",
+        "Lemon",
+        "Mint",
+        "Parsley"
+      ]
     },
     {
       "name": "Hong Kong French Toast",
@@ -1195,7 +2075,13 @@
       "mealType": "Breakfast",
       "image": "https://static01.nyt.com/images/2025/05/29/multimedia/hong-kong-french-toast-ljcv/hong-kong-french-toast-ljcv-facebookJumbo.jpg",
       "diet": "vegetarian",
-      "id": "hong-kong-french-toast"
+      "id": "hong-kong-french-toast",
+      "keyIngredients": [
+        "Eggs",
+        "Milk",
+        "Bread",
+        "Peanuts"
+      ]
     },
     {
       "name": "Wild Garlic Scones",
@@ -1204,7 +2090,12 @@
       "mealType": "Side",
       "image": "https://www.farmersgirlkitchen.co.uk/wp-content/uploads/2022/02/Cheese-and-Wild-Garlic-Scones-process-20.jpg",
       "diet": "vegetarian",
-      "id": "wild-garlic-scones"
+      "id": "wild-garlic-scones",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Milk"
+      ]
     },
     {
       "name": "Halloumi Beans",
@@ -1213,7 +2104,15 @@
       "mealType": "Main",
       "image": "https://static01.nyt.com/images/2025/05/05/multimedia/-NB-Crispy-Halloumi-Tomatoes-and-White2-hmvk/-NB-Crispy-Halloumi-Tomatoes-and-White2-hmvk-facebookJumbo.jpg",
       "diet": "vegetarian",
-      "id": "halloumi-beans"
+      "id": "halloumi-beans",
+      "keyIngredients": [
+        "Cheese",
+        "Beans",
+        "Bread",
+        "Tomatoes",
+        "Lemon",
+        "Parsley"
+      ]
     },
     {
       "name": "Wild Garlic Lasagne",
@@ -1222,7 +2121,15 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2023/02/Wild-garlic-and-mushroom-lasagne-e7f1218.jpg?resize=900%2C471",
       "diet": "vegetarian",
-      "id": "wild-garlic-lasagne"
+      "id": "wild-garlic-lasagne",
+      "keyIngredients": [
+        "Cheese",
+        "Mozzarella",
+        "Milk",
+        "Pasta",
+        "Tomatoes",
+        "Mushrooms"
+      ]
     },
     {
       "name": "Seaweed Garlic Noodles",
@@ -1231,7 +2138,10 @@
       "mealType": "Main",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcfSZpsq12mDBLR_IFrGZyacgclLKChcMTh2XiYN_iFRpTfWqPvMpjBlo&s=10",
       "diet": "vegan",
-      "id": "seaweed-garlic-noodles"
+      "id": "seaweed-garlic-noodles",
+      "keyIngredients": [
+        "Noodles"
+      ]
     },
     {
       "name": "Banana Bread",
@@ -1240,7 +2150,11 @@
       "mealType": "Dessert",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/06/recipe-image-legacy-id-1273522_8-a6b9246.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "banana-bread"
+      "id": "banana-bread",
+      "keyIngredients": [
+        "Eggs",
+        "Bananas"
+      ]
     },
     {
       "name": "Vietnamese Garlic Shrimp",
@@ -1249,7 +2163,10 @@
       "mealType": "Side",
       "image": "https://i0.wp.com/mmbonappetit.com/wp-content/uploads/2025/11/Tom-chay-toi-1.jpg?resize=1500%2C1875&ssl=1",
       "diet": "meat",
-      "id": "vietnamese-garlic-shrimp"
+      "id": "vietnamese-garlic-shrimp",
+      "keyIngredients": [
+        "Prawns"
+      ]
     },
     {
       "name": "Coconut Milk Poached Salmon",
@@ -1258,7 +2175,15 @@
       "mealType": "Main",
       "image": "https://www.recipetineats.com/tachyon/2018/09/Poached-Salmon-in-Coconut-Lime-Sauce_2.jpg",
       "diet": "meat",
-      "id": "coconut-milk-poached-salmon"
+      "id": "coconut-milk-poached-salmon",
+      "keyIngredients": [
+        "Fish",
+        "Coconut milk",
+        "Rice",
+        "Noodles",
+        "Lime",
+        "Coriander"
+      ]
     },
     {
       "name": "Banoffee Pie",
@@ -1267,7 +2192,12 @@
       "mealType": "Dessert",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/04/Banoffee-pie-1f3c2d8.jpg?resize=440%2C230",
       "diet": "vegetarian",
-      "id": "banoffee-pie"
+      "id": "banoffee-pie",
+      "keyIngredients": [
+        "Cream",
+        "Bananas",
+        "Chocolate"
+      ]
     },
     {
       "name": "Kung Pao Tofu",
@@ -1276,7 +2206,13 @@
       "mealType": "Main",
       "image": "https://www.cookwithmanali.com/wp-content/uploads/2013/11/Kung-Pao-Tofu-Recipe.jpg",
       "diet": "vegan",
-      "id": "kung-pao-tofu"
+      "id": "kung-pao-tofu",
+      "keyIngredients": [
+        "Tofu",
+        "Peppers",
+        "Coriander",
+        "Peanuts"
+      ]
     },
     {
       "name": "Vietnamese Braised Fish",
@@ -1285,7 +2221,11 @@
       "mealType": "Main",
       "image": "https://www.wokandkin.com/wp-content/uploads/2020/12/Ca-Kho-To-Close-Up-saved-for-web.png",
       "diet": "meat",
-      "id": "vietnamese-braised-fish"
+      "id": "vietnamese-braised-fish",
+      "keyIngredients": [
+        "Beef",
+        "Fish"
+      ]
     },
     {
       "name": "Cauliflower Piccata",
@@ -1294,7 +2234,14 @@
       "mealType": "Main",
       "image": "https://static01.nyt.com/images/2001/10/07/dining/hm-cauliflower-piccata/merlin_195006624_9fe19ba9-b756-415a-9fe7-f65fc4ade92f-facebookJumbo.jpg",
       "diet": "vegetarian",
-      "id": "cauliflower-piccata"
+      "id": "cauliflower-piccata",
+      "keyIngredients": [
+        "Chickpeas",
+        "Cauliflower",
+        "Lemon",
+        "Parsley",
+        "Capers"
+      ]
     },
     {
       "name": "Shrimp and Black Bean Salad",
@@ -1303,7 +2250,14 @@
       "mealType": "Main",
       "image": "https://kalynskitchen.com/wp-content/uploads/2014/05/1200-shrimp-black-bean-salad.jpg",
       "diet": "meat",
-      "id": "shrimp-and-black-bean-salad"
+      "id": "shrimp-and-black-bean-salad",
+      "keyIngredients": [
+        "Prawns",
+        "Beans",
+        "Peppers",
+        "Lime",
+        "Coriander"
+      ]
     },
     {
       "name": "Braised Courgette and Beans",
@@ -1312,7 +2266,13 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/2/2021/06/Braised-Courgette-Cannellni-Beans-V2-85bd802.jpg?resize=1200%2C630",
       "diet": "meat",
-      "id": "braised-courgette-and-beans"
+      "id": "braised-courgette-and-beans",
+      "keyIngredients": [
+        "Cheese",
+        "Beans",
+        "Courgette",
+        "Lemon"
+      ]
     },
     {
       "name": "Coconut Prawn Curry",
@@ -1321,7 +2281,15 @@
       "mealType": "Main",
       "image": "https://ichef.bbci.co.uk/food/ic/food_16x9_448/recipes/coconut_prawn_curry_with_79671_16x9.jpg",
       "diet": "meat",
-      "id": "coconut-prawn-curry"
+      "id": "coconut-prawn-curry",
+      "keyIngredients": [
+        "Prawns",
+        "Cream",
+        "Rice",
+        "Tomatoes",
+        "Bananas",
+        "Coriander"
+      ]
     },
     {
       "name": "Chocolate Mousse",
@@ -1330,7 +2298,12 @@
       "mealType": "Dessert",
       "image": "https://www.recipetineats.com/tachyon/2018/09/Chocolate-Mousse_9.jpg",
       "diet": "vegetarian",
-      "id": "chocolate-mousse"
+      "id": "chocolate-mousse",
+      "keyIngredients": [
+        "Eggs",
+        "Cream",
+        "Chocolate"
+      ]
     },
     {
       "name": "Chocolate Cremeux",
@@ -1339,7 +2312,13 @@
       "mealType": "Dessert",
       "image": "https://www.theflavorbender.com/wp-content/uploads/2023/05/Chocolate-Cremeux-SM-1943.jpg",
       "diet": "vegetarian",
-      "id": "chocolate-cremeux"
+      "id": "chocolate-cremeux",
+      "keyIngredients": [
+        "Eggs",
+        "Cream",
+        "Milk",
+        "Chocolate"
+      ]
     },
     {
       "name": "Dark Chocolate Terrine",
@@ -1348,7 +2327,12 @@
       "mealType": "Dessert",
       "image": "https://en.cooking-tree.com/wp-content/uploads/2022/06/5608-Chocolate-Terrine-Recipe-Cooking-tree.jpg",
       "diet": "vegetarian",
-      "id": "dark-chocolate-terrine"
+      "id": "dark-chocolate-terrine",
+      "keyIngredients": [
+        "Eggs",
+        "Cream",
+        "Chocolate"
+      ]
     },
     {
       "name": "Paneer Butter Masala",
@@ -1357,7 +2341,16 @@
       "mealType": "Main",
       "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/07/paneer-butter-masala-recipe.jpg",
       "diet": "vegetarian",
-      "id": "paneer-butter-masala"
+      "id": "paneer-butter-masala",
+      "keyIngredients": [
+        "Cheese",
+        "Paneer",
+        "Cream",
+        "Tomatoes",
+        "Coriander",
+        "Cashews",
+        "Almonds"
+      ]
     },
     {
       "name": "Matcha Thumbprint Cookies",
@@ -1366,7 +2359,11 @@
       "mealType": "Dessert",
       "image": "https://teakandthyme.com/wp-content/uploads/2023/12/matcha-thumbprint-cookies-DSC_6615-1x1-1200.jpg",
       "diet": "vegetarian",
-      "id": "matcha-thumbprint-cookies"
+      "id": "matcha-thumbprint-cookies",
+      "keyIngredients": [
+        "Eggs",
+        "Berries"
+      ]
     },
     {
       "name": "Scallion Pancake",
@@ -1375,7 +2372,8 @@
       "mealType": "Main",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2025/02/Scallion-pancakes-d62602a.jpg?resize=1200%2C630",
       "diet": "vegetarian",
-      "id": "scallion-pancake"
+      "id": "scallion-pancake",
+      "keyIngredients": []
     },
     {
       "name": "Leek Orzo",
@@ -1384,7 +2382,12 @@
       "mealType": "Main",
       "image": "https://ichef.bbci.co.uk/food/ic/food_16x9_448/recipes/one-pan_mushroom_and_04696_16x9.jpg",
       "diet": "vegan",
-      "id": "leek-orzo"
+      "id": "leek-orzo",
+      "keyIngredients": [
+        "Pasta",
+        "Mushrooms",
+        "Leeks"
+      ]
     },
     {
       "name": "Shrimp Orzo",
@@ -1393,7 +2396,14 @@
       "mealType": "Main",
       "image": "https://juliasalbum.com/wp-content/uploads/2024/03/shrimp-orzo-recipe-2.jpg",
       "diet": "meat",
-      "id": "shrimp-orzo"
+      "id": "shrimp-orzo",
+      "keyIngredients": [
+        "Prawns",
+        "Cream",
+        "Pasta",
+        "Spinach",
+        "Basil"
+      ]
     },
     {
       "name": "Mediterranean Pasta Salad",
@@ -1402,7 +2412,16 @@
       "mealType": "Main",
       "image": "https://feelgoodfoodie.net/wp-content/uploads/2022/05/Mediterranean-Pasta-Salad-07.jpg",
       "diet": "vegetarian",
-      "id": "mediterranean-pasta-salad"
+      "id": "mediterranean-pasta-salad",
+      "keyIngredients": [
+        "Cheese",
+        "Feta",
+        "Pasta",
+        "Tomatoes",
+        "Spinach",
+        "Cucumber",
+        "Olives"
+      ]
     },
     {
       "name": "Crumb Cake",
@@ -1411,7 +2430,11 @@
       "mealType": "Dessert",
       "image": "https://substackcdn.com/image/fetch/$s_!M1vx!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c5bce4f-8e13-4d25-bea9-100f5e58007b_4032x3024.jpeg",
       "diet": "vegetarian",
-      "id": "crumb-cake"
+      "id": "crumb-cake",
+      "keyIngredients": [
+        "Eggs",
+        "Cream"
+      ]
     },
     {
       "name": "Falafel",
@@ -1420,7 +2443,18 @@
       "mealType": "Main",
       "image": "https://www.themediterraneandish.com/wp-content/uploads/2020/02/falafel-recipe-1.jpg",
       "diet": "vegan",
-      "id": "falafel"
+      "id": "falafel",
+      "keyIngredients": [
+        "Chickpeas",
+        "Bread",
+        "Tomatoes",
+        "Cucumber",
+        "Lettuce",
+        "Coriander",
+        "Parsley",
+        "Dill",
+        "Tahini"
+      ]
     },
     {
       "name": "Pastina",
@@ -1429,7 +2463,10 @@
       "mealType": "Main",
       "image": "https://www.italiankitchenconfessions.com/wp-content/uploads/2026/02/Pastina-Soup-The-Original-Italian-Penicillin_HZ-2-1024x768.webp",
       "diet": "meat",
-      "id": "pastina"
+      "id": "pastina",
+      "keyIngredients": [
+        "Cheese"
+      ]
     },
     {
       "name": "Wild Garlic Butter",
@@ -1438,7 +2475,8 @@
       "mealType": "Side",
       "image": "https://www.farmersgirlkitchen.co.uk/wp-content/uploads/2025/04/Wild-garlic-butter-sliced-4.jpg",
       "diet": "vegetarian",
-      "id": "wild-garlic-butter"
+      "id": "wild-garlic-butter",
+      "keyIngredients": []
     },
     {
       "name": "Padron Peppers",
@@ -1447,7 +2485,10 @@
       "mealType": "Side",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/padron-peppers-900e031.jpg?resize=440%2C230",
       "diet": "vegan",
-      "id": "padron-peppers"
+      "id": "padron-peppers",
+      "keyIngredients": [
+        "Peppers"
+      ]
     },
     {
       "name": "Aubergine Parmagiana",
@@ -1456,7 +2497,13 @@
       "mealType": "Main",
       "image": "https://ichef.bbci.co.uk/food/ic/food_16x9_448/recipes/aubergine_parmigiana_57566_16x9.jpg",
       "diet": "vegetarian",
-      "id": "aubergine-parmagiana"
+      "id": "aubergine-parmagiana",
+      "keyIngredients": [
+        "Cheese",
+        "Mozzarella",
+        "Tomatoes",
+        "Aubergine"
+      ]
     },
     {
       "name": "Dense Bean Salad",
@@ -1465,7 +2512,16 @@
       "mealType": "Main",
       "image": "https://makeitdairyfree.com/wp-content/uploads/2026/08/Smoky-Southwest-Dense-Bean-Salad-9.jpg",
       "diet": "vegan",
-      "id": "dense-bean-salad"
+      "id": "dense-bean-salad",
+      "keyIngredients": [
+        "Beans",
+        "Cabbage",
+        "Peppers",
+        "Sweetcorn",
+        "Avocado",
+        "Lime",
+        "Coriander"
+      ]
     },
     {
       "name": "Dandelion Honey",
@@ -1474,7 +2530,10 @@
       "mealType": "Side",
       "image": "https://adamantkitchen.com/wp-content/uploads/2023/05/Dandelion-Honey-2.jpg",
       "diet": "vegan",
-      "id": "dandelion-honey"
+      "id": "dandelion-honey",
+      "keyIngredients": [
+        "Lemon"
+      ]
     },
     {
       "name": "Hong Kong Milk Tea Cookies",
@@ -1483,7 +2542,10 @@
       "mealType": "Dessert",
       "image": "https://substackcdn.com/image/fetch/$s_!0lHj!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F179cf15d-aafa-4fb4-b9d6-a2db2f0c08c4_1102x1102.jpeg",
       "diet": "vegetarian",
-      "id": "hong-kong-milk-tea-cookies"
+      "id": "hong-kong-milk-tea-cookies",
+      "keyIngredients": [
+        "Eggs"
+      ]
     },
     {
       "name": "Vietnamese Coffee Cookies",
@@ -1492,7 +2554,11 @@
       "mealType": "Dessert",
       "image": "https://substackcdn.com/image/fetch/$s_!i3vF!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa4ed67ed-0475-4bc7-84ba-b52ba917f411_1200x1600.jpeg",
       "diet": "vegetarian",
-      "id": "vietnamese-coffee-cookies"
+      "id": "vietnamese-coffee-cookies",
+      "keyIngredients": [
+        "Eggs",
+        "Chocolate"
+      ]
     },
     {
       "name": "White Bean Leek Soup",
@@ -1501,7 +2567,13 @@
       "mealType": "Main",
       "image": "https://substackcdn.com/image/fetch/$s_!b-39!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F78adad8b-bf83-4958-8ae5-c005410ebb4e_2896x3620.jpeg",
       "diet": "vegan",
-      "id": "white-bean-leek-soup"
+      "id": "white-bean-leek-soup",
+      "keyIngredients": [
+        "Beans",
+        "Bread",
+        "Leeks",
+        "Parsnips"
+      ]
     },
     {
       "name": "Courgette Meatball Brothy Orzo",
@@ -1510,7 +2582,19 @@
       "mealType": "Main",
       "image": "https://substackcdn.com/image/fetch/$s_!uPeG!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b20e907-b42f-410e-a887-54c1e0954ef8_4032x3024.jpeg",
       "diet": "meat",
-      "id": "courgette-meatball-brothy-orzo"
+      "id": "courgette-meatball-brothy-orzo",
+      "keyIngredients": [
+        "Pork",
+        "Mince",
+        "Cheese",
+        "Milk",
+        "Pasta",
+        "Courgette",
+        "Fennel",
+        "Basil",
+        "Parsley",
+        "Pine nuts"
+      ]
     },
     {
       "name": "Balsalmic Fig Blackberry Cake",
@@ -1519,7 +2603,14 @@
       "mealType": "Dessert",
       "image": "https://substackcdn.com/image/fetch/$s_!UE6t!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4dd6ac37-a36c-498e-87cd-c0400dcad0ab_5712x4284.jpeg",
       "diet": "vegetarian",
-      "id": "balsalmic-fig-blackberry-cake"
+      "id": "balsalmic-fig-blackberry-cake",
+      "keyIngredients": [
+        "Eggs",
+        "Milk",
+        "Lemon",
+        "Berries",
+        "Basil"
+      ]
     },
     {
       "name": "Banana Cake with Tahini Fudge",
@@ -1528,7 +2619,15 @@
       "mealType": "Dessert",
       "image": "https://substackcdn.com/image/fetch/$s_!JxZI!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4ce10a66-5013-4e0a-bebf-294a3d3e8d2a_4910x6137.jpeg",
       "diet": "vegetarian",
-      "id": "banana-cake-with-tahini-fudge"
+      "id": "banana-cake-with-tahini-fudge",
+      "keyIngredients": [
+        "Eggs",
+        "Cream",
+        "Bananas",
+        "Peanuts",
+        "Chocolate",
+        "Tahini"
+      ]
     },
     {
       "name": "Sungold Tomato Pasta",
@@ -1537,7 +2636,13 @@
       "mealType": "Main",
       "image": "https://substackcdn.com/image/fetch/$s_!VnmB!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F73d30bb4-4568-4546-9666-53b4bef78fb1_1200x630.png",
       "diet": "vegetarian",
-      "id": "sungold-tomato-pasta"
+      "id": "sungold-tomato-pasta",
+      "keyIngredients": [
+        "Cheese",
+        "Pasta",
+        "Tomatoes",
+        "Lemon"
+      ]
     },
     {
       "name": "Marry Me Chicken and Potatoes",
@@ -1546,7 +2651,15 @@
       "mealType": "Main",
       "image": "https://substackcdn.com/image/fetch/$s_!1H8R!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcdd3701e-2179-4c8d-83e7-d740e9f61b07_1179x2061.jpeg",
       "diet": "meat",
-      "id": "marry-me-chicken-and-potatoes"
+      "id": "marry-me-chicken-and-potatoes",
+      "keyIngredients": [
+        "Chicken",
+        "Cheese",
+        "Cream",
+        "Potatoes",
+        "Lemon",
+        "Basil"
+      ]
     },
     {
       "name": "Basque Cheesecake",
@@ -1555,7 +2668,13 @@
       "mealType": "Dessert",
       "image": "https://substackcdn.com/image/fetch/$s_!nOOd!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa7ca5a70-6587-4bd7-8b45-0d333565cdcf_2920x2920.jpeg",
       "diet": "vegetarian",
-      "id": "basque-cheesecake"
+      "id": "basque-cheesecake",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Cream",
+        "Miso"
+      ]
     },
     {
       "name": "Chocolate Coffee Mousse Cake",
@@ -1564,7 +2683,13 @@
       "mealType": "Dessert",
       "image": "https://substackcdn.com/image/fetch/$s_!xOBy!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdff938e2-a866-41e5-810b-140d29197ebc_3024x3598.jpeg",
       "diet": "vegetarian",
-      "id": "chocolate-coffee-mousse-cake"
+      "id": "chocolate-coffee-mousse-cake",
+      "keyIngredients": [
+        "Eggs",
+        "Cream",
+        "Milk",
+        "Chocolate"
+      ]
     },
     {
       "name": "Chicken Salad",
@@ -1573,7 +2698,15 @@
       "mealType": "Main",
       "image": "https://substackcdn.com/image/fetch/$s_!_r95!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F687bfbf1-5d59-49fc-8d46-147a746c82f2_2402x3002.webp",
       "diet": "meat",
-      "id": "chicken-salad"
+      "id": "chicken-salad",
+      "keyIngredients": [
+        "Chicken",
+        "Bread",
+        "Cucumber",
+        "Lemon",
+        "Dill",
+        "Capers"
+      ]
     },
     {
       "name": "Raspberry Pound Cake",
@@ -1582,7 +2715,14 @@
       "mealType": "Dessert",
       "image": "https://substackcdn.com/image/fetch/$s_!imQ8!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F30108a4a-cebf-48a9-ae2c-a940a0078581_3704x2771.jpeg",
       "diet": "vegetarian",
-      "id": "raspberry-pound-cake"
+      "id": "raspberry-pound-cake",
+      "keyIngredients": [
+        "Eggs",
+        "Cheese",
+        "Cream",
+        "Beetroot",
+        "Berries"
+      ]
     },
     {
       "name": "Creamy Corn Butter Beans",
@@ -1591,7 +2731,14 @@
       "mealType": "Side",
       "image": "https://substackcdn.com/image/fetch/$s_!PxKF!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb71926a-0d08-4fe2-98b7-e402c6d2eba3_4280x5350.jpeg",
       "diet": "vegetarian",
-      "id": "creamy-corn-butter-beans"
+      "id": "creamy-corn-butter-beans",
+      "keyIngredients": [
+        "Cheese",
+        "Chickpeas",
+        "Beans",
+        "Sweetcorn",
+        "Basil"
+      ]
     },
     {
       "name": "Butternut Squash Soup",
@@ -1600,7 +2747,11 @@
       "mealType": "Main",
       "image": "https://substackcdn.com/image/fetch/$s_!TCs0!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F64c8a437-2285-47e2-a320-4e794dcb0ff0_3409x2268.jpeg",
       "diet": "vegetarian",
-      "id": "butternut-squash-soup"
+      "id": "butternut-squash-soup",
+      "keyIngredients": [
+        "Cheese",
+        "Squash"
+      ]
     },
     {
       "name": "Lahm B'ajin",
@@ -1609,7 +2760,13 @@
       "mealType": "Side",
       "image": "https://itschefamani.com/wp-content/uploads/2025/01/IMG_9788-2-scaled.jpg",
       "diet": "meat",
-      "id": "lahm-b-ajin"
+      "id": "lahm-b-ajin",
+      "keyIngredients": [
+        "Mint",
+        "Parsley",
+        "Pine nuts",
+        "Tahini"
+      ]
     },
     {
       "name": "Kibbeh",
@@ -1618,7 +2775,13 @@
       "mealType": "Side",
       "image": "https://itschefamani.com/wp-content/uploads/2024/02/IMG_7508-scaled.jpg",
       "diet": "meat",
-      "id": "kibbeh"
+      "id": "kibbeh",
+      "keyIngredients": [
+        "Lamb",
+        "Basil",
+        "Almonds",
+        "Pine nuts"
+      ]
     },
     {
       "name": "Riz a Jej",
@@ -1627,7 +2790,12 @@
       "mealType": "Main",
       "image": "https://itschefamani.com/wp-content/uploads/2025/10/DSC06115-scaled.jpg",
       "diet": "meat",
-      "id": "riz-a-jej"
+      "id": "riz-a-jej",
+      "keyIngredients": [
+        "Chicken",
+        "Rice",
+        "Lemon"
+      ]
     }
   ]
 }

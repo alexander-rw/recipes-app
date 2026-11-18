@@ -11,6 +11,8 @@ export type Recipe = {
   diet?: Diet;
   // Preview image from the recipe page's og:image, filled in by `yarn images`
   image?: string;
+  // Main ingredients, such as "Chicken" or "Tofu", for the ingredient filter; set by `yarn ingredients`
+  keyIngredients?: string[];
 }
 
 // A recipe's ingredients and method, saved from its page by `yarn details`

@@ -4,7 +4,7 @@ Our recipe collection, live at **https://recipes.alexander-rw.com**.
 
 It has four parts:
 
-- **Recipes**: every recipe with filters for meal type, diet and cooking time. A recipe opens on
+- **Recipes**: every recipe with filters for meal type, diet, main ingredients and cooking time. A recipe opens on
   the site with its ingredients and method, so there's no need to scroll past someone's life story.
 - **Around the world**: a map of the countries we've eaten a meal from, at home or out, and the
   ones we're planning.
@@ -50,6 +50,7 @@ Node 20 or later is needed (`yarn details --chrome` needs Node 22's built-in Web
    - gives the recipe an `id`, which names its page (`#recipe/<id>`) and its details file,
    - fetches its photo into `image` (`yarn images`),
    - saves its ingredients and method to `public/recipes/<id>.json` (`yarn details --chrome`),
+   - tags it with its main ingredients (`keyIngredients`), for the ingredient filter,
    - and commits the results.
 
    If a photo or recipe can't be fetched, it opens a GitHub issue (or comments on the open one) with
@@ -62,6 +63,8 @@ yarn images            # --force to refetch every photo
 yarn details           # --force to refetch everything
 yarn details --chrome  # also retry pages that block plain requests, through a Chrome
                        # started with --remote-debugging-port=9222
+yarn ingredients       # re-tag main ingredients, after changing the list in
+                       # scripts/tag-ingredients.js (yarn details does this too)
 ```
 
 ### When a recipe can't be fetched
@@ -161,13 +164,13 @@ src/
   components/
     app/        App: picks the view from the URL
     recipes/    The recipe list and its cards
-    filters/    Meal type, diet and cooking time filters
+    filters/    Meal type, diet, ingredient and cooking time filters
     recipe/     A recipe's page, opened over whichever view it came from
     world/      The world map and its progress panel
     places/     Places to eat in London
     display/    The kitchen slideshow, its recipe browser and the now-playing card
   styles/       MUI themes (the display has its own, brighter for the kitchen screen)
-scripts/        yarn images / yarn details / yarn places (and place-tags.json)
+scripts/        yarn images / yarn details / yarn ingredients / yarn places (and place-tags.json)
 public/
   recipes-dinner.json   The recipe list
   recipes/<id>.json     Each recipe's ingredients and method

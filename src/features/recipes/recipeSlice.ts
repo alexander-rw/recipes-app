@@ -30,6 +30,8 @@ export interface RecipeFilters {
   diet: DietFilter | null;
   // null means the full range of cook times is shown
   cookTimeRange: CookTimeRange | null;
+  // Main ingredients a recipe must have every one of; empty shows everything
+  ingredients: string[];
 }
 
 export interface RecipeState {
@@ -47,6 +49,7 @@ const initialFilters: RecipeFilters = {
   mealTypes: [],
   diet: null,
   cookTimeRange: null,
+  ingredients: [],
 };
 
 const initialState: RecipeState = {
@@ -72,7 +75,7 @@ const recipeComparators: Record<RecipeSort, (a: Recipe, b: Recipe) => number> = 
 const normalise = (text: string) =>
   text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-const filterRecipes = (recipes: Recipe[], { search, mealTypes, diet, cookTimeRange }: RecipeFilters) => {
+const filterRecipes = (recipes: Recipe[], { search, mealTypes, diet, cookTimeRange, ingredients }: RecipeFilters) => {
   const query = normalise(search.trim());
   return recipes.filter(r =>
     (query === "" || normalise(r.name).includes(query))
@@ -81,6 +84,7 @@ const filterRecipes = (recipes: Recipe[], { search, mealTypes, diet, cookTimeRan
     && (cookTimeRange == null
       || (r.timeTakenToCook >= cookTimeRange[0]
         && (cookTimeRange[1] == null || r.timeTakenToCook <= cookTimeRange[1])))
+    && ingredients.every(i => r.keyIngredients?.includes(i))
   );
 };
 
@@ -132,6 +136,9 @@ export const recipeSlice = createSlice({
     setCookTimeRange: (state, action: PayloadAction<CookTimeRange | null>) => {
       state.filters.cookTimeRange = action.payload;
     },
+    setIngredientFilter: (state, action: PayloadAction<string[]>) => {
+      state.filters.ingredients = action.payload;
+    },
     clearFilters: (state) => {
       state.filters = initialFilters;
     },
@@ -164,6 +171,7 @@ export const {
   setMealTypeFilter,
   setDietFilter,
   setCookTimeRange,
+  setIngredientFilter,
   clearFilters,
   setSortBy,
 } = recipeSlice.actions;
@@ -201,6 +209,23 @@ export const selectRecipesForCookTimeFilter = createSelector(
 export const selectMealTypes = createSelector(
   [selectAllRecipes],
   (recipes) => uniq(recipes.map(r => r.mealType))
+);
+
+export interface IngredientOption {
+  name: string;
+  // How many of the recipes showing now have it, so how many would be left after choosing it
+  count: number;
+}
+
+// Main ingredients of the recipes showing now, most common first
+export const selectIngredientOptions = createSelector(
+  [selectFilteredRecipes],
+  (recipes): IngredientOption[] => {
+    const counts = new Map<string, number>();
+    recipes.forEach(r => r.keyIngredients?.forEach(i => counts.set(i, (counts.get(i) ?? 0) + 1)));
+    return Array.from(counts, ([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  }
 );
 
 export interface CookTimeBounds {

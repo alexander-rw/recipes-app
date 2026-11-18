@@ -16,6 +16,7 @@
 const fs = require("fs");
 const path = require("path");
 const { JSDOM, VirtualConsole } = require("jsdom");
+const { tagIngredients } = require("./tag-ingredients");
 
 const RECIPES_FILE = path.join(__dirname, "..", "public", "recipes-dinner.json");
 const DETAILS_DIR = path.join(__dirname, "..", "public", "recipes");
@@ -353,6 +354,8 @@ const main = async () => {
   await Promise.all(Array.from({ length: useChrome ? 3 : CONCURRENCY }, worker));
 
   fs.writeFileSync(RECIPES_FILE, JSON.stringify(data, null, 2) + "\n");
+  // Keeps the main ingredients the Recipes tab filters by up to date
+  tagIngredients();
 
   console.log(`Saved ${todo.length - failures.length} recipes.`);
   if (failures.length > 0) {

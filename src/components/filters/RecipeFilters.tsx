@@ -1,4 +1,4 @@
-import { Box, Button, Slider, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import { Autocomplete, Box, Button, Chip, Slider, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
@@ -6,10 +6,12 @@ import {
   DietFilter,
   selectCookTimeBounds,
   selectFilters,
+  selectIngredientOptions,
   selectMealTypes,
   selectRecipesForCookTimeFilter,
   setCookTimeRange,
   setDietFilter,
+  setIngredientFilter,
   setMealTypeFilter,
 } from "../../features/recipes/recipeSlice";
 import { CookTimeHistogram } from "./CookTimeHistogram";
@@ -26,11 +28,14 @@ export const RecipeFilters = () => {
   const mealTypes = useAppSelector(selectMealTypes);
   const cookTimeRecipes = useAppSelector(selectRecipesForCookTimeFilter);
   const { min: minTime, max: maxTime, isCapped } = useAppSelector(selectCookTimeBounds);
-  const { search, mealTypes: selectedMealTypes, diet, cookTimeRange } = useAppSelector(selectFilters);
+  const ingredientOptions = useAppSelector(selectIngredientOptions);
+  const { search, mealTypes: selectedMealTypes, diet, cookTimeRange, ingredients } = useAppSelector(selectFilters);
+  const ingredientCounts = new Map(ingredientOptions.map(o => [o.name, o.count]));
 
   const [fromTime, toTime] = cookTimeRange ?? [minTime, null];
   const sliderTo = toTime ?? maxTime;
-  const hasFilters = search !== "" || selectedMealTypes.length > 0 || diet != null || cookTimeRange != null;
+  const hasFilters = search !== "" || selectedMealTypes.length > 0 || diet != null || cookTimeRange != null
+    || ingredients.length > 0;
 
   const formatMinutes = (value: number) => (isCapped && value >= maxTime ? `${maxTime}+` : `${value}`);
 
@@ -75,6 +80,40 @@ export const RecipeFilters = () => {
                 <ToggleButton value={o.value} key={o.value}>{o.label}</ToggleButton>
               ))}
             </ToggleButtonGroup>
+          </Box>
+          <Box>
+            <Typography gutterBottom id="ingredients-label">Ingredients</Typography>
+            <Autocomplete
+              multiple
+              filterSelectedOptions
+              size="small"
+              options={ingredientOptions.map(o => o.name)}
+              value={ingredients}
+              onChange={(_, value) => dispatch(setIngredientFilter(value))}
+              noOptionsText="No other ingredients in these recipes"
+              renderOption={(props, name) => (
+                <li {...props} key={name}>
+                  <Box component="span" sx={{ flex: 1 }}>{name}</Box>
+                  <Typography component="span" variant="body2" color="text.secondary">
+                    {ingredientCounts.get(name)}
+                  </Typography>
+                </li>
+              )}
+              renderTags={(value, getTagProps) =>
+                value.map((name, index) => (
+                  <Chip {...getTagProps({ index })} key={name} label={name} color="secondary" size="small" />
+                ))
+              }
+              renderInput={params => (
+                <TextField
+                  {...params}
+                  color="secondary"
+                  placeholder={ingredients.length === 0 ? "e.g. chicken, tofu, spinach" : ""}
+                  inputProps={{ ...params.inputProps, "aria-labelledby": "ingredients-label" }}
+                />
+              )}
+              sx={{ maxWidth: 480 }}
+            />
           </Box>
         </Stack>
       </Grid>
