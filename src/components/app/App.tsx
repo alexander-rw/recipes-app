@@ -9,6 +9,7 @@ import { displayTheme, theme } from "../../styles/mui/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { RecipeFilters } from "../filters/RecipeFilters";
 import { WorldView } from "../world/WorldView";
+import { PlacesView } from "../places/PlacesView";
 import { RecipeDisplay } from "../display/RecipeDisplay";
 import { RecipePage } from "../recipe/RecipePage";
 import { NowPlaying, spotifyEnabled } from "../display/NowPlaying";
@@ -58,22 +59,29 @@ export const App = () => {
               <Tabs
                 value={view}
                 onChange={(_, next: View) => changeView(next)}
-                centered
+                variant="scrollable"
+                scrollButtons={false}
                 textColor="secondary"
                 indicatorColor="secondary"
+                // Centred, but on a narrow phone they scroll sideways rather than cut off the first tab
+                sx={{
+                  "& .MuiTabs-flexContainer": { justifyContent: "safe center" },
+                  "& .MuiTab-root": { minWidth: 0, px: { xs: 0.75, sm: 2 }, fontSize: { xs: "0.75rem", sm: "0.875rem" } },
+                }}
               >
                 <Tab value="recipes" label="Recipes" />
                 <Tab value="world" label="Around the world" />
+                <Tab value="eat" label="Places to eat" />
               </Tabs>
             </Grid>
-            {view === "recipes" ? (
+            {view === "recipes" && (
               <>
                 <RecipeFilters />
                 <RecipeList />
               </>
-            ) : (
-              <WorldView />
             )}
+            {view === "world" && <WorldView />}
+            {view === "eat" && <PlacesView />}
           </Grid>
         </Container>
         {recipePage}

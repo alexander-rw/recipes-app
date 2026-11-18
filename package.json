@@ -9,6 +9,7 @@
     "eject": "react-scripts eject",
     "images": "node scripts/fetch-recipe-images.js",
     "details": "node scripts/fetch-recipe-details.js",
+    "places": "node scripts/fetch-places.js",
     "build:base": "docker build . -f docker/Dockerfile.base -t recipes-base",
     "build:dev": "yarn build:base && docker build . -f docker/Dockerfile.dev -t recipes-dev",
     "start:dev": "docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true recipes-dev",

@@ -2,12 +2,15 @@
 
 Our recipe collection, live at **https://recipes.alexander-rw.com**.
 
-It has three parts:
+It has four parts:
 
 - **Recipes**: every recipe with filters for meal type, diet and cooking time. A recipe opens on
   the site with its ingredients and method, so there's no need to scroll past someone's life story.
 - **Around the world**: a map of the countries we've eaten a meal from, at home or out, and the
   ones we're planning.
+- **Places to eat** (`#eat`): our Google Maps list of places to eat in London, searchable by name,
+  food or area, filtered by kind of place and part of London, and sortable by distance from you.
+  It's only on the main site, not the kitchen display.
 - **Kitchen display** (`#display`): a full-screen slideshow of recipes for a touchscreen in the
   kitchen, with a browser for finding a recipe to cook from.
 
@@ -104,6 +107,24 @@ Add an entry to `public/meals.json`:
 
 The file is public on the site, so don't put anything in it you wouldn't want seen.
 
+## Updating the places to eat
+
+The places come from [our Google Maps list](https://maps.app.goo.gl/fgfBsvrhSPUmbPjD8). After adding
+places there, run:
+
+```sh
+yarn places
+```
+
+This saves the list to `public/places.json`. Google doesn't say what kind of place each one is, so
+that comes from `scripts/place-tags.json`, which maps each place's name on the list to
+`[type, cuisine]`. `type` is `restaurant`, `cafe`, `bakery`, `bar`, `dessert`, `market`, `shop` or
+`other`. `yarn places` lists any places that aren't in it yet; add them and run it again. A note
+added to a place on the Google Maps list shows on its card.
+
+The area names ("Peckham") come from the postcode district, using the table in
+`scripts/fetch-places.js`. `yarn places` warns about any district that isn't in the table.
+
 ## The kitchen display
 
 `https://recipes.alexander-rw.com/#display` is built for a 1280×800 touchscreen (it runs on a
@@ -136,13 +157,15 @@ src/
     filters/    Meal type, diet and cooking time filters
     recipe/     A recipe's page, opened over whichever view it came from
     world/      The world map and its progress panel
+    places/     Places to eat in London
     display/    The kitchen slideshow, its recipe browser and the now-playing card
   styles/       MUI themes (the display has its own, brighter for the kitchen screen)
-scripts/        yarn images / yarn details
+scripts/        yarn images / yarn details / yarn places (and place-tags.json)
 public/
   recipes-dinner.json   The recipe list
   recipes/<id>.json     Each recipe's ingredients and method
   meals.json            Meals for the world map
+  places.json           Places to eat, from yarn places
 ```
 
 Routes live in the URL hash, so they survive a refresh and can be bookmarked:
@@ -151,6 +174,7 @@ Routes live in the URL hash, so they survive a refresh and can be bookmarked:
 | --- | --- |
 | *(none)* | Recipes |
 | `#world` | Around the world |
+| `#eat` | Places to eat |
 | `#display` | Kitchen slideshow |
 | `#display/all` | Kitchen recipe browser |
 | `…/recipe/<id>` | A recipe, opened over any of the above, e.g. `#world/recipe/arayes` |

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-export type View = "recipes" | "world" | "display";
+export type View = "recipes" | "world" | "eat" | "display";
 
 // Where the app is, kept in the URL hash so it can be bookmarked and survives a refresh:
-// "" is the recipe list, "world" the meal tracker, "display" the kitchen slideshow and
+// "" is the recipe list, "world" the meal tracker, "eat" our places to eat in London,
+// "display" the kitchen slideshow and
 // "display/all" its recipe browser. "/recipe/<id>" on the end opens a recipe over any of them.
 export interface Route {
   view: View;
@@ -17,7 +18,7 @@ export const routeFromHash = (hash = window.location.hash): Route => {
   const parts = hash.replace(/^#/, "").split("/").filter(Boolean);
   const recipeAt = parts.indexOf("recipe");
   const base = recipeAt >= 0 ? parts.slice(0, recipeAt) : parts;
-  const view: View = base[0] === "world" || base[0] === "display" ? base[0] : "recipes";
+  const view: View = base[0] === "world" || base[0] === "eat" || base[0] === "display" ? base[0] : "recipes";
   return {
     view,
     browsing: view === "display" && base[1] === "all",
