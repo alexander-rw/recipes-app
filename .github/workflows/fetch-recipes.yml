@@ -1,5 +1,5 @@
 # When recipes are added to public/recipes-dinner.json, fetches each new one's photo
-# and its ingredients and method (`yarn images` and `yarn details`) and commits them.
+# and its ingredients and method (`bun images` and `bun details`) and commits them.
 # Anything that can't be fetched is raised as a GitHub issue.
 name: Fetch new recipes
 
@@ -28,13 +28,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Node 22 has the WebSocket that `yarn details --chrome` needs
-      - uses: actions/setup-node@v4
+      # Bun runs the scripts, and its built-in WebSocket is what `bun details --chrome` needs.
+      # The version comes from packageManager in package.json.
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22
-          cache: yarn
+          bun-version-file: package.json
 
-      - run: yarn install --frozen-lockfile
+      - run: bun install --frozen-lockfile
 
       - name: Start Chrome for pages that turn away plain requests
         run: |
@@ -49,12 +49,12 @@ jobs:
       - name: Fetch photos
         id: images
         continue-on-error: true
-        run: yarn --silent images 2>&1 | tee "$RUNNER_TEMP/images.log"
+        run: bun --silent images 2>&1 | tee "$RUNNER_TEMP/images.log"
 
       - name: Fetch ingredients and method
         id: details
         continue-on-error: true
-        run: yarn --silent details --chrome 2>&1 | tee "$RUNNER_TEMP/details.log"
+        run: bun --silent details --chrome 2>&1 | tee "$RUNNER_TEMP/details.log"
 
       - name: Commit what was fetched
         run: |
