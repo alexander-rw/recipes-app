@@ -9,5 +9,8 @@
   "assets": {
     "directory": "./build",
     "not_found_handling": "single-page-application"
-  }
+  },
+  // Served only at recipes.alexander-rw.com; deploys create and keep its DNS record
+  "routes": [{ "pattern": "recipes.alexander-rw.com", "custom_domain": true }],
+  "workers_dev": false
 }

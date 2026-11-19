@@ -197,3 +197,5 @@ Routes live in the URL hash, so they survive a refresh and can be bookmarked:
 
 Every push to `main` is built and deployed by Cloudflare Workers Builds as a static-assets Worker
 (`wrangler.jsonc`), with single-page-app fallback for unknown paths. There's nothing to run by hand.
+It's served at `recipes.alexander-rw.com` as a Workers custom domain, set in `wrangler.jsonc`, which
+also manages that hostname's DNS record. The `workers.dev` URL is turned off.

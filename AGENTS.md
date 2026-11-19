@@ -33,6 +33,8 @@ in `public/`. See `README.md` for what the site does and how its data files are 
 
 - Cloudflare Workers Builds deploys every push to `main` as a static-assets Worker. `wrangler.jsonc`
   holds its build command and points it at `build/`, with single-page-app fallback.
+- The site is served only at `recipes.alexander-rw.com`, a custom domain declared in `wrangler.jsonc`
+  (`workers_dev` is off). Cloudflare owns that hostname's DNS record, so don't add one by hand.
 - `.github/workflows/fetch-recipes.yml` runs when `public/recipes-dinner.json` changes. It runs
   `bun images` and `bun details --chrome` and commits what they fetch.
 - When changing how the project is installed, built or run, update `wrangler.jsonc`, the workflow,
