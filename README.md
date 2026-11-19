@@ -193,7 +193,3 @@ Routes live in the URL hash, so they survive a refresh and can be bookmarked:
 
 Every push to `main` is built and deployed by Cloudflare Workers Builds as a static-assets Worker
 (`wrangler.jsonc`), with single-page-app fallback for unknown paths. There's nothing to run by hand.
-
-There are also Dockerfiles in `docker/` for running a dev server (`yarn build:dev && yarn start:dev`,
-on port 3001) or an nginx production build (`yarn start:prod`, on port 3002), from before the site
-moved to Cloudflare.
