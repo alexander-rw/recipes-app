@@ -1,12 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { Box } from "@mui/material";
-import maplibregl, { GeoJSONSource, LngLatBoundsLike, Map as MapLibreMap } from "maplibre-gl";
+// The CSP build loads its worker from a file instead of a blob. In the main build, CRA's Babel
+// rewrites the inlined worker code so it fails with "_ is not defined" in production.
+import maplibregl, { GeoJSONSource, LngLatBoundsLike, Map as MapLibreMap } from "maplibre-gl/dist/maplibre-gl-csp";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Place, PlaceType } from "../../types/Place";
 import { placeEmoji, priceLabel, TYPE_COLORS, TYPE_LABELS } from "./placeStyle";
 
 // OpenFreeMap's pale Positron style: free, with no key or sign-up (https://openfreemap.org)
 const STYLE_URL = "https://tiles.openfreemap.org/styles/positron";
+
+// Copied into public/ by the prestart and prebuild scripts
+maplibregl.setWorkerUrl(`${process.env.PUBLIC_URL}/maplibre-gl-csp-worker.js`);
 
 // Central London, for before there's anything to fit the map to
 const LONDON: [number, number] = [-0.118, 51.509];

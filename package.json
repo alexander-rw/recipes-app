@@ -4,7 +4,9 @@
   "private": true,
   "packageManager": "bun@1.4.5",
   "scripts": {
+    "prestart": "cp node_modules/maplibre-gl/dist/maplibre-gl-csp-worker.js public/",
     "start": "react-scripts start",
+    "prebuild": "cp node_modules/maplibre-gl/dist/maplibre-gl-csp-worker.js public/",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

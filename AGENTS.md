@@ -22,6 +22,13 @@ in `public/`. See `README.md` for what the site does and how its data files are 
 - `react-scripts` (`start`, `build`, `test`) still runs on Node through its `#!/usr/bin/env node`
   shebang, so Node 20+ must be installed for those.
 
+## Map
+
+- The places map imports MapLibre's CSP build (`maplibre-gl/dist/maplibre-gl-csp`). The
+  `prestart` and `prebuild` scripts copy its worker into `public/` (gitignored). Don't switch back
+  to the plain `maplibre-gl` import: CRA's Babel breaks its inlined worker in production builds
+  ("_ is not defined"), although `bun start` works fine.
+
 ## Checking a change
 
 - `bun run build` must pass. There are no test files, so `bun run test` exits with "No tests

@@ -19,3 +19,6 @@
 .env.production.local
 
 npm-debug.log*
+
+# MapLibre worker, copied from node_modules by prestart/prebuild
+/public/maplibre-gl-csp-worker.js
