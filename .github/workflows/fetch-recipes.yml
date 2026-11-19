@@ -26,7 +26,7 @@ jobs:
       run:
         shell: bash
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       # Bun runs the scripts, and its built-in WebSocket is what `bun details --chrome` needs.
       # The version comes from packageManager in package.json.
