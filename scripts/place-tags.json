@@ -1,5 +1,5 @@
 {
-  "_comment": "What kind of place each one is, by its name on the Google Maps list. Google's list doesn't say, so these are filled in by hand: [type, cuisine, price]. type is restaurant, cafe, bakery, bar, dessert, market, shop or other. price is 1-4 for £ to ££££, roughly what one person spends: £ under £15, ££ £15-30, £££ £30-60, ££££ over £60. A place missing from here shows up untagged; yarn places lists them.",
+  "_comment": "What kind of place each one is, by its name on the Google Maps list. Google's list doesn't say, so these are filled in by hand: [type, cuisine, price]. type is restaurant, cafe, bakery, bar, dessert, market, shop or other. price is 1-4 for £ to ££££, roughly what one person spends: £ under £15, ££ £15-30, £££ £30-60, ££££ over £60. A place missing from here shows up untagged; bun places lists them.",
   "Palungo Nepali Restaurant": ["restaurant", "Nepalese", 1],
   "Netil Market": ["market", "Street food", 1],
   "Harley's Butchery & Rotisserie": ["restaurant", "Rotisserie", 2],

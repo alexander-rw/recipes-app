@@ -6,10 +6,10 @@
 // To add an ingredient, add a line to INGREDIENTS: its name, the words that mean
 // it on an ingredient line (plurals match too), and optionally words that mean a
 // line isn't really it (so "chicken stock" doesn't count as chicken).
-// `yarn details` runs this after fetching, so it only needs running by hand
+// `bun details` runs this after fetching, so it only needs running by hand
 // after changing the list.
 //
-// Usage: yarn ingredients
+// Usage: bun ingredients
 
 const fs = require("fs");
 const path = require("path");

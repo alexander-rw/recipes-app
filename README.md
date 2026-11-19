@@ -20,14 +20,18 @@ recipes and meals are JSON files in `public/`, served with the rest of the site.
 
 ## Running it
 
+It uses [Bun](https://bun.com) 1.4.5 as its package manager and to run the scripts in `scripts/`:
+
 ```sh
-yarn install
-yarn start      # http://localhost:3000
-yarn build      # production build in build/
-yarn test
+bun install
+bun start        # http://localhost:3000
+bun run build    # production build in build/
+bun run test
 ```
 
-Node 20 or later is needed (`yarn details --chrome` needs Node 22's built-in WebSocket).
+Use `bun run build` and `bun run test`, not `bun build` or `bun test`: those are Bun's own bundler
+and test runner, not this project's scripts. The Create React App commands (`start`, `build`,
+`test`) still run on Node, so Node 20 or later is needed too.
 
 ## Adding a recipe
 
@@ -48,8 +52,8 @@ Node 20 or later is needed (`yarn details --chrome` needs Node 22's built-in Web
 
 2. Push to `main`. The **Fetch new recipes** workflow (`.github/workflows/fetch-recipes.yml`) then:
    - gives the recipe an `id`, which names its page (`#recipe/<id>`) and its details file,
-   - fetches its photo into `image` (`yarn images`),
-   - saves its ingredients and method to `public/recipes/<id>.json` (`yarn details --chrome`),
+   - fetches its photo into `image` (`bun images`),
+   - saves its ingredients and method to `public/recipes/<id>.json` (`bun details --chrome`),
    - tags it with its main ingredients (`keyIngredients`), for the ingredient filter,
    - and commits the results.
 
@@ -59,12 +63,12 @@ Node 20 or later is needed (`yarn details --chrome` needs Node 22's built-in Web
 You can run the same scripts locally. Both only fetch recipes that don't have the data yet:
 
 ```sh
-yarn images            # --force to refetch every photo
-yarn details           # --force to refetch everything
-yarn details --chrome  # also retry pages that block plain requests, through a Chrome
-                       # started with --remote-debugging-port=9222
-yarn ingredients       # re-tag main ingredients, after changing the list in
-                       # scripts/tag-ingredients.js (yarn details does this too)
+bun images            # --force to refetch every photo
+bun details           # --force to refetch everything
+bun details --chrome  # also retry pages that block plain requests, through a Chrome
+                      # started with --remote-debugging-port=9222
+bun ingredients       # re-tag main ingredients, after changing the list in
+                      # scripts/tag-ingredients.js (bun details does this too)
 ```
 
 ### When a recipe can't be fetched
@@ -117,7 +121,7 @@ The places come from [our Google Maps list](https://maps.app.goo.gl/fgfBsvrhSPUm
 places there, run:
 
 ```sh
-yarn places
+bun places
 ```
 
 This saves the list to `public/places.json`. Google doesn't say what kind of place each one is, so
@@ -125,11 +129,11 @@ that comes from `scripts/place-tags.json`, which maps each place's name on the l
 `[type, cuisine, price]`. `type` is `restaurant`, `cafe`, `bakery`, `bar`, `dessert`, `market`,
 `shop` or `other`. `price` is 1 to 4 for £ to ££££, roughly what one person spends: £ under £15,
 ££ £15–30, £££ £30–60, ££££ over £60. The prices are our own estimates, as Google's list doesn't
-include them either. `yarn places` lists any places that aren't in it yet; add them and run it again. A note
+include them either. `bun places` lists any places that aren't in it yet; add them and run it again. A note
 added to a place on the Google Maps list shows on its card.
 
 The area names ("Peckham") come from the postcode district, using the table in
-`scripts/fetch-places.js`. `yarn places` warns about any district that isn't in the table.
+`scripts/fetch-places.js`. `bun places` warns about any district that isn't in the table.
 
 The map uses [OpenFreeMap](https://openfreemap.org)'s Positron style with MapLibre, which needs no
 API key. `PlacesMap.tsx` hides its road names, railways and other clutter and tints it to match the
@@ -170,12 +174,12 @@ src/
     places/     Places to eat in London
     display/    The kitchen slideshow, its recipe browser and the now-playing card
   styles/       MUI themes (the display has its own, brighter for the kitchen screen)
-scripts/        yarn images / yarn details / yarn ingredients / yarn places (and place-tags.json)
+scripts/        bun images / bun details / bun ingredients / bun places (and place-tags.json)
 public/
   recipes-dinner.json   The recipe list
   recipes/<id>.json     Each recipe's ingredients and method
   meals.json            Meals for the world map
-  places.json           Places to eat, from yarn places
+  places.json           Places to eat, from bun places
 ```
 
 Routes live in the URL hash, so they survive a refresh and can be bookmarked:

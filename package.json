@@ -2,15 +2,16 @@
   "name": "recipes-app",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "bun@1.4.5",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "images": "node scripts/fetch-recipe-images.js",
-    "details": "node scripts/fetch-recipe-details.js",
-    "ingredients": "node scripts/tag-ingredients.js",
-    "places": "node scripts/fetch-places.js"
+    "images": "bun scripts/fetch-recipe-images.js",
+    "details": "bun scripts/fetch-recipe-details.js",
+    "ingredients": "bun scripts/tag-ingredients.js",
+    "places": "bun scripts/fetch-places.js"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Saves our Google Maps list of places to eat in London to public/places.json.
 //
-//   yarn places
+//   bun places
 //
 // The list is shared by link, and Google Maps loads a shared list from the getlist endpoint below,
 // which needs no key. Google doesn't say what kind of place each one is, so that comes from

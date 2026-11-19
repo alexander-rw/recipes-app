@@ -2,7 +2,7 @@ export type PlaceType = "restaurant" | "cafe" | "bakery" | "bar" | "dessert" | "
 
 export type Region = "Central" | "North" | "East" | "South" | "West";
 
-// One entry in public/places.json, made by `yarn places` from our Google Maps list
+// One entry in public/places.json, made by `bun places` from our Google Maps list
 export type Place = {
   // Google Maps place id (the "cid"), for a link to the place
   id: string;

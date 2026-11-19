@@ -3,7 +3,7 @@
 // previews. Only recipes without an image are fetched, so it's cheap to re-run
 // after adding recipes. Pass --force to refetch every recipe.
 //
-// Usage: yarn images [--force]
+// Usage: bun images [--force]
 
 const fs = require("fs");
 const path = require("path");

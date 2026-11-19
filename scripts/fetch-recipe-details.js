@@ -11,7 +11,7 @@
 // loadWithChrome). For a page nothing can read, write its file by hand and
 // add "addedByHand": true so it's kept.
 //
-// Usage: yarn details [--force] [--chrome]
+// Usage: bun details [--force] [--chrome]
 
 const fs = require("fs");
 const path = require("path");
@@ -228,13 +228,13 @@ const detailsFromPage = (document) => {
 };
 
 // Loads a page in a Chrome started with --remote-debugging-port=9222, for
-// sites whose bot protection turns away plain requests. Node 20 needs
-// --experimental-websocket for this.
+// sites whose bot protection turns away plain requests. Bun has the
+// WebSocket this needs built in (so does Node 22+).
 const CHROME = "http://127.0.0.1:9222";
 
 const loadWithChrome = async (href) => {
   if (typeof WebSocket === "undefined") {
-    throw new Error("--chrome needs Node 22+, or node --experimental-websocket");
+    throw new Error("--chrome needs a WebSocket: run it with Bun (bun details --chrome)");
   }
   const target = await (await fetch(`${CHROME}/json/new?about:blank`, { method: "PUT" })).json();
   const socket = new WebSocket(target.webSocketDebuggerUrl);
